@@ -19,6 +19,15 @@ label start:
 
     scene fondo_seleccionar_personaje with fade
 
+    "¡Bienvenido/Bienvenida a Conquista matemática!"
+    "Esta es una novela visual que presenta parte de la vida de Juan Cupul, ¡un héroe de Tixcacalcupul!"
+    "Durante la historia tendrás que tomar decisiones que afectarán el curso de la historia y los personajes."
+    "Pero también verás varios ejercicios matemáticos que tendrás que resolver."
+    "Si no logras resolverlos con éxito, la historia no avanzará, así que esfuérzate mucho para que puedas
+    conocer cuál será el final que te tocará basado en tus decisiones."
+    "Y sobre todo, ¡no olvides divertirte!"
+    "Por ahora, personaliza un poco tu partida."
+
     $ nombreUsuario = renpy.input("Escribe tu nombre")
 
     #jump seleccionar_avatar_1
@@ -110,9 +119,9 @@ label No_ayuda_Fili:
     hacer guardia."
     juan "Hasta luego, Filiberto."
 
-    "Hasta aquí llegué."
+    hide fili
 
-    return
+    jump turno_bombero
 
 label Ayuda_Fili:
     juan "Está bien, Filiberto. No te preocupes, yo te ayudo."
@@ -249,7 +258,7 @@ label llegan_a_huerto:
         ¿cuántos kilogramos de provisiones recolectaron en total?"
         "405 kg":
             "¡Maravilloso! Parece que Juan y Filiberto saben cómo recolectar la cantidad justa de provisiones."
-            jump cosechar_verduras
+            jump cosechar_verduras_2
         "345 kg":
             "Ups, parece que esta respuesta no es la correcta. ¡No te rindas, sigue practicando!"
             jump problema_5
@@ -259,6 +268,64 @@ label llegan_a_huerto:
         "305 kg":
             "Sigue intentado, estoy seguro de que la próxima será la correcta."
             jump problema_5
+
+label cosechar_verduras_2:
+    "Juan y Filiberto se encargan de cosechar las verduras."
+    hide zanahoria1
+    pause
+    hide zanahoria2
+    pause
+    hide zanahoria3
+    pause
+    hide zanahoria4
+    pause
+    hide zanahoria5
+    pause
+    hide zanahoria6
+    pause
+    hide tomate1
+    pause
+    hide tomate2
+    pause
+    hide tomate3
+    pause
+    hide tomate4
+    pause
+    hide tomate5
+    pause
+    hide rabanob1
+    pause
+    hide rabanob2
+    pause
+    hide rabanob3
+    pause
+    hide rabanob4
+    pause
+    hide rabanob5
+    pause
+    hide rabanob6
+    pause
+    hide rabanor1
+    pause
+    hide rabanor2
+    pause
+    hide rabanor3
+    pause
+    hide rabanor4
+    pause
+    hide rabanor5
+    pause
+    hide rabanor6
+    pause
+
+    filiberto "Ahora que ya tenemos las verduras, necesitamos ir por agua."
+    juan "De acuerdo. Podemos ir por ella al río, pero sería mejor agarrarla de un pozo."
+    juan "Vayamos al que está en mi casa."
+    filiberto "Regresemos entonces. Sólo hay que dejar esto en la cabaña para no andarlo cargando."
+
+    "Juan y Filiberto dejaron las verduras en la cabaña de los bomberos y se dirigen de vuelta a casa de Juan."
+
+    jump regresar_casaJ_agua
         
 label cosechar_verduras:
     "Juan y Filiberto se encargan de cosechar las verduras."
@@ -316,9 +383,166 @@ label cosechar_verduras:
 
     "Juan y Filiberto dejaron las verduras en la cabaña de los bomberos y se dirigen de vuelta a casa de Juan."
 
-    "Me detuve aquí."
+    jump regresar_casaJ_agua
+
+label regresar_casaJ_agua:
+    scene afuera_casa_juan
+
+    show juan parado atras:
+        xpos 830
+        ypos 1000
+    show fili parado atras:
+        xpos 930
+        ypos 1000
+    
+    show juan camina atras:
+        linear 2 ypos 700
+        
+    show fili camina atras:
+        linear 2 ypos 700
+
+    pause 2
+
+    show juan parado derecha:
+        xpos 830
+        ypos 700
+    show fili parado izquierda:
+        xpos 930
+        ypos 700
+
+    juan "Ya estamos aquí. Llenemos unas cubetas y terminamos."
+    filiberto "Está bien."
+
+    "Juan y Filiberto están a punto de recolectar agua del pozo y dejarla en la cabaña de los bomberos."
+    "Pero para que ellos puedan hacerlo, debes resolver un problema."
+    
+    menu problema_division_3:
+        "Juan Cupul se encuentra frente a un depósito con 56 litros de agua que 
+        debe distribuir en cubetas de 8 litros cada una. ¿Cuántas cubetas necesitará 
+        llenar para repartir toda el agua?"
+        "48 cubetas":
+            "¡Vuelve a intentarlo, tú puedes! Lee nuevamente el ejercicio. "
+            jump problema_division_3
+        "7 cubetas":
+            "¡Buen trabajo, lo has conseguido! Has logrado ayudar a Juan Cupul"
+        "9 cubetas":
+            "¡Casi lo tienes, estás cerca! Pero la respuesta no es la correcta."
+            jump problema_division_3
+        "64 cubetas":
+            "¡Vamos de nuevo!"
+            jump problema_division_3
+        
+    show cubeta1:
+        xpos 1140
+        ypos 780
+    pause 0.4
+    show cubeta2:
+        xpos 1190
+        ypos 780
+    pause 0.4
+    show cubeta3:
+        xpos 1240
+        ypos 780
+    pause 0.4
+    show cubeta4:
+        xpos 1290
+        ypos 780
+
+    juan "Ya tenemos el agua. Ahora sólo debemos llevarla a la cabaña y habremos terminado."
+    filiberto "Muchas gracias por tu ayuda, Juan. Gracias a ti, me ahorré muchas horas de trabajo."
+    juan "De nada, Filiberto. Si luego necesitas ayuda con algo más, puedes decirme."
+    filiberto "No te preocupes. Por hoy ya fue suficiente, además, mañana te casas."
+    filiberto "¿Cómo te sientes? ¿No estás nervioso?"
+    juan "Es extraño, pero no. Me siento listo."
+    filiberto "Tiene que ser una buena señal. Una señal de que es lo que realmente quieres."
+    juan "Eso parece."
+    juan "Ya llevemos el agua, antes de que sea tarde."
+
+    hide cubeta1
+    hide cubeta2
+    hide cubeta3
+    hide cubeta4
+    hide fili
+
+    jump turno_bombero
+
+label turno_bombero:
+
+    show juan parado derecha:
+        xpos 830
+        ypos 700
+
+    show novia parada izquierda:
+        xpos 930
+        ypos 700
+
+    "Luego de terminar con Filiberto, Juan desayuna y se prepara para su guardia como bombero."
+
+    juan "Ya necesito irme a mi puesto. Hoy me toca hacer guardia con Filiberto."
+    prometida "¿Estás seguro? Tu tío José vino en la mañana mientras dormías y me dijo
+    que podía ocupar tu lugar."
+    juan "Tengo que ir yo. Sé que mañana es nuestra boda, pero es mi responsabilidad ayudar y 
+    contribuir como todos."
+    juan "Lo siento mucho."
+    prometida "No, está bien, yo entiendo. Sólo te pido que no faltes."
+    juan "Te prometo que estaré allí. No te voy a fallar."
+    prometida "Bien. Antes de que te vayas, ¿puedes resolver un reto?"
+    juan "Sí, dímelo, estoy listo."
+
+    menu problema_resta_6:
+        prometida "Si jugaste 15 partidas de ajedrez y ganaste 8, ¿cuántas partidas perdiste?"
+        "2 partidas":
+            "¡Vuelve a intentarlo, tú puedes!"
+            jump problema_resta_6
+        "5 partidas":
+            "Estás en el camino correcto. Recuerda cuántas partidas de ajedrez jugó Juan en total y cuántas ganó."
+            jump problema_resta_6
+        "23 partidas":
+            "¡Tú puedes hallar la solución!"
+            jump problema_resta_6
+        "7 partidas":
+            "¡Eso es! La respuesta es correcta."
+
+    prometida "No has perdido la práctica. Sigues sin perder tu racha de aciertos."
+    juan "Practico mucho gracias a ti."
+    juan "Bueno, ya me voy. Nos vemos mañana."
+
+    "Aquí me quedé."
+
 
     return
+
+
+
+#Que cuendo lleguen a la cabaña no haya agua y aunque ellos no entienden por qué,
+#no les queda de otra que ir por más porque la necesitarán para su urno. Lo que ellos
+#no saben es que fue una trampa de los atacantes para separarlos porque sabían que
+#uno solo tendría que ir por agua porque no podían abandonar su turno
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 

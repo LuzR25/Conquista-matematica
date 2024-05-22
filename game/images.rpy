@@ -65,6 +65,11 @@ image tomate3 = "Objetos/Decoracion/Tomates_1.png"
 image tomate4 = "Objetos/Decoracion/Tomates_1.png"
 image tomate5 = "Objetos/Decoracion/Tomates_1.png"
 
+image cubeta1 = Image("Objetos/Decoracion/Cubeta_2.png", oversample=1.7)
+image cubeta2 = Image("Objetos/Decoracion/Cubeta_2.png", oversample=1.7)
+image cubeta3 = Image("Objetos/Decoracion/Cubeta_2.png", oversample=1.7)
+image cubeta4 = Image("Objetos/Decoracion/Cubeta_2.png", oversample=1.7)
+
 #* AVATARES
 image avatar1 = "Avatares/Avatar 1.png"
 image avatar2 = "Avatares/Avatar 2.png"
