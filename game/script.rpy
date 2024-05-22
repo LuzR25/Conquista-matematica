@@ -125,7 +125,7 @@ label Ayuda_Fili:
     scene camino_casa_juan
     with fade
 
-    "Juan y Filiberto se ponen a caminar, pero están confundidos, no saben qué camino tomar."
+    "Juan y Filiberto se ponen a caminar, pero están confundidos y no saben qué camino tomar."
 
     menu camino_oeste:
         "Si pueden llegar al huerto caminando en línea recta y la casa de Juan está hacia el norte, ¿qué camino deben tomar?"
