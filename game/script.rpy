@@ -507,9 +507,8 @@ label turno_bombero:
     juan "Practico mucho gracias a ti."
     juan "Bueno, ya me voy. Nos vemos mañana."
 
-    "Aquí me quedé."
-
-    jump en_la_cabana_bombero
+    #jump en_la_cabana_bombero
+    jump camino_al_turno
 
 label camino_al_turno:
     scene camino_v_md
@@ -519,18 +518,22 @@ label camino_al_turno:
 
     show juan parado izquierda:
         xpos 1850
-        ypos 520
+        ypos 450
     
     show juan camina izquierda:
-        linear 6 xpos 120
+        linear 6 xpos 0
 
     pause 6
 
     scene camino_v_osc
 
+    show vendedor quieto:
+        xpos 800
+        ypos 400
+
     show juan parado izquierda:
         xpos 1850
-        ypos 520
+        ypos 450
     
     show juan camina izquierda:
         linear 2 xpos 1600
@@ -539,8 +542,6 @@ label camino_al_turno:
 
     show juan parado izquierda:
         xpos 1600
-
-
 
     "Es entonces que ve a este ser extraño al que no reconoce. No siente miedo, pero tampoco le entusiasma
     la idea de acercarse a él."
@@ -551,7 +552,14 @@ label camino_al_turno:
 
     "Juan duda, pero la intriga lo lleva a caminar a este ser cuyo nombre aún desconoce."
 
-    #! Animación de Juan acercándose
+    show juan camina izquierda:
+        linear 3 xpos 950 ypos 420
+
+    pause 3
+
+    show juan parado izquierda:
+        xpos 950 
+        ypos 420
 
     vendedor "Yo no soy más que un mercader. Me conocen como el Vendedor ambulante."
     vendedor "Como bien sabrás, un vendedor sólo puede mantenerse de las ventas si consigue ofrecer
@@ -565,7 +573,7 @@ label camino_al_turno:
     "Juan no sabe qué decir, su curiosidad lo hace querer acceder de inmediato, aunque ni siquiera
     sabe qué es lo que el Vendedor ambulante busca."
 
-    "Por otro lado, podría ser peligroso seguir a este extraño ser a un lugar desconocido a buscar
+    "Por otro lado, podría ser peligroso seguir a este extraño a un lugar desconocido a buscar
     quien sabe qué y, de ayudarlo, corre con el riesgo de no llegar a tiempo a su puesto de bombero."
 
     "Los cruzob podrían atacar en cualquier momento y él necesita estar ahí si eso
@@ -583,6 +591,8 @@ label camino_al_turno:
 label juan_ayuda_ambulante:
     juan "Está bien. Te ayudaré en tu búsqueda. ¿Qué debo hacer?"
 
+    "Aquí me quedé."
+
 label juan_no_ayuda_ambulante:
     juan "Lo siento, pero tengo algo que hacer justo ahora y no puedo distraerme.
         Tal vez en otro momento."
@@ -592,14 +602,17 @@ label juan_no_ayuda_ambulante:
     
     "Y el Vendedor ambulante desaparece."
 
-    #! Animación del vendedor desaparienciendo
+    hide vendedor quieto with wipeup
 
     "Juan siente miedo por un segundo, pero se lo quita de encima. Tiene una responsabilidad
     que cumplir."
 
     juan "Si era un fantasma, no quiero saber."
 
-    #! Animación de Juan yéndose 
+    show juan camina izquierda:
+        linear 3.5 xpos 0
+
+    pause 3.5
 
     jump en_la_cabana_bombero
 
@@ -639,6 +652,13 @@ label en_la_cabana_bombero:
     juan "Por ahora, lo único que podemos hacer es no abandonar nuestro puesto. Si de verdad van a atacar,
         hay que asegurarnos de avisar a los demás."
     filiberto "De acuerdo, iré por más agua entonces. Voy al río, no me tardo."
+
+    show fili camina derecha:
+        linear 3 xpos 1900
+
+    pause 3
+
+    hide fili camina derecha
 
     "Filiberto se va y Juan se queda solo."
 

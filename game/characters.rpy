@@ -664,7 +664,7 @@ image mujer parada derecha:
 
 #* VENDEDOR
 image vendedor_quieto_1 = Crop((0, 0, 128, 128), "spritesheet_vendedor")
-image vendedor_quieto_1 = Crop((128, 0, 128, 128), "spritesheet_vendedor")
+image vendedor_quieto_2 = Crop((128, 0, 128, 128), "spritesheet_vendedor")
 image vendedor_quieto_3 = Crop((256, 0, 128, 128), "spritesheet_vendedor")
 image vendedor_quieto_4 = Crop((384, 0, 128, 128), "spritesheet_vendedor")
 image vendedor_quieto_5 = Crop((512, 0, 128, 128), "spritesheet_vendedor")
@@ -695,3 +695,4 @@ image vendedor quieto:
     pause 0.3
     "vendedor_quieto_10"
     pause 0.3
+    repeat

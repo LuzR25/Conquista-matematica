@@ -5,7 +5,7 @@ image afuera_casa_juan = "Fondos/Afuera_Casa_Juan.png"
 image fondo_seleccionar_personaje = "Fondos/Fondo_Seleccionar_Personaje.jpg"
 image cabana_bombero = Image("Fondos/Fondo 3.png", oversample=0.93)
 image camino_v_md = Image("Fondos/Fondo 2.png", oversample=0.93)
-image camino_v_osc = Image("Fondos/Fondo 4.png", oversample=0.93)
+image camino_v_osc = Image("Fondos/Fondo 4.png", oversample=0.665)
 
 # Para el mundo a explorar ############
 image arriba = "flecha_arriba.png"
