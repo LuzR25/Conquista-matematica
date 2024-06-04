@@ -2,7 +2,7 @@
 define juan = Character("Juan Cupul", color="#0011a7")
 define prometida = Character("María Dolores", color="#8b6eb9")
 define filiberto = Character("Filiberto Tun", color="#155513")
-define estatua = Character("Estatua mística", color="#3d3d3d")
+define vendedor = Character("Vendedor ambulante", color="#3d3d3d")
 
 # IMÁGENES ####################################################################
 #De los personajes

@@ -424,7 +424,7 @@ label regresar_casaJ_agua:
             "¡Vuelve a intentarlo, tú puedes! Lee nuevamente el ejercicio. "
             jump problema_division_3
         "7 cubetas":
-            "¡Buen trabajo, lo has conseguido! Has logrado ayudar a Juan Cupul"
+            "¡Buen trabajo, lo has conseguido! Has logrado ayudar a Juan Cupul."
         "9 cubetas":
             "¡Casi lo tienes, estás cerca! Pero la respuesta no es la correcta."
             jump problema_division_3
@@ -486,7 +486,7 @@ label turno_bombero:
     juan "Lo siento mucho."
     prometida "No, está bien, yo entiendo. Sólo te pido que no faltes."
     juan "Te prometo que estaré allí. No te voy a fallar."
-    prometida "Bien. Antes de que te vayas, ¿puedes resolver un reto?"
+    prometida "Antes de que te vayas, ¿puedes resolver un reto?"
     juan "Sí, dímelo, estoy listo."
 
     menu problema_resta_6:
@@ -509,6 +509,140 @@ label turno_bombero:
 
     "Aquí me quedé."
 
+    jump en_la_cabana_bombero
+
+label camino_al_turno:
+    scene camino_v_md
+
+    "Juan está de camino a su turno como bombero. Avanza con tranquilidad, sabiendo que va con tiempo
+    para llegar puntual."
+
+    show juan parado izquierda:
+        xpos 1850
+        ypos 520
+    
+    show juan camina izquierda:
+        linear 6 xpos 120
+
+    pause 6
+
+    scene camino_v_osc
+
+    show juan parado izquierda:
+        xpos 1850
+        ypos 520
+    
+    show juan camina izquierda:
+        linear 2 xpos 1600
+
+    pause 2
+
+    show juan parado izquierda:
+        xpos 1600
+
+
+
+    "Es entonces que ve a este ser extraño al que no reconoce. No siente miedo, pero tampoco le entusiasma
+    la idea de acercarse a él."
+
+    "Este ser lo llama y le pide que se acerque."
+
+    vendedor "No temas, muchacho. Acércate, que tengo una misión para ti."
+
+    "Juan duda, pero la intriga lo lleva a caminar a este ser cuyo nombre aún desconoce."
+
+    #! Animación de Juan acercándose
+
+    vendedor "Yo no soy más que un mercader. Me conocen como el Vendedor ambulante."
+    vendedor "Como bien sabrás, un vendedor sólo puede mantenerse de las ventas si consigue ofrecer
+            a sus clientes los mejores productos."
+    vendedor "A mí me encanta ofrecer sólo lo mejor de lo mejor, y resulta que algo que uno de mis
+            clientes busca se encuentra aquí, en este pueblo que tú seguramente llamas hogar."
+    vendedor "Necesito tu ayuda para encontrarlo, pues poco conozco sobre este lugar en el que 
+            me encuentro y en cuanto te he visto, he sabido que eres el indicado."
+    vendedor "¿Puedes ayudarme a encontrar lo que busco?"
+
+    "Juan no sabe qué decir, su curiosidad lo hace querer acceder de inmediato, aunque ni siquiera
+    sabe qué es lo que el Vendedor ambulante busca."
+
+    "Por otro lado, podría ser peligroso seguir a este extraño ser a un lugar desconocido a buscar
+    quien sabe qué y, de ayudarlo, corre con el riesgo de no llegar a tiempo a su puesto de bombero."
+
+    "Los cruzob podrían atacar en cualquier momento y él necesita estar ahí si eso
+    sucede, y no quiere arriesgar su responsabilidad por un desconocido."
+
+    menu:
+        "¿Deseas acompañar al vendedor ambulante en su búsqueda, arriesgando llegar tarde a tu
+        puesto como bombero y que ocurra un ataque en ese momento?"
+        "Sí, quiero acompañar al Vendedor ambulante":
+            jump juan_ayuda_ambulante
+        "No, no deseo arriesgar la seguridad de Tixcacalcupul":
+            jump juan_no_ayuda_ambulante
+        
+
+label juan_ayuda_ambulante:
+    juan "Está bien. Te ayudaré en tu búsqueda. ¿Qué debo hacer?"
+
+label juan_no_ayuda_ambulante:
+    juan "Lo siento, pero tengo algo que hacer justo ahora y no puedo distraerme.
+        Tal vez en otro momento."
+
+    vendedor "Pues bien, sólo me queda desearte suerte, Juan Cupul, dado que no nos
+            volveremos a encontrar. "
+    
+    "Y el Vendedor ambulante desaparece."
+
+    #! Animación del vendedor desaparienciendo
+
+    "Juan siente miedo por un segundo, pero se lo quita de encima. Tiene una responsabilidad
+    que cumplir."
+
+    juan "Si era un fantasma, no quiero saber."
+
+    #! Animación de Juan yéndose 
+
+    jump en_la_cabana_bombero
+
+label en_la_cabana_bombero:
+    scene cabana_bombero
+
+    show fili parado derecha:
+        xpos 520
+        ypos 410
+    
+    show juan parado izquierda:
+        xpos 1850
+        ypos 520
+    
+    show juan camina izquierda:
+        linear 6 xpos 620 ypos 410
+
+    pause 6
+
+    show juan parado izquierda:
+        xpos 610
+        ypos 410
+
+    filiberto "Juan, qué bueno que llegaste. Tenemos un problema."
+    juan "¿Un problema? ¿Qué pasó?"
+    filiberto "El agua que trajimos del pozo de tu casa ya no está."
+    juan "¿Estás seguro? ¿No será que alguien vino y la movió de lugar? 
+        ¿Buscaste en toda la cabaña?"
+    filiberto "Sí, en toda la cabaña y alrededor de ella. No hay rastros del agua."
+    filiberto "No tiene sentido que desapareciera. Somos los únicos que deberían estar aquí hoy."
+    juan "Es extraño, pero no podemos descartar que alguien pasara y se la llevara, aunque no estoy
+        seguro de por qué."
+    filiberto "¿Y si llegaron los cruzob y se la llevaron?"
+    juan "Podría ser. Pero, de ser así, no habrían desperdiciado la oportunidad de atacar si pudieron
+        tomarse el tiempo de robarse el agua."
+    filiberto "Hay algo que no está bien aquí, Juan."
+    juan "Por ahora, lo único que podemos hacer es no abandonar nuestro puesto. Si de verdad van a atacar,
+        hay que asegurarnos de avisar a los demás."
+    filiberto "De acuerdo, iré por más agua entonces. Voy al río, no me tardo."
+
+    "Filiberto se va y Juan se queda solo."
+
+    "Aquí me quedé."
 
     return
 
