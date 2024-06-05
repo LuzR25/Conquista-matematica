@@ -3,11 +3,13 @@
     nombreUsuario = ""
     ayudoFili = False
     avatarElegido = ""
+    conservaObjeto = False
     
     def my_save(data):
         data["nombre_usuario"] = nombreUsuario
         data["puntos_victorias"] = puntosVictorias
         data["ayudo_a_fili"] = ayudoFili
+        data["conserva_objeto"] = conservaObjeto
         data["avatar_elegido"] = avatarElegido
 
     config.save_json_callbacks = [ my_save ]
@@ -595,18 +597,12 @@ label juan_ayuda_ambulante:
             que sólo aparece ante aquellos que se atreven a resolver un acertijo."
     vendedor "Pero antes de eso necesitamos llegar al lugar donde se pide la oportunidad de encontrar 
             el camino."
-    vendedor "¿Conoces algún lugar en el que podamos comunicarnos con los dioses, Juan Cupul?"
+    vendedor "Lo único que sé sobre ese lugar es que debe haber un árbol enorme, ¿sabes dónde puede estar?"
 
-    "Lo más lógico sería un cenote o una iglesia, pero no han encontrado un cenote en este pueblo, así
-    que la única opción es la iglesia."
+    juan "Sí, hay un camino aquí que tiene un gran árbol en el centro. No es muy lejos.
+        Sígueme."
 
-    juan "Sólo se me ocurre ir a la iglesia."
-
-    vendedor "No quiero comunicarme con esos dioses, muchacho."
-
-    juan "Es el único lugar en el que podemos hablar con algún dios."
-
-    vendedor "Muy bien, Juan Cupul. Llévame a tu iglesia."
+    vendedor "Muy bien, muchacho. Guía el camino entonces."
 
     show juan camina derecha:
         linear 4 xpos 1900
@@ -616,10 +612,10 @@ label juan_ayuda_ambulante:
 
     pause 5
 
-    jump en_la_iglesia
+    jump en_el_gran_arbol
 
-label en_la_iglesia:
-    scene iglesia
+label en_el_gran_arbol:
+    scene gran_arbol
 
     show juan camina derecha:
         xpos 0 ypos 400
@@ -669,12 +665,165 @@ label en_la_iglesia:
     juan "¿Y cómo hacemos eso?"
     vendedor "Primero necesitamos una vela."
 
-    show vela at truecenter
+    show vela:
+        xpos 550 ypos 500
 
-    "Aquí me detuve."
+    juan "¿No te parece peligroso poner una vela tan cerca del árbol? Sobre todo una tan grande.
+        Creo que mido casi lo mismo que esa vela."
 
-    return
+    vendedor "Silencio, muchacho. Necesito calma y concentranción."
 
+    "Juan se mantiene callado mientras ve al vendedor ambulante hacer absolutamente nada."
+    "Pareciera estar pensando en algo, así que sólo puede asumir que el vendedor se está 
+    comunicando con alguien usando esos desconocidos poderes suyos."
+
+    vendedor "Los dioses me están haciendo varias preguntas, pero no sé qué responder, necesito tu ayuda."
+
+    menu problema_division_1:
+        vendedor "Juan Cupul tiene 36 machetes y los tiene que repartir entre 6 campesinos de la comunidad. 
+        ¿Cuántos machetes le debe dar a cada campesino?"
+        "4 machetes":
+            "¡Casi lo tienes, estás cerca! Pero la respuesta no es la correcta."
+            jump problema_division_1
+        "6 machetes":
+            "¡Excelente, ahí lo tienes! Juan Cupul debe dar 6 machetes a cada campesino."
+        "30 machetes":
+            "¡Vuelve a intentarlo, tú puedes!"
+            jump problema_division_1
+        "5 machetes":
+            "¡Vamos de nuevo!"
+            jump problema_division_1
+    
+    menu problema_division_2:
+        vendedor "Durante la cosecha de tomates Juan Cupul recolecta 72 kilos y se los 
+        quiere regalar a 9 familias que viven cerca de su casa, ¿cuántos kilos de tomate 
+        le regalará a cada familia?"
+        "8 kilos":
+            "¡Excelente, lo has conseguido! Juan Cupul le regalara 8 kilos de tomate a cada familia."
+        "13 kilos":
+            "¡Vuelve a intentarlo, tú puedes!"
+            jump problema_division_2
+        "7 kilos":
+            "¡Casi lo tienes, estás cerca! Pero la respuesta no es la correcta."
+            jump problema_division_2
+        "63 kilos":
+            "¡Vamos de nuevo!"
+            jump problema_division_2
+    
+    menu problema_division_4:
+        vendedor "Juan Cupul está ayudando a sus vecinos a prepararse para el invierno. 
+                Han cortado 60 troncos de árboles y desean dividirlos igualmente entre 5 hogares. 
+                ¿Cuántos troncos recibirá cada hogar?"
+        "12 troncos":
+            "¡Buen trabajo, lo has conseguido! Has apoyado mucho a Juan Cupul."
+        "55 troncos":
+            "¡Vuelve a intentarlo, tú puedes!"
+            jump problema_division_4
+        "11 troncos":
+            "¡Casi lo tienes, estás cerca! Pero la respuesta no es la correcta."
+            jump problema_division_4
+        "8 troncos":
+            "¡Vamos de nuevo!"
+            jump problema_division_4
+
+    vendedor "Muchas gracias, muchacho. Dame un segundo más."
+    vendedor "Ya está."
+
+    scene arboles_doblado with hpunch
+    play sound "audio/vendedor_efecto.mp3"
+
+    show gallina_1 quieta:
+        xpos 350 ypos 600
+
+    show vendedor quieto:
+        xpos 310 ypos 390
+
+    show juan parado derecha:
+        xpos 180 ypos 400
+
+    "De la nada, ya están en otro lugar."
+
+    vendedor "Espero te encuentres bien muchacho, la trasnportación inmediata suele sentar
+            muy mal la primera vez."
+
+    juan "Estoy bien, sólo... No vuelvas a hacerlo."
+    vendedor "Eso no puedo prometerlo. ¡Ah, mira! Ahí está. Es perfecta."
+
+    "Lo único que Juan ve es a una gallina haciendo nada en el camino."
+
+    vendedor "Es exactamente lo que necesitaba."
+    juan "¿Lo que estabas buscando era una gallina?"
+    vendedor "No cualquier gallina, muchacho. Mira este maravilloso ejemplar haciendo 
+            cosas que ninguna otra gallina puede hacer."
+    
+    show gallina_1 come
+
+    juan "Esa gallina está comiendo. Como cualquier otra."
+    vendedor "Hay que saber diferenciar al diamante del zafiro, muchacho. Este es un 
+            ejemplar muy especial y procederé a añadirlo a mi cesta de inmediato."
+
+    show cesta:
+        xpos 360 ypos 390
+    pause 1
+    hide gallina_1 come
+    show gallina_1 quieta:
+        xpos 350 ypos 600
+        linear 1.5 xpos 440 ypos 535
+    pause 2
+    hide gallina_1 quieta
+
+    vendedor "Bien, ya tengo lo que buscaba. Muchas gracias por tu ayuda."
+    juan "De nada, la experiencia ha sido muy... interesante."
+    vendedor "Por tu ayuda, me tomaré la libertad de obsequiarte algo."
+
+    show calavera:
+        xpos 250 ypos 500
+
+    "Una calavera gigante con una vela encendida encima es lo que aparece ante Juan."
+
+    vendedor "No cometas el error de confundir al diamante con zafiro, muchacho. 
+            Esta no es una calavera ordinaria."
+    vendedor "Tiene el poder de despertar al ser vivo de tu elección de cualquier 
+            tipo de sueño. Cuídala bien. La necesitarás en el futuro."
+    
+    menu:
+        "El vendedor ambulante le ha obsequiado un objeto mágico a Juan Cupul. Si lo 
+        aceptas, se añadirá a tu inventario y podrás usarlo en un momento específico
+        de la historia en el futuro. ¿Deseas conservar el obsequio del vendedor ambulante?"
+        "Sí, quiero quedármelo.":
+            $ conservaObjeto = True
+            pause 1.0
+            hide calavera
+            jump acepta_objeto
+        "No, no creo necesitarlo.":
+            jump no_acepta_objeto
+
+label acepta_objeto:
+    juan "Muchas gracias. La voy a cuidar muy bien."
+    jump adios_vendedor
+
+label no_acepta_objeto:
+    juan "Agradezco el gesto, pero no creo que necesitar un objeto mágico. Será mejor que 
+        lo conserves tú."
+    vendedor "Es tu decisión, muchacho."
+    hide calavera
+    jump adios_vendedor
+
+label adios_vendedor:
+    vendedor "Pues bien, yo me despido. Ya no nos volveremos a ver, pero sin duda alguna 
+            conservaré un buen recuerdo sobre ti."
+
+    hide cesta
+    hide vendedor quieto with hpunch
+    play sound "audio/vendedor_efecto.mp3"
+
+    juan "No me acostumbraría jamás a eso."
+
+    show juan camina frente:
+        linear 3 ypos 1000
+    pause 3
+
+    jump en_la_cabana_bombero
 
 
 label juan_no_ayuda_ambulante:

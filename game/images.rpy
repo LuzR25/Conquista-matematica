@@ -7,6 +7,8 @@ image cabana_bombero = Image("Fondos/Fondo 3.png", oversample=0.93)
 image camino_v_md = Image("Fondos/Fondo 2.png", oversample=0.93)
 image camino_v_osc = Image("Fondos/Fondo 4.png", oversample=0.665)
 image iglesia = Image("Fondos/Fondo_A31.png", oversample=0.933)
+image gran_arbol = Image("Fondos/Fondo 17.png", oversample=0.933)
+image arboles_doblado = Image("Fondos/Fondo 13.png", oversample=0.665)
 
 # Para el mundo a explorar ############
 image arriba = "flecha_arriba.png"

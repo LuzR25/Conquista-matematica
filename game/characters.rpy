@@ -693,25 +693,25 @@ image vendedor_quieto_10 = Crop((1152, 0, 128, 128), "spritesheet_vendedor")
 
 image vendedor quieto:
     "vendedor_quieto_1"
-    pause 0.3
+    pause 0.2
     "vendedor_quieto_2"
-    pause 0.3
+    pause 0.2
     "vendedor_quieto_3"
-    pause 0.3
+    pause 0.2
     "vendedor_quieto_4"
-    pause 0.3
+    pause 0.2
     "vendedor_quieto_5"
-    pause 0.3
+    pause 0.2
     "vendedor_quieto_6"
-    pause 0.3
+    pause 0.2
     "vendedor_quieto_7"
-    pause 0.3
+    pause 0.2
     "vendedor_quieto_8"
-    pause 0.3
+    pause 0.2
     "vendedor_quieto_9"
-    pause 0.3
+    pause 0.2
     "vendedor_quieto_10"
-    pause 0.3
+    pause 0.2
     repeat
 
 #* ANIMALES
