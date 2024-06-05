@@ -15,7 +15,6 @@ image spritesheet_fili = "Personajes/Filberto_Style_Sheets_128x128.png"
 image spritesheet_hombre = "Personajes/Hombre_Style_Sheets_128x128.png"
 image spritesheet_mujer = "Personajes/Mujer_Style_Sheets_128x128.png"
 image spritesheet_vendedor = "Personajes/Vendedor_Style_Sheet_128x128.png"
-image spritesheet_cesta = "Personajes/Cesta_Vendedor_Style_Sheet.png"
 
 #De los animales
 image spritesheet_gallina_1 = "Animales/Gallina_Sheet_1.png"
@@ -27,6 +26,11 @@ image spritesheet_pavo = "Animales/Pavo_Sheet_1.png"
 image spritesheet_pollito = "Animales/Pollito_Sheet_1.png"
 image spritesheet_puerquito_1 = "Animales/Puerquito_Sheet_1.png"
 image spritesheet_puerquito_2 = "Animales/Puerquito_Sheet_2.png"
+
+#De los objetos
+image spritesheet_cesta = "Personajes/Cesta_Vendedor_Style_Sheet.png"
+image spritesheet_vela = "Objetos/Decoracion/Vela_1.png"
+image spritesheet_calavera = "Objetos/Decoracion/Craneo_1.png"
 
 
 #ANIMACIONES ###################################################################
@@ -710,31 +714,6 @@ image vendedor quieto:
     pause 0.3
     repeat
 
-image cesta_1 = Crop((0, 0, 208, 291), "spritesheet_cesta")
-image cesta_2 = Crop((208, 0, 208, 291), "spritesheet_cesta")
-image cesta_3 = Crop((416, 0, 208, 291), "spritesheet_cesta")
-image cesta_4 = Crop((624, 0, 208, 291), "spritesheet_cesta")
-image cesta_5 = Crop((832, 0, 208, 291), "spritesheet_cesta")
-image cesta_6 = Crop((1040, 0, 208, 291), "spritesheet_cesta")
-image cesta_7 = Crop((1248, 0, 208, 291), "spritesheet_cesta")
-
-image cesta:
-    "cesta_1"
-    pause 0.1
-    "cesta_2"
-    pause 0.1
-    "cesta_3"
-    pause 0.1
-    "cesta_4"
-    pause 0.1
-    "cesta_5"
-    pause 0.1
-    "cesta_6"
-    pause 0.1
-    "cesta_7"
-    pause 0.1
-    repeat
-
 #* ANIMALES
 image gallina_1_1 = Crop((0, 0, 64, 64), "spritesheet_gallina_1")
 image gallina_1_2 = Crop((64, 0, 64, 64), "spritesheet_gallina_1")
@@ -838,5 +817,60 @@ image puerquito revolcado:
     pause 0.1
     repeat
 
+#*OBJETOS
+image cesta_1 = Crop((0, 0, 208, 291), "spritesheet_cesta")
+image cesta_2 = Crop((208, 0, 208, 291), "spritesheet_cesta")
+image cesta_3 = Crop((416, 0, 208, 291), "spritesheet_cesta")
+image cesta_4 = Crop((624, 0, 208, 291), "spritesheet_cesta")
+image cesta_5 = Crop((832, 0, 208, 291), "spritesheet_cesta")
+image cesta_6 = Crop((1040, 0, 208, 291), "spritesheet_cesta")
+image cesta_7 = Crop((1248, 0, 208, 291), "spritesheet_cesta")
 
+image cesta:
+    "cesta_1"
+    pause 0.1
+    "cesta_2"
+    pause 0.1
+    "cesta_3"
+    pause 0.1
+    "cesta_4"
+    pause 0.1
+    "cesta_5"
+    pause 0.1
+    "cesta_6"
+    pause 0.1
+    "cesta_7"
+    pause 0.1
+    repeat
 
+image vela_1 = Crop((0, 0, 120, 181), "spritesheet_vela")
+image vela_2 = Crop((120, 0, 120, 181), "spritesheet_vela")
+image vela_3 = Crop((240, 0, 120, 181), "spritesheet_vela")
+image vela_4 = Crop((360, 0, 120, 181), "spritesheet_vela")
+
+image vela:
+    "vela_1"
+    pause 0.15
+    "vela_2"
+    pause 0.15
+    "vela_3"
+    pause 0.15
+    "vela_4"
+    pause 0.15
+    repeat
+
+image calavera_1 = Crop((0, 0, 133, 243), "spritesheet_calavera")
+image calavera_2 = Crop((133, 0, 133, 243), "spritesheet_calavera")
+image calavera_3 = Crop((266, 0, 133, 243), "spritesheet_calavera")
+image calavera_4 = Crop((399, 0, 133, 243), "spritesheet_calavera")
+
+image calavera:
+    "calavera_1"
+    pause 0.15
+    "calavera_2"
+    pause 0.15
+    "calavera_3"
+    pause 0.15
+    "calavera_4"
+    pause 0.15
+    repeat

@@ -665,10 +665,11 @@ label en_la_iglesia:
     juan "Impresionante no es la palabra que yo usaría, más bien ruidoso."
     vendedor "Pequeños defectos para una magia tan maravillosa."
     juan "Ya estamos aquí, ¿qué debemos hacer ahora?"
+    vendedor "Ahora debemos llamar a los dioses y pedirles que nos muestren el camino."
+    juan "¿Y cómo hacemos eso?"
+    vendedor "Primero necesitamos una vela."
 
-    show puerquito quieto at truecenter
-    pause 2.0
-    show puerquito revolcado
+    show vela at truecenter
 
     "Aquí me detuve."
 
