@@ -6,6 +6,7 @@ image fondo_seleccionar_personaje = "Fondos/Fondo_Seleccionar_Personaje.jpg"
 image cabana_bombero = Image("Fondos/Fondo 3.png", oversample=0.93)
 image camino_v_md = Image("Fondos/Fondo 2.png", oversample=0.93)
 image camino_v_osc = Image("Fondos/Fondo 4.png", oversample=0.665)
+image iglesia = Image("Fondos/Fondo_A31.png", oversample=0.933)
 
 # Para el mundo a explorar ############
 image arriba = "flecha_arriba.png"
@@ -37,7 +38,7 @@ image A30 = "Fondo_A30.png"
 image A33 = Image("Fondos/Fondo_A33.png", oversample=0.93) #Huerto
 image A34 = "Fondo_A34.png"
 image A35 = "Fondo_A35.png"
-image iglesia = "Fondo_A31.png"
+
 
 #*OBJETOS
 #Decoración

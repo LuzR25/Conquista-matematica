@@ -591,7 +591,90 @@ label camino_al_turno:
 label juan_ayuda_ambulante:
     juan "Está bien. Te ayudaré en tu búsqueda. ¿Qué debo hacer?"
 
-    "Aquí me quedé."
+    vendedor "Para encontrar el objeto debemos pasar por un camino que se encuentra siempre oculto y 
+            que sólo aparece ante aquellos que se atreven a resolver un acertijo."
+    vendedor "Pero antes de eso necesitamos llegar al lugar donde se pide la oportunidad de encontrar 
+            el camino."
+    vendedor "¿Conoces algún lugar en el que podamos comunicarnos con los dioses, Juan Cupul?"
+
+    "Lo más lógico sería un cenote o una iglesia, pero no han encontrado un cenote en este pueblo, así
+    que la única opción es la iglesia."
+
+    juan "Sólo se me ocurre ir a la iglesia."
+
+    vendedor "No quiero comunicarme con esos dioses, muchacho."
+
+    juan "Es el único lugar en el que podemos hablar con algún dios."
+
+    vendedor "Muy bien, Juan Cupul. Llévame a tu iglesia."
+
+    show juan camina derecha:
+        linear 4 xpos 1900
+
+    show vendedor quieto:
+        linear 5 xpos 1900
+
+    pause 5
+
+    jump en_la_iglesia
+
+label en_la_iglesia:
+    scene iglesia
+
+    show juan camina derecha:
+        xpos 0 ypos 400
+        linear 2.5 xpos 220
+
+    pause 2.5
+
+    show juan parado derecha
+    
+    juan "Listo, ya estamos a..."
+
+    show juan parado izquierda
+    pause 1
+
+    "El vendedor ambulante, que supuestamente venía detrás de Juan, ya no está."
+
+    show juan parado atras
+    pause 1
+
+    show juan parado frente
+    pause 1
+
+    show juan parado derecha
+
+    "Juan voltea para todos lados, pero no lo encuentra."
+
+    play sound "audio/vendedor_efecto.mp3"
+
+    show vendedor quieto with hpunch:
+        xpos 310 ypos 390
+
+    show juan camina derecha:
+        linear 0.05 xpos 180
+    
+    show juan parado derecha
+
+    vendedor "Sí, naturalmente más eficiente que caminar todo el tramo."
+    juan "Casi me matas de un susto, ¿por qué hiciste eso?"
+    vendedor "Me he cansado de seguirte a medio camino, así que me detuve a descansar 
+            por un rato y luego me he transportado a dónde te encontrabas en ese momento,
+            que es aquí."
+    vendedor "¿Verdad que ha sido de lo más impresionante?"
+    juan "Impresionante no es la palabra que yo usaría, más bien ruidoso."
+    vendedor "Pequeños defectos para una magia tan maravillosa."
+    juan "Ya estamos aquí, ¿qué debemos hacer ahora?"
+
+    show puerquito quieto at truecenter
+    pause 2.0
+    show puerquito revolcado
+
+    "Aquí me detuve."
+
+    return
+
+
 
 label juan_no_ayuda_ambulante:
     juan "Lo siento, pero tengo algo que hacer justo ahora y no puedo distraerme.

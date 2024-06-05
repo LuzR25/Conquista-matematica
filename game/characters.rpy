@@ -15,6 +15,19 @@ image spritesheet_fili = "Personajes/Filberto_Style_Sheets_128x128.png"
 image spritesheet_hombre = "Personajes/Hombre_Style_Sheets_128x128.png"
 image spritesheet_mujer = "Personajes/Mujer_Style_Sheets_128x128.png"
 image spritesheet_vendedor = "Personajes/Vendedor_Style_Sheet_128x128.png"
+image spritesheet_cesta = "Personajes/Cesta_Vendedor_Style_Sheet.png"
+
+#De los animales
+image spritesheet_gallina_1 = "Animales/Gallina_Sheet_1.png"
+image spritesheet_gallina_2 = "Animales/Gallina_Sheet_2.png"
+image spritesheet_gallina_3 = "Animales/Gallina_Sheet_3.png"
+image spritesheet_gallina_1_come = "Animales/Gallina_Sheet_4.png"
+image spritesheet_gallina_4 = "Animales/Guardar_Pio_Sheet.png"
+image spritesheet_pavo = "Animales/Pavo_Sheet_1.png"
+image spritesheet_pollito = "Animales/Pollito_Sheet_1.png"
+image spritesheet_puerquito_1 = "Animales/Puerquito_Sheet_1.png"
+image spritesheet_puerquito_2 = "Animales/Puerquito_Sheet_2.png"
+
 
 #ANIMACIONES ###################################################################
 #* JUAN
@@ -696,3 +709,134 @@ image vendedor quieto:
     "vendedor_quieto_10"
     pause 0.3
     repeat
+
+image cesta_1 = Crop((0, 0, 208, 291), "spritesheet_cesta")
+image cesta_2 = Crop((208, 0, 208, 291), "spritesheet_cesta")
+image cesta_3 = Crop((416, 0, 208, 291), "spritesheet_cesta")
+image cesta_4 = Crop((624, 0, 208, 291), "spritesheet_cesta")
+image cesta_5 = Crop((832, 0, 208, 291), "spritesheet_cesta")
+image cesta_6 = Crop((1040, 0, 208, 291), "spritesheet_cesta")
+image cesta_7 = Crop((1248, 0, 208, 291), "spritesheet_cesta")
+
+image cesta:
+    "cesta_1"
+    pause 0.1
+    "cesta_2"
+    pause 0.1
+    "cesta_3"
+    pause 0.1
+    "cesta_4"
+    pause 0.1
+    "cesta_5"
+    pause 0.1
+    "cesta_6"
+    pause 0.1
+    "cesta_7"
+    pause 0.1
+    repeat
+
+#* ANIMALES
+image gallina_1_1 = Crop((0, 0, 64, 64), "spritesheet_gallina_1")
+image gallina_1_2 = Crop((64, 0, 64, 64), "spritesheet_gallina_1")
+
+image gallina_1 quieta:
+    "gallina_1_1"
+    pause 0.3
+    "gallina_1_2"
+    pause 0.3
+    repeat
+
+image gallina_1_1_c = Crop((0, 0, 64, 64), "spritesheet_gallina_1_come")
+image gallina_1_2_c = Crop((64, 0, 64, 64), "spritesheet_gallina_1_come")
+
+image gallina_1 come:
+    "gallina_1_1_c"
+    pause 0.15
+    "gallina_1_2_c"
+    pause 0.15
+    "gallina_1_1_c"
+    pause 0.15
+    "gallina_1_2_c"
+    pause 0.15
+    "gallina_1_1_c"
+    pause 1
+    repeat
+
+image gallina_2_1 = Crop((0, 0, 64, 64), "spritesheet_gallina_2")
+image gallina_2_2 = Crop((64, 0, 64, 64), "spritesheet_gallina_2")
+
+image gallina_2:
+    "gallina_2_1"
+    pause 0.3
+    "gallina_2_2"
+    pause 0.3
+    repeat
+
+image gallina_3_1 = Crop((0, 0, 64, 64), "spritesheet_gallina_3")
+image gallina_3_2 = Crop((64, 0, 64, 64), "spritesheet_gallina_3")
+
+image gallina_3:
+    "gallina_3_1"
+    pause 0.3
+    "gallina_3_2"
+    pause 0.3
+    repeat
+
+image gallina_4_1 = Crop((0, 0, 64, 64), "spritesheet_gallina_4")
+image gallina_4_2 = Crop((64, 0, 64, 64), "spritesheet_gallina_4")
+
+image gallina_4:
+    "gallina_4_1"
+    pause 0.3
+    "gallina_4_2"
+    pause 0.3
+    repeat
+
+image pollito_1 = Crop((0, 0, 64, 64), "spritesheet_pollito")
+image pollito_2 = Crop((64, 0, 64, 64), "spritesheet_pollito")
+
+image pollito:
+    "pollito_1"
+    pause 0.3
+    "pollito_2"
+    pause 0.3
+    repeat
+
+image pavo_1 = Crop((0, 0, 64, 64), "spritesheet_pavo")
+image pavo_2 = Crop((64, 0, 64, 64), "spritesheet_pavo")
+
+image pavo:
+    "pavo_1"
+    pause 0.3
+    "pavo_2"
+    pause 0.3
+    repeat
+
+image puerquito_1 = Crop((0, 0, 96, 96), "spritesheet_puerquito_1")
+image puerquito_2 = Crop((96, 0, 96, 96), "spritesheet_puerquito_1")
+
+image puerquito quieto:
+    "puerquito_1"
+    pause 0.3
+    "puerquito_2"
+    pause 0.3
+    repeat
+
+image puerquito_1_r = Crop((0, 0, 96, 96), "spritesheet_puerquito_2")
+image puerquito_2_r = Crop((96, 0, 96, 96), "spritesheet_puerquito_2")
+image puerquito_3_r = Crop((192, 0, 96, 96), "spritesheet_puerquito_2")
+image puerquito_4_r = Crop((288, 0, 96, 96), "spritesheet_puerquito_2")
+
+image puerquito revolcado:
+    "puerquito_1_r"
+    pause 0.1
+    "puerquito_2_r"
+    pause 0.1
+    "puerquito_3_r"
+    pause 0.1
+    "puerquito_4_r"
+    pause 0.1
+    repeat
+
+
+
