@@ -24,7 +24,8 @@ label start:
     scene fondo_seleccionar_personaje with fade
 
     "¡Bienvenido/Bienvenida a Conquista matemática!"
-    "Esta es una novela visual que presenta parte de la vida de Juan Cupul, ¡un héroe de Tixcacalcupul!"
+    "Esta es una novela visual que presenta parte de la vida de Juan Cupul, ¡un héroe de Tixcacalcupul! 
+    (es importante recalcar que no es una representación fiel de su vida, sino una adaptación)."
     "Durante la historia tendrás que tomar decisiones que afectarán el curso de la historia y los personajes."
     "Pero también verás varios ejercicios matemáticos que tendrás que resolver."
     "Si no logras resolverlos con éxito, la historia no avanzará, así que esfuérzate mucho para que puedas
@@ -281,7 +282,7 @@ label llegan_a_huerto:
 
 label cosechar_verduras_2:
     "Juan y Filiberto se encargan de cosechar las verduras."
-    "Presiona la tecla Enter para cosechar las zanahorias."
+    "Presiona la tecla Enter para cosechar las verduras."
     hide zanahoria1
     pause
     hide zanahoria2
@@ -774,7 +775,7 @@ label en_el_gran_arbol:
 
     "De la nada, ya están en otro lugar."
 
-    vendedor "Espero te encuentres bien muchacho, la trasnportación inmediata suele sentar
+    vendedor "Espero te encuentres bien, muchacho, la trasnportación inmediata suele sentar
             muy mal la primera vez."
 
     juan "Estoy bien, sólo... No vuelvas a hacerlo."
