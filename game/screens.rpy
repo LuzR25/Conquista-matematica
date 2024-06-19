@@ -2,6 +2,11 @@
 ## Inicialización
 ################################################################################
 init offset = -1
+default avatar = ""
+default nombreDeUsuario = "Ayuda, por favor"
+default aciertos = 0
+default errores = 0
+
 
 
 ################################################################################
@@ -294,6 +299,9 @@ screen navigation():
 
         spacing gui.navigation_spacing
 
+        if not main_menu:
+            textbutton _("Datos de partida") action ShowMenu("datos_partida")
+
         if main_menu:
 
             textbutton _("Comenzar") action Start()
@@ -540,6 +548,32 @@ style return_button:
     yalign 1.0
     yoffset -45
 
+## Pantalla 'datos de partida' #################################################
+##
+## Esta pantalla ofrecerá al usuario sus estadísticas de juego, siempre y cuando
+## haya una partida cargada en el momento.
+
+screen datos_partida():
+    tag menu
+
+    use game_menu(_("Datos de partida"), scroll="viewport"):
+
+        style_prefix "about"
+
+        vbox:
+
+        #* El avatar se ve y muestra bien, aunque falta acomodarlo para que se vea bien
+        
+        #* Los datos de las preguntas se jalan siempre y cuando yo haga alguna asignación
+        #* directa dentro de la partida
+
+        #! El nombre no se muestra, a pesar de que el usuario lo asigna y lo sé con seguridad
+        #! porque lo muestro en pantalla de guardado y carga, aquí indica que no fue asignado
+        
+            label "[nombreDeUsuario]\n"
+            image("Avatares/" + avatarElegido + ".png") xalign 0.5
+            text _("\nTotal de preguntas acertadas: [aciertos]")
+            text _("Total de preguntas erradas: [errores]\n")
 
 ## Pantalla 'acerca de' ########################################################
 ##
@@ -633,7 +667,7 @@ screen file_slots(title):
                 style_prefix "slot"
 
                 xalign 0.5
-                yalign 0.5
+                yalign 0.4
 
                 spacing gui.slot_spacing
 
@@ -646,10 +680,15 @@ screen file_slots(title):
                     #$ nombrePartida = FileTime(slot, format=_("{#file_time}%A, %d de %B %Y, %H:%M"), empty=_("vacío"))
 
                     button:
-                        #action FileAction(slot)
                         action FileAction(slot)
 
                         has vbox
+
+                        $ avatar = str(FileJson(slot, key="avatar_elegido", missing='Avatar 1'))
+                        $ nombreDeUsuario = FileJson(slot, key="nombre_usuario", missing='Sin nombre')
+                        $ aciertos = FileJson(slot, key="aciertos", missing=0)
+                        $ errores = FileJson(slot, key="errores", missing=0)
+                        $ partida = slot
 
                         add FileScreenshot(slot) 
                         

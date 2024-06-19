@@ -6,6 +6,8 @@
     ayudoFili = False
     avatarElegido = ""
     conservaObjeto = False
+    aciertos = 0
+    errores = 0
     
     def my_save(data):
         data["nombre_usuario"] = nombreUsuario
@@ -13,6 +15,8 @@
         data["ayudo_a_fili"] = ayudoFili
         data["conserva_objeto"] = conservaObjeto
         data["avatar_elegido"] = avatarElegido
+        data["aciertos"] = aciertos
+        data["errores"] = errores
 
     config.save_json_callbacks = [ my_save ]
 
@@ -34,6 +38,8 @@ label start:
     "Por ahora, personaliza un poco tu partida."
 
     $ nombreUsuario = renpy.input("Escribe tu nombre")
+    $ aciertos = 10
+    $ errores = 12
 
     jump seleccion_avatar_1
 
