@@ -62,7 +62,7 @@ define config.has_voice = True
 ## el menú principal. Este archivo seguirá sonando en el juego hasta que sea
 ## detenido o se reproduzca otro archivo.
 
-define config.main_menu_music = "fondo.mp3"
+define config.main_menu_music = "menu.mp3"
 
 
 ## Transiciones ################################################################
@@ -151,7 +151,7 @@ define config.save_directory = "Conquistamatematica-1708579903"
 ##
 ## El icono mostrado en la barra de tareas.
 
-define config.window_icon = "gui/window_icon.png"
+define config.window_icon = "images/Logo_JuanC.png"
 
 
 ## Configuración de 'Build' ####################################################

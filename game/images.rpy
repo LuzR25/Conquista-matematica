@@ -9,6 +9,8 @@ image camino_v_osc = Image("Fondos/Fondo 4.png", oversample=0.665)
 image iglesia = Image("Fondos/Fondo_A31.png", oversample=0.933)
 image gran_arbol = Image("Fondos/Fondo 17.png", oversample=0.933)
 image arboles_doblado = Image("Fondos/Fondo 13.png", oversample=0.665)
+image fondo_final = "Fondos/Fondo_Basta_Matematico.png"
+image cabana_vacio = Image("Fondos/Fondo_A35.png", oversample=0.933)
 
 # Para el mundo a explorar ############
 image arriba = "flecha_arriba.png"
@@ -39,11 +41,11 @@ image A26 = "Fondo_A26.png"
 image A30 = "Fondo_A30.png"
 image A33 = Image("Fondos/Fondo_A33.png", oversample=0.93) #Huerto
 image A34 = "Fondo_A34.png"
-image A35 = "Fondo_A35.png"
 
 
 #*OBJETOS
 #Decoración
+image cabana_milpa = Image("Objetos/Casas/Casa_Milpa.png", oversample=0.96)
 image zanahoria1 = "Objetos/Decoracion/Zanahoria_1.png"
 image zanahoria2 = "Objetos/Decoracion/Zanahoria_1.png"
 image zanahoria3 = "Objetos/Decoracion/Zanahoria_1.png"

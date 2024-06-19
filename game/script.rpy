@@ -1,4 +1,6 @@
 ﻿init python:
+    puntos = 0
+    labelFinal = ""
     puntosVictorias=0
     nombreUsuario = ""
     ayudoFili = False
@@ -32,12 +34,7 @@ label start:
 
     $ nombreUsuario = renpy.input("Escribe tu nombre")
 
-    #jump seleccionar_avatar_1
     jump seleccion_avatar_1
-
-
-#scene narracion with fade
-#pause
 
 label inicio_historia:
     scene interior_casa_juan with fade 
@@ -107,11 +104,13 @@ label Filiberto_afuera_casa:
     filiberto "¿Puedes ayudarme a conseguir las provisiones?"
 
     menu:
-        "¿Deseas ayudar a Filiberto con las provisiones? Esta decisión te afectará más adelante."
+        "¿Deseas ayudar a Filiberto con las provisiones?"
         "Sí, ayudaré a Filiberto.":
+            play sound "audio/seleccion.mp3"
             jump Ayuda_Fili
             $ ayudoFili = True
         "No, deseo ocupar mi tiempo en otra cosa.":
+            play sound "audio/seleccion.mp3"
             jump No_ayuda_Fili
 
 label No_ayuda_Fili:
@@ -138,15 +137,20 @@ label Ayuda_Fili:
 
     "Juan y Filiberto se ponen a caminar, pero están confundidos y no saben qué camino tomar."
 
+    #! Subir volumen del audio de error porque no se escucha con la canción de fondo encima
+
     menu camino_oeste:
         "Si pueden llegar al huerto caminando en línea recta y la casa de Juan está hacia el norte, ¿qué camino deben tomar?"
         "El de arriba":
+            play sound "error.mp3" volume 4.0
             "Este es el camino norte, sólo regresarían a la casa de Juan. Intenta de nuevo."
             jump camino_oeste
         "El de la izquierda":
+            play sound "acierto.mp3"
             "¡Muy bien! El oeste está a la izquierda."
             jump llegan_a_huerto
         "El de la derecha":
+            play sound "error.mp3" volume 4.0
             "Casi lo logras, pero este camino lleva al este. Trata de nuevo."
             jump camino_oeste
 
@@ -259,20 +263,25 @@ label llegan_a_huerto:
         de Tixcacalcupul. Si en un día recolectaron 175 kg de maíz y 230 kg de frijoles, 
         ¿cuántos kilogramos de provisiones recolectaron en total?"
         "405 kg":
+            play sound "acierto.mp3"
             "¡Maravilloso! Parece que Juan y Filiberto saben cómo recolectar la cantidad justa de provisiones."
             jump cosechar_verduras_2
         "345 kg":
+            play sound "error.mp3" volume 4.0
             "Ups, parece que esta respuesta no es la correcta. ¡No te rindas, sigue practicando!"
             jump problema_5
         "400 kg":
+            play sound "error.mp3" volume 4.0
             "¡Casi lo tienes! pero esta vez la respuesta no es la correcta."
             jump problema_5
         "305 kg":
+            play sound "error.mp3" volume 4.0
             "Sigue intentado, estoy seguro de que la próxima será la correcta."
             jump problema_5
 
 label cosechar_verduras_2:
     "Juan y Filiberto se encargan de cosechar las verduras."
+    "Presiona la tecla Enter para cosechar las zanahorias."
     hide zanahoria1
     pause
     hide zanahoria2
@@ -423,14 +432,18 @@ label regresar_casaJ_agua:
         debe distribuir en cubetas de 8 litros cada una. ¿Cuántas cubetas necesitará 
         llenar para repartir toda el agua?"
         "48 cubetas":
+            play sound "error.mp3" volume 4.0
             "¡Vuelve a intentarlo, tú puedes! Lee nuevamente el ejercicio. "
             jump problema_division_3
         "7 cubetas":
+            play sound "acierto.mp3"
             "¡Buen trabajo, lo has conseguido! Has logrado ayudar a Juan Cupul."
         "9 cubetas":
+            play sound "error.mp3" volume 4.0
             "¡Casi lo tienes, estás cerca! Pero la respuesta no es la correcta."
             jump problema_division_3
         "64 cubetas":
+            play sound "error.mp3" volume 4.0
             "¡Vamos de nuevo!"
             jump problema_division_3
         
@@ -494,15 +507,19 @@ label turno_bombero:
     menu problema_resta_6:
         prometida "Si jugaste 15 partidas de ajedrez y ganaste 8, ¿cuántas partidas perdiste?"
         "2 partidas":
+            play sound "error.mp3" volume 4.0
             "¡Vuelve a intentarlo, tú puedes!"
             jump problema_resta_6
         "5 partidas":
+            play sound "error.mp3" volume 4.0
             "Estás en el camino correcto. Recuerda cuántas partidas de ajedrez jugó Juan en total y cuántas ganó."
             jump problema_resta_6
         "23 partidas":
+            play sound "error.mp3" volume 4.0
             "¡Tú puedes hallar la solución!"
             jump problema_resta_6
         "7 partidas":
+            play sound "acierto.mp3"
             "¡Eso es! La respuesta es correcta."
 
     prometida "No has perdido la práctica. Sigues sin perder tu racha de aciertos."
@@ -585,8 +602,10 @@ label camino_al_turno:
         "¿Deseas acompañar al vendedor ambulante en su búsqueda, arriesgando llegar tarde a tu
         puesto como bombero y que ocurra un ataque en ese momento?"
         "Sí, quiero acompañar al Vendedor ambulante":
+            play sound "seleccion.mp3"
             jump juan_ayuda_ambulante
         "No, no deseo arriesgar la seguridad de Tixcacalcupul":
+            play sound "seleccion.mp3"
             jump juan_no_ayuda_ambulante
         
 
@@ -642,7 +661,7 @@ label en_el_gran_arbol:
 
     "Juan voltea para todos lados, pero no lo encuentra."
 
-    play sound "audio/vendedor_efecto.mp3"
+    play sound "vendedor_efecto.mp3"
 
     show vendedor quieto with hpunch:
         xpos 310 ypos 390
@@ -683,14 +702,18 @@ label en_el_gran_arbol:
         vendedor "Juan Cupul tiene 36 machetes y los tiene que repartir entre 6 campesinos de la comunidad. 
         ¿Cuántos machetes le debe dar a cada campesino?"
         "4 machetes":
+            play sound "error.mp3" volume 4.0
             "¡Casi lo tienes, estás cerca! Pero la respuesta no es la correcta."
             jump problema_division_1
         "6 machetes":
+            play sound "acierto.mp3"
             "¡Excelente, ahí lo tienes! Juan Cupul debe dar 6 machetes a cada campesino."
         "30 machetes":
+            play sound "error.mp3" volume 4.0
             "¡Vuelve a intentarlo, tú puedes!"
             jump problema_division_1
         "5 machetes":
+            play sound "error.mp3" volume 4.0
             "¡Vamos de nuevo!"
             jump problema_division_1
     
@@ -699,14 +722,18 @@ label en_el_gran_arbol:
         quiere regalar a 9 familias que viven cerca de su casa, ¿cuántos kilos de tomate 
         le regalará a cada familia?"
         "8 kilos":
+            play sound "acierto.mp3"
             "¡Excelente, lo has conseguido! Juan Cupul le regalara 8 kilos de tomate a cada familia."
         "13 kilos":
+            play sound "error.mp3" volume 4.0
             "¡Vuelve a intentarlo, tú puedes!"
             jump problema_division_2
         "7 kilos":
+            play sound "error.mp3" volume 4.0
             "¡Casi lo tienes, estás cerca! Pero la respuesta no es la correcta."
             jump problema_division_2
         "63 kilos":
+            play sound "error.mp3" volume 4.0
             "¡Vamos de nuevo!"
             jump problema_division_2
     
@@ -715,14 +742,18 @@ label en_el_gran_arbol:
                 Han cortado 60 troncos de árboles y desean dividirlos igualmente entre 5 hogares. 
                 ¿Cuántos troncos recibirá cada hogar?"
         "12 troncos":
+            play sound "acierto.mp3"
             "¡Buen trabajo, lo has conseguido! Has apoyado mucho a Juan Cupul."
         "55 troncos":
+            play sound "error.mp3" volume 4.0
             "¡Vuelve a intentarlo, tú puedes!"
             jump problema_division_4
         "11 troncos":
+            play sound "error.mp3" volume 4.0
             "¡Casi lo tienes, estás cerca! Pero la respuesta no es la correcta."
             jump problema_division_4
         "8 troncos":
+            play sound "error.mp3" volume 4.0
             "¡Vamos de nuevo!"
             jump problema_division_4
 
@@ -791,11 +822,13 @@ label en_el_gran_arbol:
         aceptas, se añadirá a tu inventario y podrás usarlo en un momento específico
         de la historia en el futuro. ¿Deseas conservar el obsequio del vendedor ambulante?"
         "Sí, quiero quedármelo.":
+            play sound "seleccion.mp3"
             $ conservaObjeto = True
             pause 1.0
             hide calavera
             jump acepta_objeto
         "No, no creo necesitarlo.":
+            play sound "seleccion.mp3"
             jump no_acepta_objeto
 
 label acepta_objeto:
@@ -815,7 +848,7 @@ label adios_vendedor:
 
     hide cesta
     hide vendedor quieto with hpunch
-    play sound "audio/vendedor_efecto.mp3"
+    play sound "vendedor_efecto.mp3"
 
     juan "No me acostumbraría jamás a eso."
 
@@ -830,7 +863,7 @@ label juan_no_ayuda_ambulante:
     juan "Lo siento, pero tengo algo que hacer justo ahora y no puedo distraerme.
         Tal vez en otro momento."
 
-    vendedor "Pues bien, sólo me queda desearte suerte, Juan Cupul, dado que no nos
+    vendedor "Pues bien, sólo me queda desearte suerte, muchacho, dado que no nos
             volveremos a encontrar. "
     
     "Y el Vendedor ambulante desaparece."
@@ -893,21 +926,353 @@ label en_la_cabana_bombero:
 
     hide fili camina derecha
 
+    show juan parado derecha
+
     "Filiberto se va y Juan se queda solo."
 
-    "Aquí me quedé."
+    "Juan no tiene nada qué hacer en este momento, más que vigilar."
+    "Pasa mucho tiempo, pero Filiberto no regresa."
+
+    show hombre camina derecha:
+        xpos 0 ypos 800
+        linear 1 xpos 100
+    pause 1.0
+    show hombre parado derecha
+
+    juan "¿Qué habrá sucedido con Filiberto? Si no iba tan lejos."
+
+    "Juan se enoja, pensando que Filiberto lo ha abandonado para relajarse un rato."
+
+    juan "Si quería descansar, como mínimo me pudo haber avisado."
+
+    "Para distraerse, analiza lo que ocurrió con el agua."
+
+    juan "Es muy sospechoso que el agua desapareciera."
+    
+    show hombre camina derecha:
+        linear 1 xpos 200
+    pause 1.0
+    show hombre parado derecha
+
+    juan "Mientras más lo analizo, menos sentido tiene."
+
+    show hombre camina derecha:
+        linear 1 xpos 300
+    pause 1.0
+    show hombre parado derecha
+
+    juan "Aunque, si yo fuera un cruzob, intentaría..."
+
+    show hombre camina derecha:
+        linear 1 xpos 485
+    pause 1.0
+    show hombre parado atras
+
+    play music "audio/pelea.mp3"
+
+    cruzob "¿Separar a tu enemigo? Sí, nosotros pensamos exactamente igual."
+
+    show juan parado frente
+
+    show hombre camina atras:
+        linear 3 xpos 610 ypos 490
+    pause 3
+    show hombre parado atras
+
+    cruzob "Te estarás preguntando dónde está tu primo. Mis compañeros le hicieron una 
+            visita mientras iba por el agua. No te preocupes. No le han hecho mucho daño.
+            Todavía."
+    cruzob "Lo dejaron inconsciente, y ahora me toca a mí encargarme de ti."
+
+    "El primer impulso de Juan es saltar para alcanzar la bomba y avisar de que hay cruzob en 
+    el pueblo."
+
+    show juan camina derecha
+
+    show hombre camina atras:
+        linear 0.5 xpos 655 ypos 410
+    pause 0.5
+
+    show hombre camina izquierda:
+        linear 0.5 xpos 640
+    
+    show juan camina derecha:
+        linear 1 xpos 550
+
+    pause 1
+
+    show juan parado derecha
+    show hombre parado izquierda
+
+    cruzob "Ni se te ocurra tocar esa bomba, Juan Cupul. "
+    cruzob "Lo que tú debes hacer justo ahora es enfrentarte a mí, no avisarle nada a nadie."
+
+    "Juan sabe que necesita vencer a este cruzob si quiere alcanzar la bomba."
+
+    juan "Pues hay que acabar con esto rápido."
+
+    menu:
+        "Durante la sublevación en 1847, Juan Cupul luchó contra las tropas enemigas durante 
+        2 horas y 20 minutos. Si comenzó la lucha a las 9:45 AM, ¿a qué hora terminó?"
+        "11:05 AM":
+            play sound "error.mp3" volume 4.0
+            "No hay segundas oportunidades en el campo de batalla."
+        "11:15 AM":
+            play sound "error.mp3" volume 4.0
+            "No hay segundas oportunidades en el campo de batalla."
+        "12:05 PM":
+            play sound "acierto.mp3"
+            "¡Muy bien! Juan ha ganado un punto en la batalla."
+            $ puntos = puntos + 1
+        "12:25 PM":
+            play sound "error.mp3" volume 4.0
+            "No hay segundas oportunidades en el campo de batalla."
+        
+    menu:
+        "Para la batalla que se aproximaba Juan Cupul decidió armar 5 escuadrones con 10 
+        soldados en cada una y de esta manera enfrentar a los enemigos ¿Cuántos soldados 
+        fueron en total los que apoyaron en la batalla?"
+        "50 soldados":
+            play sound "acierto.mp3"
+            "¡Excelente! Tal vez Juan pueda vencer al cruzob."
+            $ puntos = puntos + 1
+        "2 soldados":
+            play sound "error.mp3" volume 4.0
+            "Fallaste, así que Juan también."
+        "15 soldados":
+            play sound "error.mp3" volume 4.0
+            "Fallaste, así que Juan también."
+        "5 soldados":
+            play sound "error.mp3" volume 4.0
+            "Fallaste, así que Juan también."
+    
+    "Juan Cupul está enseñando técnicas de combate a 15 guerreros en su pueblo. 
+        Quiere asegurarse de que todos reciban la misma cantidad de entrenamiento, 
+        así que divide el tiempo de entrenamiento igualmente entre ellos. "
+        
+    menu:
+        "Si tiene 45 horas de entrenamiento, ¿cuántas horas recibe cada guerrero?"
+        "2 horas":
+            play sound "error.mp3" volume 4.0
+            "Juan se ha equivocado porque tú te equivocaste."
+        "1675 horas":
+            play sound "error.mp3" volume 4.0
+            "Juan se ha equivocado porque tú te equivocaste."
+        "356 horas":
+            play sound "error.mp3" volume 4.0
+            "Juan se ha equivocado porque tú te equivocaste."
+        "3 horas":
+            play sound "acierto.mp3"
+            "¡Eso es todo! Juan puede triunfar."
+            $ puntos = puntos + 1
+
+    menu:
+        "Juan Cupul tenía 25 espadas y perdió 9 en una batalla. ¿Cuántas espadas le quedan?"
+        "14 espadas":
+            play sound "error.mp3" volume 4.0
+            "Juan podría no vencer, lo has guiado mal."
+        "16 espadas":
+            play sound "acierto.mp3"
+            "¡Triunfaste, y Juan también!"
+            $ puntos = puntos + 1
+        "18 espadas":
+            play sound "error.mp3" volume 4.0
+            "Juan podría no vencer, lo has guiado mal."
+        "34 espadas":
+            play sound "error.mp3" volume 4.0
+            "Juan podría no vencer, lo has guiado mal."
+
+    
+    python:
+        if puntos <= 2:
+            if conservaObjeto == True:
+                labelFinal = "usar_objeto"
+            else:
+                labelFinal = "perdiste"
+        else:
+                labelFinal = "juan_triunfa"
+
+    jump expression labelFinal
+
+
+label juan_triunfa:
+    "Juan logra vencer al cruzob."
+    
+    hide hombre parado izquierda with moveouttop
+
+    juan "Es hora de explotar la bomba."
+
+    "Juan enciende la bomba y corre a protegerse."
+
+    show juan camina frente:
+        linear 1 xpos 485 ypos 800
+    
+    pause 1
+
+    show juan camina izquierda:
+        linear 0.7 xpos 110
+
+    pause 0.7
+
+    show juan parado derecha
+    pause 1.0
+
+    play sound "audio/explosion.mp3"
+
+    scene cabana_vacio with hpunch
+    show cabana_milpa:
+        xpos 50 ypos 150
+
+    show juan parado derecha:
+        xpos 110 ypos 800
+
+    juan "Listo, ahora todos saben que hay cruzob en el pueblo."
+
+    show fili parado izquierda:
+        xpos 1840 ypos 520
+    
+    filiberto "¡Juan! ¡Juan!"
+
+    juan "¡Aquí estoy!"
+
+    show juan camina derecha:
+        linear 1.5 xpos 485
+    
+    pause 1.5
+
+    show juan camina atras:
+        linear 1.5 xpos 655 ypos 410
+
+    show fili camina izquierda:
+        linear 1.5 xpos 755 ypos 410
+
+    pause 1.5
+
+    show juan parado derecha
+    show fili parado izquierda
+
+    filiberto "Escuché que lograste explotar la bomba, ¿todo bien?"
+    juan "Sí, todo bien. ¿Y tú? Me dijeron que te dejaron inconsciente."
+    filiberto "No tengo nada. Vamos, hay que correr y ayudar. Afortunadamente me libré 
+            de los cruzob que me vigilaban, pero los demás están atacando el pueblo."
+    juan "Vamos, vamos."
+
+    show juan camina derecha:
+        linear 2 xpos 1850
+    show fili camina derecha:
+        linear 2 xpos 1850 ypos 620
+
+    pause 2.0
+    hide juan camina derecha
+    hide fili camina derecha
+
+    "Gracias a que Juan logró vencer al cruzob y explotó la bomba, avisaron al pueblo a tiempo."
+    "Juan y Filiberto apoyaron a la gente de su hogar a combatir a los cruzob invasores y los vencieron 
+    en poco tiempo."
+    "Juan y María Dolores se pudieron casar al día siguiente :)."
+
+    jump despedida_final
+
+
+
+menu usar_objeto:
+    "Has perdido la batalla, ¿deseas usar el obsequio del vendedor ambulante para despertar 
+    a Filiberto de la inconsciencia y así él llegue a tiempo a rescatarte?"
+    "Sí, que mi primo me ayude":
+        play sound "seleccion.mp3"
+        "Muy bien, has decidido aceptar la ayuda de Filiberto."
+        jump fili_ayuda
+    "No, prefiero perder a ser rescatado":
+        play sound "seleccion.mp3"
+        jump perdiste
+
+label fili_ayuda:
+    show fili parado izquierda:
+        xpos 1830 ypos 520
+    
+    filiberto "¡Juan! ¡Juan!"
+    show hombre parado derecha
+
+    filiberto "¡Oye! ¡Tú! Deja a mi primo en paz."
+
+    show fili camina izquierda:
+        linear 2 xpos 650 ypos 410
+
+    pause 2.0
+    hide hombre parado derecha with moveoutleft
+
+    show fili parado izquierda
+
+    filiberto "¿Estás bien, Juan?"
+    juan "No, pero lo estaré. Ahora no hay tiempo que perder. Encendamos la bomba."
+
+    show juan camina frente:
+        linear 1 xpos 485 ypos 800
+    show fili camina frente:
+        linear 1 xpos 535 ypos 800
+    pause 1
+
+    show juan camina izquierda:
+        linear 0.7 xpos 110
+    
+    show fili camina izquierda:
+        linear 0.7 xpos 210
+
+    pause 0.7
+
+    show juan parado derecha
+    show fili parado derecha
+    
+    play sound "audio/explosion.mp3"
+
+    scene cabana_vacio with hpunch
+    show cabana_milpa:
+        xpos 50 ypos 150
+
+    show juan parado derecha:
+        xpos 110 ypos 800
+    
+    show fili parado derecha:
+        xpos 210 ypos 800
+
+    juan "Ya está, ahora todos saben que estamos bajo ataque."
+    show fili parado izquierda
+    filiberto "Pues hay que apurarnos, hay que ir a ayudar."
+
+    "Juan y Fili corren para ir a ayudar a su pueblo."
+
+    hide juan parado derecha
+    hide fili parado izquierda
+
+    "Gracias a que Filiberto despertó justo a tiempo para rescatar a Juan, lograron 
+    dar el aviso lo suficientemente antes como para que Tixcacalcupul se defendiera
+    con éxito."
+    "Tixcacalcupul venció a los cruzob."
+    "Juan y María Dolores pudieron casarse al día siguiente :)."
+    jump despedida_final
+
+label perdiste:
+    "Has perdido la batalla contra el cruzob, te han vencido."
+    hide hombre parado izquierda
+    hide juan parado derecha
+    "Lamentablemente, los cruzob invadieron Tixcacalcupul porque Juan nunca avisó 
+    del ataque y Filiberto no despertó a tiempo para ir a ayudarlo."
+    "Los cruzob decidieron secuestrar a Juan para que viera cómo hacían trizas su hogar."
+    "Al final, simplemente se deshicieron de Juan. "
+    "Juan no pudo casarse con María Dolores al día siguiente :(."
+    jump despedida_final
+
+label despedida_final:
+    play music "fondo3.mp3"
+    scene fondo_final
+    "Esto ha sido todo, ¡muchas gracias por jugar Conquista matemática!"
+
+    "Tu progreso se mantendrá en el mismo punto de la última vez que guardaste partida."
+    "Si quieres guardar tu progreso para quedarte en el final, este es el momento."
+    "Presiona Enter para terminar la partida y regresar al menú."
+    pause
 
     return
-
-
-
-#Que cuendo lleguen a la cabaña no haya agua y aunque ellos no entienden por qué,
-#no les queda de otra que ir por más porque la necesitarán para su urno. Lo que ellos
-#no saben es que fue una trampa de los atacantes para separarlos porque sabían que
-#uno solo tendría que ir por agua porque no podían abandonar su turno
-
-
-
 
 
 

@@ -3,6 +3,7 @@ define juan = Character("Juan Cupul", color="#0011a7")
 define prometida = Character("María Dolores", color="#8b6eb9")
 define filiberto = Character("Filiberto Tun", color="#155513")
 define vendedor = Character("Vendedor ambulante", color="#3d3d3d")
+define cruzob = Character("Cruzob", color="#bd0000")
 
 # IMÁGENES ####################################################################
 #De los personajes
