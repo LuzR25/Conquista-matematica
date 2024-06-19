@@ -575,6 +575,14 @@ screen datos_partida():
             text _("\nTotal de preguntas acertadas: [aciertos]")
             text _("Total de preguntas erradas: [errores]\n")
 
+        #* Considerar la opción de crear una gráfica para ver la diferencia entre los
+        #* aciertos y los errores en las preguntas, debo ver creado una barra o algo 
+        #* por el estilo, tal vez añadiendo cuadrados manualmente o algo por el estilo.
+        #* Para no sobrellenar con muchos puntos si esos datos llegaran a 200 o algo así, 
+        #* puedo hacer un cálculo para obtener unas proporciones sobre diez y así rellenar 
+        #* las barras. 
+        #! Checar cómo funcionan las barras en otros menús
+
 ## Pantalla 'acerca de' ########################################################
 ##
 ## Esta pantalla da información sobre los créditos y el copyright del juego y de
