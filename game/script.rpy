@@ -35,6 +35,9 @@ label start:
     "Si no logras resolverlos con éxito, la historia no avanzará, así que esfuérzate mucho para que puedas
     conocer cuál será el final que te tocará basado en tus decisiones."
     "Y sobre todo, ¡no olvides divertirte!"
+    "Como detalle adicional, verás que los personajes se moverán durante la historia.
+    Para evitar errores durante esas animaciones, procura no presionar o mover nada 
+    hasta que terminen."
     "Por ahora, personaliza un poco tu partida."
 
     $ nombreUsuario = renpy.input("Escribe tu nombre")
@@ -74,7 +77,90 @@ label inicio_historia:
 
     #$ persistent.nombres.append(nombreUsuario)# = nombres
 
+    "Juan Bautista Cupul Tun vive con su prometida María Dolores Canul en una casita 
+    en el pueblo Tixcacal."
+    "Se la pasan sus días tranquilos, jugando a resolver problemas matemáticos 
+    para no perder la práctica en sus habilidades de matemáticas."
+
+    prometida "Te tengo uno bueno."
+
+    menu problema_multiplicacion_6:
+        prometida "Participaste en la batalla junto con otros 7 guerreros. 
+        Cada uno lanzó 15 flechas durante la batalla. ¿Cuántas flechas lanzaron en total?"
+        "23 flechas":
+            play sound "error.mp3" volume 4.0
+            "No te rindas, continúa intentándolo."
+            jump problema_multiplicacion_6
+        "7 flechas":
+            play sound "error.mp3" volume 4.0
+            "Ups, parece que esta respuesta no es la correcta."
+            jump problema_multiplicacion_6
+        "105 flechas":
+            play sound "error.mp3" volume 4.0
+            "Vamos, inténtalo otra vez."
+            jump problema_multiplicacion_6
+        "120 flechas":
+            play sound "acierto.mp3"
+            "¡Excelente! En este caso hay 8 guerreros (7 guerreros + Juan Cupul) y 
+            se multiplica por 15 flechas que lanzó cada uno."
+        
+    prometida "¡Muy bien, Juan! Aunque todavía te gano por tres aciertos."
+    juan "Pero no te dejaré vencerme hoy. Vamos, dime otro."
     
+    "Y así se la pasan sus días. Sólo esperando a que llegue la fecha de su boda."
+
+    scene interior_casa_juan with fade 
+
+    show juan parado derecha:
+        xpos 1255 ypos 390
+    show novia parada izquierda:
+        xpos 1465 ypos 390
+
+    juan "¡Espera, espera! Antes de que digas que ya ganaste, dame la oportunidad 
+    de un empate."
+    prometida "Está bien."
+
+    menu problema_resta_2:
+        prometida "Tenías 48 litros de agua para un maratón y bebiste 15 litros. 
+        ¿Cuántos litros de agua te quedan?"
+        "33 litros":
+            play sound "acierto.mp3"
+            "¡Excelente! A Juan Cupul le quedan 33 litros de agua para seguir el maratón."
+        "34 litros":
+            play sound "error.mp3" volume 4.0
+            "¡Vamos, estás cerca! Pero esta vez la respuesta no es la correcta."
+            jump problema_resta_2
+        "35 litros":
+            play sound "error.mp3" volume 4.0
+            "¡Sigue adelante! Recuerda cuántos litros de agua tenía Juan para su 
+            maratón y cuántos bebió."
+            jump problema_resta_2
+        "63 litros":
+            play sound "error.mp3" volume 4.0
+            "¡Puedes descubrir la solución!"
+            jump problema_resta_2
+
+    juan "¡Sí! Hoy declaramos un empate."
+    prometida "Me la debes, te di una oportunidad."
+    juan "Está bien. Muchas gracias, María."
+
+    "Pero la amenaza de ataque e invasión al pueblo a causa de los cruzob estaba tan 
+    presente que en el pueblo se tomó la desición de hacer guardia todos los días y a todas 
+    horas en una cabaña."
+    "Donde avisarían de los ataques explotando una bomba."
+    "A nadie le parecía excesivo ya que estuvieron todos de acuerdo en que era necesario
+    estar pendientes por si llegaba algún ataque."
+    "Y así pasó el tiempo, hasta el día antes de su boda. Día en el que a Juan le tocaba
+    guardia de bombero."
+
+    scene interior_casa_juan with fade 
+
+    show juan parado derecha:
+        xpos 400 ypos 600
+    show novia parada izquierda:
+        xpos 500 ypos 600
+
+    #! Añadir otro ejercicio aquí, para seguir con la "tradición" de los personajes
 
     prometida "Buenos días. Veo que apenas te levantas."
     juan "Buenos días. Los preparativos para la boda de mañana me dejaron exhausto."
@@ -86,9 +172,6 @@ label inicio_historia:
     jump Filiberto_afuera_casa
 
     #hide protagonista1
-    #with dissolve
-
-    #hide prometida1
     #with dissolve
 
 label Filiberto_afuera_casa:
@@ -143,8 +226,6 @@ label Ayuda_Fili:
     with fade
 
     "Juan y Filiberto se ponen a caminar, pero están confundidos y no saben qué camino tomar."
-
-    #! Subir volumen del audio de error porque no se escucha con la canción de fondo encima
 
     menu camino_oeste:
         "Si pueden llegar al huerto caminando en línea recta y la casa de Juan está hacia el norte, ¿qué camino deben tomar?"
@@ -261,80 +342,313 @@ label llegan_a_huerto:
 
     "Juan y Filiberto llegaron al huerto. Ahora deben cosechar los cultivos."
 
-    "Para poder cosechar, necesitan saber cuánta comida recolectarán al final. 
-    Ayúdalos a calcularlo."
+    # Movemos a Juan y Fili a los tomates y rábanos blancos
+    show juan camina izquierda:
+        linear 3 xpos 400
+    show fili camina izquierda:
+        linear 3 xpos 400
+    pause 3
+    show juan parado izquierda
+    show fili parado izquierda
 
+    "Para poder cosechar, necesitan que los ayudes resolviendo algunos ejercicios."
+    
+    jump cosechar_verduras_2
 
-    menu problema_5:
+label cosechar_verduras_2:
+
+    #* Cosechar las zanahorias
+    menu problema_suma_5:
         "Juan Cupul y Filiberto recolectaron cierta cantidad de provisiones para la población 
-        de Tixcacalcupul. Si en un día recolectaron 175 kg de maíz y 230 kg de frijoles, 
+        de Tixcacal. Si en un día recolectaron 175 kg de maíz y 230 kg de frijoles, 
         ¿cuántos kilogramos de provisiones recolectaron en total?"
         "405 kg":
             play sound "acierto.mp3"
             "¡Maravilloso! Parece que Juan y Filiberto saben cómo recolectar la cantidad justa de provisiones."
-            jump cosechar_verduras_2
         "345 kg":
             play sound "error.mp3" volume 4.0
             "Ups, parece que esta respuesta no es la correcta. ¡No te rindas, sigue practicando!"
-            jump problema_5
+            jump problema_suma_5
         "400 kg":
             play sound "error.mp3" volume 4.0
             "¡Casi lo tienes! pero esta vez la respuesta no es la correcta."
-            jump problema_5
+            jump problema_suma_5
         "305 kg":
             play sound "error.mp3" volume 4.0
             "Sigue intentado, estoy seguro de que la próxima será la correcta."
-            jump problema_5
+            jump problema_suma_5
 
-label cosechar_verduras_2:
-    "Juan y Filiberto se encargan de cosechar las verduras."
-    "Presiona la tecla Enter para cosechar las verduras."
+    # En cada bloque de cosecha se mueve al personaje para que esté a lado de esa
+    # verdura, y después de que el usuario presiona Enter, suena "cosechar" y se
+    # desaparece la imagen de la verdura.
+
+    "Juan se encarga de cosechar las zanahorias."
+    show juan camina atras:
+        linear 2 xpos 190 ypos 90
+    pause 2
+    show juan parado derecha
+    "Presiona la tecla Enter para cosechar las zanahorias."
+    pause
+    play sound "cosechar.mp3" volume 4.0
     hide zanahoria1
+
+    show juan camina derecha:
+        linear 1 xpos 365 ypos 90
+    pause 1
+    show juan parado derecha
     pause
+    play sound "cosechar.mp3" volume 4.0
     hide zanahoria2
+    
+    show juan camina derecha:
+        linear 1 xpos 540 ypos 90
+    pause 1
+    show juan parado derecha
     pause
+    play sound "cosechar.mp3" volume 4.0
     hide zanahoria3
+    
+    show juan camina izquierda:
+        linear 2 xpos 190 ypos 250
+    pause 2
+    show juan parado derecha
     pause
+    play sound "cosechar.mp3" volume 4.0
     hide zanahoria4
+    
+    show juan camina derecha:
+        linear 1 xpos 365 ypos 250
+    pause 1
+    show juan parado derecha
     pause
+    play sound "cosechar.mp3" volume 4.0
     hide zanahoria5
+    
+    show juan camina derecha:
+        linear 1 xpos 540 ypos 250
+    pause 1
+    show juan parado derecha
     pause
+    play sound "cosechar.mp3" volume 4.0
     hide zanahoria6
+
+    #* Cosechar los rábanos blancos
+    menu problema_suma_2:
+        "Juan Cupul recibió 3 mensajes urgentes en la ranchería Poop. Después de leer el 
+        primero, pasó 20 minutos. El segundo mensaje le tomó 15 minutos y el tercero, 30 
+        minutos. ¿Cuánto tiempo pasó en total antes de continuar su misión?"
+        "45 minutos":
+            play sound "error.mp3" volume 4.0
+            "Sigue intentado, estoy seguro de que la próxima será la correcta."
+            jump problema_suma_2
+        "1 hora":
+            play sound "error.mp3" volume 4.0
+            "Ups, parece que esta respuesta no es la correcta. ¡No te rindas, sigue practicando!"
+            jump problema_suma_2
+        "1 hora y 5 minutos":
+            play sound "acierto.mp3"
+            "¡Magnífico! La respuesta es correcta."
+        "1 hora y 15 minutos":
+            play sound "error.mp3" volume 4.0
+            "¡Casi lo tienes! pero esta vez la respuesta no es la correcta."
+            jump problema_suma_2
+        
+    "Filiberto se encarga de cosechar los rábanos blancos."
+    show fili camina frente:
+        linear 2 xpos 187 ypos 650
+    pause 2
+    show fili parado derecha
+    "Presiona la tecla Enter para cosechar los rábanos blancos."
     pause
-    hide tomate1
-    pause
-    hide tomate2
-    pause
-    hide tomate3
-    pause
-    hide tomate4
-    pause
-    hide tomate5
-    pause
+    play sound "cosechar.mp3" volume 4.0
     hide rabanob1
+    
+    show fili camina derecha:
+        linear 1 xpos 362 ypos 650
+    pause 1
+    show fili parado derecha
     pause
+    play sound "cosechar.mp3" volume 4.0
     hide rabanob2
+    
+    show fili camina derecha:
+        linear 1 xpos 537 ypos 650
+    pause 1
+    show fili parado derecha
     pause
+    play sound "cosechar.mp3" volume 4.0
     hide rabanob3
+    
+    show fili camina izquierda:
+        linear 2 xpos 187 ypos 810
+    pause 2
+    show fili parado derecha
     pause
+    play sound "cosechar.mp3" volume 4.0
     hide rabanob4
+
+    show fili camina derecha:
+        linear 1 xpos 362 ypos 810
+    pause 1
+    show fili parado derecha
     pause
+    play sound "cosechar.mp3" volume 4.0
     hide rabanob5
+
+    show fili camina derecha:
+        linear 1 xpos 537 ypos 810
+    pause 1
+    show fili parado derecha
     pause
+    play sound "cosechar.mp3" volume 4.0
     hide rabanob6
+
+    # Movemos a Juan y Fili a los tomates y rábanos rojos
+    show juan camina derecha:
+        linear 3 xpos 900 ypos 90
+    show fili camina derecha:
+        linear 3 xpos 900 ypos 655
+    pause 3
+    show juan parado derecha
+    show fili parado derecha
+
+    menu problema_resta_4:
+        "Juan Cupul tenía 45 provisiones para su expedición y consumió 19. 
+        ¿Cuántas provisiones le quedan?"
+        "26 provisiones":
+            play sound "acierto.mp3"
+            "¡Excelente esfuerzo! La respuesta es correcta."
+        "28 provisiones":
+            play sound "error.mp3" volume 4.0
+            "¡Sigue intentándolo, estás en el camino correcto!"
+            jump problema_resta_4
+        "31 provisiones":
+            play sound "error.mp3" volume 4.0
+            "¡No te rindas! Piensa en cuántas provisiones tenía Juan al principio y cuántas consumió."
+            jump problema_resta_4
+        "34 provisiones":
+            play sound "error.mp3" volume 4.0
+            "¡Sigue intentándolo! La respuesta no es correcta."
+            jump problema_resta_4
+
+    #* Cosechar los tomates
+
+    "Juan se encarga de cosechar los tomates."
+    "Presiona la tecla Enter para cosechar los tomates."
     pause
+    play sound "cosechar.mp3" volume 4.0
+    hide tomate1
+
+    show juan camina derecha:
+        linear 1 xpos 1050
+    pause 1
+    show juan parado derecha
+    pause
+    play sound "cosechar.mp3" volume 4.0
+    hide tomate2
+
+    show juan camina derecha:
+        linear 1 xpos 1230
+    pause 1
+    show juan parado derecha
+    pause
+    play sound "cosechar.mp3" volume 4.0
+    hide tomate3
+
+    show juan camina izquierda:
+        linear 2 xpos 990 ypos 250
+    pause 2
+    show juan parado derecha
+    pause
+    play sound "cosechar.mp3" volume 4.0
+    hide tomate4
+
+    show juan camina derecha:
+        linear 1 xpos 1140
+    pause 1
+    show juan parado derecha
+    pause
+    play sound "cosechar.mp3" volume 4.0
+    hide tomate5
+
+    #* Cosechar los rábanos rojos
+
+    menu problema_multiplicacion_1:
+        "Juan Cupul se encontraba viajando a una velocidad de 60km por hora para 
+        llegar hasta Tixcacal, si viajo durante 3 horas ¿Cuántos kilómetros 
+        recorrió en total?"
+        "20 kilómetros":
+            play sound "error.mp3" volume 4.0
+            "Ups, parece que esta respuesta no es la correcta."
+            jump problema_multiplicacion_1
+        "180 kilómetros":
+            play sound "acierto.mp3"
+            "Buen trabajo, la respuesta se obtiene de multiplicar la velocidad 
+            por el tiempo de viaje, sigue así."
+        "63 kilómetros":
+            play sound "error.mp3" volume 4.0
+            "Inténtalo de nuevo."
+            jump problema_multiplicacion_1
+        "57 kilómetros":
+            play sound "error.mp3" volume 4.0
+            "Sigue intentado, estoy seguro de que la próxima será la correcta."
+            jump problema_multiplicacion_1
+    
+    "Filiberto se encarga de cosechar los rábanos rojos."
+    "Presiona la tecla Enter para cosechar los rábanos rojos."
+    pause
+    play sound "cosechar.mp3" volume 4.0
     hide rabanor1
+
+    show fili camina derecha:
+        linear 1 xpos 1090
+    pause 1
+    show fili parado derecha
     pause
+    play sound "cosechar.mp3" volume 4.0
     hide rabanor2
+
+    show fili camina derecha:
+        linear 1 xpos 1260
+    pause 1
+    show fili parado derecha
     pause
+    play sound "cosechar.mp3" volume 4.0
     hide rabanor3
+
+    show fili camina izquierda:
+        linear 2 xpos 920 ypos 810
+    pause 2
+    show fili parado derecha
     pause
+    play sound "cosechar.mp3" volume 4.0
     hide rabanor4
+
+    show fili camina derecha:
+        linear 1 xpos 1090
+    pause 1
+    show fili parado derecha
     pause
+    play sound "cosechar.mp3" volume 4.0
     hide rabanor5
+
+    show fili camina derecha:
+        linear 1 xpos 1260
+    pause 1
+    show fili parado derecha
     pause
+    play sound "cosechar.mp3" volume 4.0
     hide rabanor6
-    pause
+
+    # Acercamos a Juan y Filiberto
+
+    show juan camina frente:
+        linear 1.5 xpos 1300 ypos 450
+    show fili camina atras:
+        linear 1.5 xpos 1200 ypos 450
+    pause 1.5
+    show juan parado izquierda
+    show fili parado derecha
 
     filiberto "Ahora que ya tenemos las verduras, necesitamos ir por agua."
     juan "De acuerdo. Podemos ir por ella al río, pero sería mejor agarrarla de un pozo."
@@ -345,6 +659,8 @@ label cosechar_verduras_2:
 
     jump regresar_casaJ_agua
         
+
+### En este label las verduras se cosechan "solas"
 label cosechar_verduras:
     "Juan y Filiberto se encargan de cosechar las verduras."
     hide zanahoria1
@@ -611,7 +927,7 @@ label camino_al_turno:
         "Sí, quiero acompañar al Vendedor ambulante":
             play sound "seleccion.mp3"
             jump juan_ayuda_ambulante
-        "No, no deseo arriesgar la seguridad de Tixcacalcupul":
+        "No, no deseo arriesgar la seguridad de Tixcacal":
             play sound "seleccion.mp3"
             jump juan_no_ayuda_ambulante
         
@@ -1252,9 +1568,9 @@ label fili_ayuda:
     hide fili parado izquierda
 
     "Gracias a que Filiberto despertó justo a tiempo para rescatar a Juan, lograron 
-    dar el aviso lo suficientemente antes como para que Tixcacalcupul se defendiera
+    dar el aviso lo suficientemente antes como para que Tixcacal se defendiera
     con éxito."
-    "Tixcacalcupul venció a los cruzob."
+    "Tixcacal venció a los cruzob."
     "Juan y María Dolores pudieron casarse al día siguiente :)."
     jump despedida_final
 
@@ -1262,7 +1578,7 @@ label perdiste:
     "Has perdido la batalla contra el cruzob, te han vencido."
     hide hombre parado izquierda
     hide juan parado derecha
-    "Lamentablemente, los cruzob invadieron Tixcacalcupul porque Juan nunca avisó 
+    "Lamentablemente, los cruzob invadieron Tixcacal porque Juan nunca avisó 
     del ataque y Filiberto no despertó a tiempo para ir a ayudarlo."
     "Los cruzob decidieron secuestrar a Juan para que viera cómo hacían trizas su hogar."
     "Al final, simplemente se deshicieron de Juan. "

@@ -299,8 +299,8 @@ screen navigation():
 
         spacing gui.navigation_spacing
 
-        if not main_menu:
-            textbutton _("Datos de partida") action ShowMenu("datos_partida")
+        #if not main_menu:
+            #textbutton _("Datos de partida") action ShowMenu("datos_partida")
 
         if main_menu:
 
