@@ -11,7 +11,7 @@ image gran_arbol = Image("Fondos/Fondo 17.png", oversample=0.933)
 image arboles_doblado = Image("Fondos/Fondo 13.png", oversample=0.665)
 image fondo_final = "Fondos/Fondo_Basta_Matematico.png"
 image cabana_vacio = Image("Fondos/Fondo_A35.png", oversample=0.933)
-image casa_naranja = Image("Fondos/Fondo 8.png", oversample=0.933)
+image casa_naranja = Image("Fondos/Fondo 8.png", oversample=0.93)
 image puente_rio = Image("Fondos/Fondo 11.png", oversample=0.933)
 
 # Para el mundo a explorar ############

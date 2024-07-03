@@ -1,6 +1,7 @@
 ﻿init python:
     puntos = 0
     labelFinal = ""
+    dialogoRoboAgua = ""
     puntosVictorias=0
     nombreUsuario = ""
     ayudoFili = False
@@ -164,13 +165,13 @@ label inicio_historia:
     juan "Buenos días. Los preparativos para la boda de mañana me dejaron exhausto."
     prometida "Bueno, no te sobreesfuerces, no queremos que mañana no estés disponible."
     juan "No te preocupes, es lo que menos quiero."
-    prometida "Entonces, ¿estás listo para el primero reto de hoy?"
+    prometida "Entonces, ¿estás listo para el primer reto de hoy?"
     juan "Completamente listo."
 
     menu problema_multiplicacion_2:
-        prometida "La maestra Ana le pidió a los estudiantes investigar sobre la historia de Juan Cupul, 
-        para ello les dijo que vayan a la sección de Historia en la biblioteca de la escuela, "
-        prometida "si hay 4 estanterías y en cada estantería hay 36 libros, ¿cuántos libros hay en la 
+        prometida "Unos estudiantes investigaban sobre la historia de Juan Cupul; 
+        para ello fueron a la sección de Historia en la biblioteca de la escuela. 
+        Si hay 4 estanterías y en cada estantería hay 36 libros, ¿cuántos libros hay en la 
         sección de Historia de la biblioteca? "
         "9 libros":
             play sound "error.mp3" volume 4.0
@@ -191,7 +192,7 @@ label inicio_historia:
 
     prometida "Vaya, apenas empieza el día y ya siento que vas a ganarme."
     juan "Yo no estaría tan seguro de eso."
-    pometida "Tienes razón, aún hay que ver si yo también empiezo con el pie derecho."
+    prometida "Tienes razón, aún hay que ver si yo también empiezo con el pie derecho."
     prometida "Estoy lista para mi ejercicio."
     juan "Tienes 20..."
     filiberto "¡Juan! ¡Juan!"
@@ -226,10 +227,11 @@ label Filiberto_afuera_casa:
     menu:
         "¿Deseas ayudar a Filiberto con las provisiones?"
         "Sí, ayudaré a Filiberto.":
+            $ ayudoFili = True
             play sound "audio/seleccion.mp3"
             jump Ayuda_Fili
-            $ ayudoFili = True
         "No, deseo ocupar mi tiempo en otra cosa.":
+            $ ayudoFili = False
             play sound "audio/seleccion.mp3"
             jump No_ayuda_Fili
 
@@ -1238,7 +1240,6 @@ label juan_no_ayuda_ambulante:
 
     jump en_la_cabana_bombero
 
-
 label en_la_cabana_bombero:
     scene cabana_bombero
 
@@ -1261,8 +1262,15 @@ label en_la_cabana_bombero:
 
     filiberto "Juan, qué bueno que llegaste. Tenemos un problema."
     juan "¿Un problema? ¿Qué pasó?"
-    filiberto "El agua que trajimos del pozo de tu casa ya no está."
-    juan "¿Estás seguro? ¿No será que alguien vino y la movió de lugar? 
+
+    python:
+        if ayudoFili == True:
+            dialogoRoboAgua = "El agua que obtuvimos del pozo de tu casa ya no está. Desaparecieron las cubetas."
+        else:
+            dialogoRoboAgua = "Las cubetas con agua que dejé antes de irme a desayunar ya no están."
+
+    filiberto "[dialogoRoboAgua]"
+    juan "¿Estás seguro? ¿No será que alguien vino y las movió de lugar? 
         ¿Buscaste en toda la cabaña?"
     filiberto "Sí, en toda la cabaña y alrededor de ella. No hay rastros del agua."
     filiberto "No tiene sentido que desapareciera. Somos los únicos que deberían estar aquí hoy."
@@ -1298,22 +1306,22 @@ label fili_desaperece:
     de agua desaparezcan así como así."
     
     show fili camina derecha:
-        xpos 100
+        xpos 0
         ypos 450
     
     show fili camina derecha:
-        linear 6 xpos 1850
+        linear 3 xpos 1850
 
-    pause 6
+    pause 3
 
     scene casa_naranja
 
     show fili camina derecha:
         xpos 100
-        ypos 450
+        ypos 400
     
     show fili camina derecha:
-        linear 2 xpos 1500
+        linear 2 xpos 900
 
     pause 2
 
@@ -1365,7 +1373,7 @@ label fili_desaperece:
     pause 0.1
     show fili parado frente
 
-    filiberto "Bien, el camino de abajo será"
+    filiberto "Bien, el camino de abajo será."
 
     show fili camina frente:
         linear 3 ypos 1000
@@ -1376,8 +1384,8 @@ label fili_desaperece:
     scene puente_rio
 
     show fili camina frente:
-        xpos 0.5 ypos 0
-        linear 1 ypos 450
+        xpos 0.46 ypos 0
+        linear 1 ypos 180
     pause 1
     show fili parado frente
 
@@ -1385,11 +1393,51 @@ label fili_desaperece:
     filiberto "Ahora, a conseguir esa agua."
 
     show fili camina frente:
-        linear 2 ypos 800
+        linear 2 ypos 500
     pause 2
     show fili parado frente
 
+    cruzob "¿A dónde vas tan apurado? ¿Cuál es la prisa?"
+
+    show fili parado atras
+    filiberto "¡¿Quién anda ahí?!"
+
+    "Filiberto ya ansioso a causa de la desaparición del agua, sabe que esa persona 
+    no tiene, en absoluto, buenas intenciones."
+
+    cruzob "¿Por qué no intentas adivinar?"
+    filiberto "¡No tengo tiempo para juegos! ¡Sal ya!"
+
+    show hombre camina derecha:
+        xpos 0.35 ypos 50
+        linear 1 xpos 0.46
+    pause 1
+    show hombre parado frente
+
+    cruzob "Un gusto conocerte, Filiberto, aunque no para ti."
+
+    "El cruzob no duda. Corre a Filiberto y lo noquea en un segundo."
+
+    show hombre camina frente:
+        linear 1 ypos 470
+    pause 1
+    show hombre parado frente
+    hide fili parado atras
+
+    show fili_parado_atras_2:
+        xpos 0.46 ypos 500
+        linear 0.1 rotate 90
+    
+    cruzob "Espero que tu primo tenga un poco más de resistencia que tú, Fili."
+    cruzob "Es hasta vergonzoso lo fácil que fue."
+    jump ataque
+
+
 label ataque:
+    scene cabana_bombero with fade
+    show juan parado derecha:
+        xpos 610 ypos 410
+
     "Juan no tiene nada qué hacer en este momento, más que vigilar."
     "Pasa mucho tiempo, pero Filiberto no regresa."
 
@@ -1439,10 +1487,11 @@ label ataque:
     pause 3
     show hombre parado atras
 
-    cruzob "Te estarás preguntando dónde está tu primo. Mis compañeros le hicieron una 
-            visita mientras iba por el agua. No te preocupes. No le han hecho mucho daño.
+    cruzob "Te estarás preguntando dónde está tu primo. Mi compañero le hizo una visita 
+            mientras iba por el agua. No te preocupes. No le ha hecho mucho daño.
             Todavía."
-    cruzob "Lo dejaron inconsciente, y ahora me toca a mí encargarme de ti."
+    cruzob "Lo dejó inconsciente, y ahora me toca a mí encargarme de ti en lo que los 
+            demás llegan."
 
     "El primer impulso de Juan es saltar para alcanzar la bomba y avisar de que hay cruzob en 
     el pueblo."
@@ -1725,7 +1774,7 @@ label perdiste:
 label despedida_final:
     play music "fondo3.mp3"
     scene fondo_final
-    "Esto ha sido todo, ¡muchas gracias por jugar Conquista matemática!"
+    "Esto ha sido todo, ¡muchas gracias por leer Conquista matemática!"
 
     "Tu progreso se mantendrá en el mismo punto de la última vez que guardaste partida."
     "Si quieres guardar tu progreso para quedarte en el final, este es el momento."
