@@ -1238,6 +1238,7 @@ label juan_no_ayuda_ambulante:
 
     jump en_la_cabana_bombero
 
+
 label en_la_cabana_bombero:
     scene cabana_bombero
 
@@ -1286,20 +1287,48 @@ label en_la_cabana_bombero:
 
     "Filiberto se va y Juan se queda solo."
 
-label fili_desaperece:
-    #! Fili camina rápido por un camino
-    
-    scene casa_naranja
+    jump fili_desaperece
 
-    #! Fili llegando a la bifurcación
+
+label fili_desaperece:
+    scene camino_v_osc
 
     "Filiberto camina con prisa, esperando obtener el agua lo más pronto posible."
     "Tiene la rara sensación de que algo no va bien. No es normal que cuatro cubetas 
     de agua desaparezcan así como así."
+    
+    show fili camina derecha:
+        xpos 100
+        ypos 450
+    
+    show fili camina derecha:
+        linear 6 xpos 1850
+
+    pause 6
+
+    scene casa_naranja
+
+    show fili camina derecha:
+        xpos 100
+        ypos 450
+    
+    show fili camina derecha:
+        linear 2 xpos 1500
+
+    pause 2
+
+    show fili parado derecha
 
     "Llega a un camino dividido en dos y, de repente, siente que no sabe por dónde ir."
 
     filiberto "¿Cuál era el camino? ¿Cuál era el camino?"
+
+    show fili parado atras
+    pause 1.5
+    show fili parado frente
+    pause 1.5
+    show fili parado derecha
+
     filiberto "He vivido aquí toda mi vida y de la nada no sé cuál es el camino."
 
     "Filiberto se desespera, no entendiendo por qué no se acuerda."
@@ -1309,11 +1338,56 @@ label fili_desaperece:
 
     filiberto "De tín marín de..."
 
-    "Filiberto está escogiendo al azar, ayúdalo a que el camino elegido sea el correcto 
-    resolviendo correctamente el siguiente ejercicio."
+    "Filiberto está escogiendo al azar. Ayúdalo a que el camino elegido sea el correcto 
+    resolviendo exitosamente el siguiente ejercicio."
 
-    #! Poner ejercicio aquí.
+    menu problema_suma_3:
+        "Durante la 'Guerra de Castas', Juan Cupul caminó 2 horas y 40 minutos para llegar 
+        al frente de batalla. Si comenzó su marcha a las 6:20 AM, ¿a qué hora llegó?"
+        "8:00 AM":
+            play sound "error.mp3" volume 4.0
+            "¡Casi lo tienes! Pero esta vez la respuesta no es la correcta."
+            jump problema_suma_3
+        "9:00 AM":
+            play sound "acierto.mp3"
+            "¡Fantástico! Parece que Juan Cupul tiene un buen ritmo para llegar a tiempo 
+            a la batalla."
+        "8:20 AM":
+            play sound "error.mp3" volume 4.0
+            "Sigue intentando, estoy de que la próxima será la correcta."
+            jump problema_suma_3
+        "9:40 AM":
+            play sound "error.mp3" volume 4.0
+            "Ups, parece que esta respuesta no es la correcta. ¡No te rindas, sigue practicando!"
+            jump problema_suma_3
 
+    filiberto "... Que esa niña merita cochina fue."
+    pause 0.1
+    show fili parado frente
+
+    filiberto "Bien, el camino de abajo será"
+
+    show fili camina frente:
+        linear 3 ypos 1000
+    
+    pause 3
+
+    #Fili llega al río
+    scene puente_rio
+
+    show fili camina frente:
+        xpos 0.5 ypos 0
+        linear 1 ypos 450
+    pause 1
+    show fili parado frente
+
+    filiberto "¡Eso es todo!"
+    filiberto "Ahora, a conseguir esa agua."
+
+    show fili camina frente:
+        linear 2 ypos 800
+    pause 2
+    show fili parado frente
 
 label ataque:
     "Juan no tiene nada qué hacer en este momento, más que vigilar."
