@@ -147,7 +147,7 @@ label inicio_historia:
     "Pero la amenaza de ataque e invasión al pueblo a causa de los cruzob estaba tan 
     presente que en el pueblo se tomó la desición de hacer guardia todos los días y a todas 
     horas en una cabaña."
-    "Donde avisarían de los ataques explotando una bomba."
+    "Las personas que vigilaban avisarían de los ataques explotando una bomba."
     "A nadie le parecía excesivo ya que estuvieron todos de acuerdo en que era necesario
     estar pendientes por si llegaba algún ataque."
     "Y así pasó el tiempo, hasta el día antes de su boda. Día en el que a Juan le tocaba
@@ -160,14 +160,44 @@ label inicio_historia:
     show novia parada izquierda:
         xpos 500 ypos 600
 
-    #! Añadir otro ejercicio aquí, para seguir con la "tradición" de los personajes
-
     prometida "Buenos días. Veo que apenas te levantas."
     juan "Buenos días. Los preparativos para la boda de mañana me dejaron exhausto."
     prometida "Bueno, no te sobreesfuerces, no queremos que mañana no estés disponible."
     juan "No te preocupes, es lo que menos quiero."
-    prometida "Bueno, ve afuera que Filiberto ha venido y dice que quiere hablar contigo."
-    juan "Ya voy, debe ser importante."
+    prometida "Entonces, ¿estás listo para el primero reto de hoy?"
+    juan "Completamente listo."
+
+    menu problema_multiplicacion_2:
+        prometida "La maestra Ana le pidió a los estudiantes investigar sobre la historia de Juan Cupul, 
+        para ello les dijo que vayan a la sección de Historia en la biblioteca de la escuela, "
+        prometida "si hay 4 estanterías y en cada estantería hay 36 libros, ¿cuántos libros hay en la 
+        sección de Historia de la biblioteca? "
+        "9 libros":
+            play sound "error.mp3" volume 4.0
+            "Sigue intentando, estoy seguro de que la próxima será la correcta."
+            jump problema_multiplicacion_2
+        "40 libros":
+            play sound "error.mp3" volume 4.0
+            "Ups, parece que esta respuesta no es la correcta. ¡No te rindas, sigue practicando!"
+            jump problema_multiplicacion_2
+        "32 libros":
+            play sound "error.mp3" volume 4.0
+            "Buen intento, ahora trata con una operación diferente."
+            jump problema_multiplicacion_2
+        "144 libros":
+            play sound "acierto.mp3"
+            "¡Felicidades! Para saber el total de libros se multiplican los 36 libros por las 4 
+            estanterías que hay en la sección de Historia."
+
+    prometida "Vaya, apenas empieza el día y ya siento que vas a ganarme."
+    juan "Yo no estaría tan seguro de eso."
+    pometida "Tienes razón, aún hay que ver si yo también empiezo con el pie derecho."
+    prometida "Estoy lista para mi ejercicio."
+    juan "Tienes 20..."
+    filiberto "¡Juan! ¡Juan!"
+    juan "Creo que es Filiberto."
+    filiberto "¡Juan! ¡Juan!"
+    juan "Iré a ver qué es."
 
     jump Filiberto_afuera_casa
 
@@ -214,6 +244,7 @@ label No_ayuda_Fili:
 
     jump turno_bombero
 
+######################### Empieza ayuda Fili###################################
 label Ayuda_Fili:
     juan "Está bien, Filiberto. No te preocupes, yo te ayudo."
     juan "¿Qué debemos hacer?"
@@ -803,7 +834,9 @@ label regresar_casaJ_agua:
     hide fili
 
     jump turno_bombero
+######################### Termina ayuda Fili###################################
 
+# Aquí se unen los caminos después de la decisión de ayudar o no a Filiberto
 label turno_bombero:
 
     show juan parado derecha:
@@ -1253,6 +1286,36 @@ label en_la_cabana_bombero:
 
     "Filiberto se va y Juan se queda solo."
 
+label fili_desaperece:
+    #! Fili camina rápido por un camino
+    
+    scene casa_naranja
+
+    #! Fili llegando a la bifurcación
+
+    "Filiberto camina con prisa, esperando obtener el agua lo más pronto posible."
+    "Tiene la rara sensación de que algo no va bien. No es normal que cuatro cubetas 
+    de agua desaparezcan así como así."
+
+    "Llega a un camino dividido en dos y, de repente, siente que no sabe por dónde ir."
+
+    filiberto "¿Cuál era el camino? ¿Cuál era el camino?"
+    filiberto "He vivido aquí toda mi vida y de la nada no sé cuál es el camino."
+
+    "Filiberto se desespera, no entendiendo por qué no se acuerda."
+
+    filiberto "Bien, pues escogeré al azar. Lo peor que puede pasar es que tenga que regresar 
+    y tomar el otro camino."
+
+    filiberto "De tín marín de..."
+
+    "Filiberto está escogiendo al azar, ayúdalo a que el camino elegido sea el correcto 
+    resolviendo correctamente el siguiente ejercicio."
+
+    #! Poner ejercicio aquí.
+
+
+label ataque:
     "Juan no tiene nada qué hacer en este momento, más que vigilar."
     "Pasa mucho tiempo, pero Filiberto no regresa."
 
