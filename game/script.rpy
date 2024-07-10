@@ -1373,21 +1373,25 @@ label maria_alimenta_animales:
     scene corral_animales
 
     show novia parada frente:
-        xpos 880 ypos 400
+        xpos 895 ypos 400
 
     show puerquito1 quieto:
         xpos 200 ypos 300
     show puerquito2 quieto:
-        xpos 550 ypos 600
+        xpos 277 ypos 600
     show puerquito3 quieto:
         xpos 375 ypos 400
 
     show gallina_1 quieta:
-        xpos 1300 ypos 400
+        xpos 1350 ypos 400
     show gallina_2:
         xpos 1500 ypos 450
     show gallina_3:
-        xpos 1550 ypos 600
+        xpos 1780 ypos 600
+    show gallina_4:
+        xpos 1700 ypos 350
+    show pollito:
+        xpos 1730 ypos 350
     show pavo:
         xpos 1350 ypos 650
 
@@ -1418,12 +1422,54 @@ label maria_alimenta_animales:
             play sound "error.mp3" volume 4.0
             "¡Vamos de nuevo!"
             jump problema_division_5
-    
+
+    menu problema_multiplicacion_4:
+        "Después de la batalla que se dio en Tixcacal se empezó a recolectar despensa 
+        para los heridos; cada día se juntó 1 caja de mercancía y en cada una 
+        había 14 bolsas de frijol. ¿Cuántas bolsas de frijol se juntaron a la semana?"
+        "2 bolsas de frijol":
+            play sound "error.mp3" volume 4.0
+            "Sigue practicando, cada intento te acerca más al éxito."
+            jump problema_multiplicacion_4
+        "21 bolsas de frijol":
+            play sound "error.mp3" volume 4.0
+            "Ups, parece que esta respuesta no es la correcta."
+            jump problema_multiplicacion_4
+        "98 bolsas de frijol":
+            play sound "acierto.mp3"
+            "Muy bien, se multiplica el total de días de la semana (7) por las 
+            14 bolsas de frijol que se juntó en cada uno de esos días. "
+        "7 bolsas de frijol":
+            play sound "error.mp3" volume 4.0
+            "No te desanimes, sigue intentándolo."
+            jump problema_multiplicacion_4
+
+    menu problema_multiplicacion_5:
+        "Para armar una estrategia de batalla Juan Cupul organizó una reunión con 
+        sus aliados, para ello acomodó 4 mesas y en cada mesa colocó 8 sillas. ¿A 
+        cuántos aliados invitó Juan Cupul para la reunión?"
+        "2 aliados":
+            play sound "error.mp3" volume 4.0
+            "Sigue practicando, cada intento te acerca más al éxito."
+            jump problema_multiplicacion_5
+        "12 aliados":
+            play sound "error.mp3" volume 4.0
+            "Ups, parece que esta respuesta no es la correcta."
+            jump problema_multiplicacion_5
+        "4 aliados":
+            play sound "error.mp3" volume 4.0
+            "Vamos, inténtalo otra vez."
+            jump problema_multiplicacion_5
+        "32 aliados":
+            play sound "acierto.mp3"
+            "Lo estás resolviendo muy bien, la respuesta se obtiene multiplicando 
+            el número de mesas (4) por la cantidad de sillas que va en cada mesa (8)."
+
     "María alimenta a los cochinos, las gallinas y los pavos."
 
     show gallina_1 come
 
-    prometida "¿De verdad? ¿Sólo esa gallina quiere comer?"
+    prometida "¿De verdad? ¿Sólo Paquita quiere comer?"
 
     show puerquito1 revolcado
     show puerquito3 revolcado
