@@ -13,19 +13,9 @@ image fondo_final = "Fondos/Fondo_Basta_Matematico.png"
 image cabana_vacio = Image("Fondos/Fondo_A35.png", oversample=0.933)
 image casa_naranja = Image("Fondos/Fondo 8.png", oversample=0.93)
 image puente_rio = Image("Fondos/Fondo 11.png", oversample=0.933)
-
-# Para el mundo a explorar ############
-image arriba = "flecha_arriba.png"
-image arriba_hover = "flecha_arriba_hover.png"
-image abajo = "flecha_abajo.png"
-image abajo_hover = "flecha_abajo_hover.png"
-image derecha = "flecha_derecha.png"
-image derecha_hover = "flecha_derecha_hover.png"
-image izquierda = "flecha_izquierda.png"
-image izquierda_hover = "flecha_izquierda_hover.png"
-
-
 image camino_casa_juan = Image("Fondos/Fondo_A04_Arboles.jpg", oversample=0.93)
+image corral_animales = Image("Fondos/Fondo 7.png", oversample=0.933)
+
 image A2 = "Fondo_A02.png"
 image A3 = "Fondo_A03.png"
 image A4 = "Fondo_A04.png"
@@ -79,6 +69,8 @@ image cubeta1 = Image("Objetos/Decoracion/Cubeta_2.png", oversample=1.7)
 image cubeta2 = Image("Objetos/Decoracion/Cubeta_2.png", oversample=1.7)
 image cubeta3 = Image("Objetos/Decoracion/Cubeta_2.png", oversample=1.7)
 image cubeta4 = Image("Objetos/Decoracion/Cubeta_2.png", oversample=1.7)
+
+image caja_naranjas = Image("Objetos/Decoracion/Caja_Naranjas_1.png", oversample=1.6)
 
 #* AVATARES
 image avatar1 = "Avatares/Avatar 1.png"
@@ -141,3 +133,13 @@ image avatar21_hover = "Avatares/Avatar 21_hover.png"
 # 1    3
 
 # 2    4
+
+#* BOTONES
+image arriba = "flecha_arriba.png"
+image arriba_hover = "flecha_arriba_hover.png"
+image abajo = "flecha_abajo.png"
+image abajo_hover = "flecha_abajo_hover.png"
+image derecha = "flecha_derecha.png"
+image derecha_hover = "flecha_derecha_hover.png"
+image izquierda = "flecha_izquierda.png"
+image izquierda_hover = "flecha_izquierda_hover.png"

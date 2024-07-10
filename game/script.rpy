@@ -884,7 +884,77 @@ label turno_bombero:
     juan "Practico mucho gracias a ti."
     juan "Bueno, ya me voy. Nos vemos mañana."
 
-    #jump en_la_cabana_bombero
+    jump vecina_naranjas
+
+# Pequeña misión en la que María Dolores ofrece regalar naranjas a una vecina si
+# esta resuelve un ejercicio
+label vecina_naranjas:
+    scene afuera_casa_juan
+
+    show caja_naranjas:
+        xpos 0.61 ypos 0.6
+
+    show mujer camina atras:
+        xpos 880 ypos 1000
+        linear 1.5 ypos 850
+
+    pause 1.5
+
+    show mujer parada atras
+
+    vecina "¡Buenas tardes! ¡Vecina! ¡Vecina!"
+
+    show novia parada frente:
+        xpos 880 ypos 700
+
+    prometida "¡Hola, Vero! ¿Cómo estás?"
+    vecina "Muy bien, María, muy bien. ¿Y cómo estás tú?"
+    prometida "Muy bien también, emocionada por mañana."
+    vecina "Ah, sí. Tú y el Juanito se casan mañana, qué gusto."
+    prometida "Sí, estoy muy feliz, pero dime, ¿en qué te puedo ayudar?"
+    vecina "Ay, María, no quisiera molestarte, pero es que necesito unas chinas."
+    vecina "Ando cocinando y me acabo de dar cuenta de que no tengo y mi árbol de 
+    china no tiene ninguna."
+    vecina "¿Me puedes vender unas cuantas de las que tienes?"
+    prometida "Claro que sí, pero tengo una mejor idea. Si resuelves bien un ejercicio 
+    que te voy a decir, te regalo la caja entera."
+    vecina "Ay, María, qué cosas me pides, jajajaja. Ya veo como tú y el Juanito 
+    se mantienen entretenidos."
+    prometida "Ya sabes que nos encanta resolver problemas matemáticos. Entonces, ¿aceptas?"
+    vecina "Está bien, acepto. Será entretenido."
+
+    menu problema_resta_7:
+        prometida "Después de la lucha, Juan Cupul tenía 325 balas para sus 
+        pistolas. Si usó 150 balas durante la primera parte de la batalla, ¿cuántas 
+        balas le quedaron después?"
+        "175 balas":
+            play sound "acierto.mp3" 
+            "¡Muy bien! Hiciste un maravilloso trabajo, la respuesta es correcta."
+        "200 balas":
+            play sound "error.mp3" volume 4.0
+            "Estás cerca de la respuesta correcta.¡Continúa intentándolo!"
+            jump problema_resta_7
+        "125 balas":
+            play sound "error.mp3" volume 4.0
+            "Piensa en cuántas balas tenía Juan al principio y cuántas utilizó durante la batalla."
+            jump problema_resta_7
+        "225 balas":
+            play sound "error.mp3" volume 4.0
+            "La respuesta es incorrecta, pero ¡tú puedes resolver esto!"
+            jump problema_resta_7
+
+    prometida "¡Muy bien, Vero! La caja de naranjas es tuya."
+    "María le da la caja de naranjas a Vero."
+    hide caja_naranjas
+
+    vecina "Pues muchas gracias, María. Esto fue divertido. La próxima vez regresaré 
+    sólo para intentar resolver alguno de tus ejercicios. ¡Nos vemos luego!"
+    prometida "¡Adiós!"
+
+    show mujer camina frente:
+        linear 2 ypos 1200
+    pause 2
+
     jump camino_al_turno
 
 label camino_al_turno:
@@ -967,6 +1037,7 @@ label camino_al_turno:
             jump juan_no_ayuda_ambulante
         
 
+##################### Inicia Juan ayuda Vendedor Ambulante #####################
 label juan_ayuda_ambulante:
     juan "Está bien. Te ayudaré en tu búsqueda. ¿Qué debo hacer?"
 
@@ -1216,6 +1287,7 @@ label adios_vendedor:
 
     jump en_la_cabana_bombero
 
+#################### Termina Juan ayuda Vendedor Ambulante ####################
 
 label juan_no_ayuda_ambulante:
     juan "Lo siento, pero tengo algo que hacer justo ahora y no puedo distraerme.
@@ -1295,9 +1367,76 @@ label en_la_cabana_bombero:
 
     "Filiberto se va y Juan se queda solo."
 
+    jump maria_alimenta_animales
+
+label maria_alimenta_animales:
+    scene corral_animales
+
+    show novia parada frente:
+        xpos 880 ypos 400
+
+    show puerquito1 quieto:
+        xpos 200 ypos 300
+    show puerquito2 quieto:
+        xpos 550 ypos 600
+    show puerquito3 quieto:
+        xpos 375 ypos 400
+
+    show gallina_1 quieta:
+        xpos 1300 ypos 400
+    show gallina_2:
+        xpos 1500 ypos 450
+    show gallina_3:
+        xpos 1550 ypos 600
+    show pavo:
+        xpos 1350 ypos 650
+
+    "María Dolores aprovecha el tiempo en el que no está Juan para cuidar de sus 
+    animales."
+
+    prometida "Muy bien. Es hora de alimentarlos."
+
+    "María quiere alimentar a sus animales. Para que ella pueda alimentar a los 
+    cochinos, las gallinas y el pavo, debes resolver tres ejercicios."
+
+    menu problema_division_5:
+        "En la feria agrícola, Juan Cupul obtuvo 45 paquetes de semillas. Quiere 
+        distribuirlos de manera igualitaria entre 9 agricultores de la comunidad. 
+        ¿Cuántos paquetes de semillas recibirá cada agricultor?"
+        "4 paquetes":
+            play sound "error.mp3" volume 4.0
+            "¡Casi lo tienes, estás cerca! pero la respuesta no es la correcta."
+            jump problema_division_5
+        "5 paquetes":
+            play sound "acierto.mp3" 
+            "¡Muy bien, lo has conseguido!"
+        "36 paquetes":
+            play sound "error.mp3" volume 4.0
+            "¡Vuelve a intentarlo, tú puedes! Lee nuevamente el ejercicio."
+            jump problema_division_5
+        "28 paquetes":
+            play sound "error.mp3" volume 4.0
+            "¡Vamos de nuevo!"
+            jump problema_division_5
+    
+    "María alimenta a los cochinos, las gallinas y los pavos."
+
+    show gallina_1 come
+
+    prometida "¿De verdad? ¿Sólo esa gallina quiere comer?"
+
+    show puerquito1 revolcado
+    show puerquito3 revolcado
+
+    prometida "Bien, yo ya hice mi parte."
+
+    show novia camina atras:
+        linear 1.5 ypos 0
+    pause 1.5
+
     jump fili_desaperece
 
-
+# Filiberto va en busca del agua, pero lo noquean cuando encuentra el río
 label fili_desaperece:
     scene camino_v_osc
 

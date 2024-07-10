@@ -1,9 +1,10 @@
 # PERSONAJES ##################################################################
 define juan = Character("Juan Cupul", color="#0011a7")
-define prometida = Character("María Dolores", color="#8b6eb9")
+define prometida = Character("María Dolores", color="#9f00be")
 define filiberto = Character("Filiberto Tun", color="#155513")
 define vendedor = Character("Vendedor ambulante", color="#3d3d3d")
 define cruzob = Character("Cruzob", color="#bd0000")
+define vecina = Character("Verónica Tuz Cocom", color="#db0054")
 
 # IMÁGENES ####################################################################
 #De los personajes
@@ -795,7 +796,21 @@ image pavo:
 image puerquito_1 = Crop((0, 0, 96, 96), "spritesheet_puerquito_1")
 image puerquito_2 = Crop((96, 0, 96, 96), "spritesheet_puerquito_1")
 
-image puerquito quieto:
+image puerquito1 quieto:
+    "puerquito_1"
+    pause 0.3
+    "puerquito_2"
+    pause 0.3
+    repeat
+
+image puerquito2 quieto:
+    "puerquito_1"
+    pause 0.3
+    "puerquito_2"
+    pause 0.3
+    repeat
+
+image puerquito3 quieto:
     "puerquito_1"
     pause 0.3
     "puerquito_2"
@@ -807,7 +822,29 @@ image puerquito_2_r = Crop((96, 0, 96, 96), "spritesheet_puerquito_2")
 image puerquito_3_r = Crop((192, 0, 96, 96), "spritesheet_puerquito_2")
 image puerquito_4_r = Crop((288, 0, 96, 96), "spritesheet_puerquito_2")
 
-image puerquito revolcado:
+image puerquito1 revolcado:
+    "puerquito_1_r"
+    pause 0.1
+    "puerquito_2_r"
+    pause 0.1
+    "puerquito_3_r"
+    pause 0.1
+    "puerquito_4_r"
+    pause 0.1
+    repeat
+
+image puerquito2 revolcado:
+    "puerquito_1_r"
+    pause 0.1
+    "puerquito_2_r"
+    pause 0.1
+    "puerquito_3_r"
+    pause 0.1
+    "puerquito_4_r"
+    pause 0.1
+    repeat
+
+image puerquito3 revolcado:
     "puerquito_1_r"
     pause 0.1
     "puerquito_2_r"
