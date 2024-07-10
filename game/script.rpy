@@ -1369,6 +1369,19 @@ label en_la_cabana_bombero:
 
     jump maria_alimenta_animales
 
+
+#! Hay un problema con el guardado de los datos de las partidas. La primera vez
+#! que esos datos se guardan, se mantienen bien y todo. Pero si te sales de una
+#! partida, la guardas, cierras la app, la vuelves a abrir, cargas esa partida
+#! de nuevo y sobreescribes tu nuevo avance en la misma ranura, los datos 
+#! anteriomente guardados se pierden. No sé por qué, pero eso es lo que sucede. 
+#! Probablemente por eso tenía problemas para enseñar el nombre antes cuando 
+#! intentaba crear la pantalla para mostrar los datos de la partida. 
+#! Tengo que averiguar cómo resolver eso o buscar una alternativa para ese 
+#! guardado dinámico de datos porque me está causando muchos problemas.
+
+# Misión en la que María Dolores "alimenta" a los animales después de que el 
+# resuelve correctamente tres ejercicios
 label maria_alimenta_animales:
     scene corral_animales
 
