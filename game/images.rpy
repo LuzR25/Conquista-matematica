@@ -19,9 +19,9 @@ image A33 = Image("Fondos/Fondo_A33.png", oversample=0.93) #Huerto
 
 # Misión encontrar Vendedor Ambulante
 image A10 = Image("Fondos/Fondo 10.png", oversample=0.933)
-image A12 = Image("Fondos/Fondo 12.png", oversample=0.933)
-image A14 = Image("Fondos/Fondo 14.png", oversample=0.933)
-image A15 = Image("Fondos/Fondo 15.png", oversample=0.933)
+image A12 = Image("Fondos/Fondo 12.png", oversample=0.666)
+image A14 = Image("Fondos/Fondo 14.png", oversample=0.666)
+image A15 = Image("Fondos/Fondo 15.png", oversample=0.666)
 image A16 = Image("Fondos/Fondo 16.png", oversample=0.933)
 
 #*OBJETOS

@@ -5,6 +5,7 @@
     puntosVictorias=0
     nombreUsuario = ""
     ayudoFili = False
+    ayudoVendedor = False
     avatarElegido = ""
     conservaObjeto = False
     aciertos = 0
@@ -14,6 +15,7 @@
         data["nombre_usuario"] = nombreUsuario
         data["puntos_victorias"] = puntosVictorias
         data["ayudo_a_fili"] = ayudoFili
+        data["ayudo_a_vendedor"] = ayudoVendedor
         data["conserva_objeto"] = conservaObjeto
         data["avatar_elegido"] = avatarElegido
         data["aciertos"] = aciertos
@@ -88,13 +90,13 @@ label inicio_historia:
     menu problema_multiplicacion_6:
         prometida "Participaste en la batalla junto con otros 7 guerreros. 
         Cada uno lanzó 15 flechas durante la batalla. ¿Cuántas flechas lanzaron en total?"
-        "23 flechas":
-            play sound "error.mp3" volume 4.0
-            "No te rindas, continúa intentándolo."
-            jump problema_multiplicacion_6
         "7 flechas":
             play sound "error.mp3" volume 4.0
             "Ups, parece que esta respuesta no es la correcta."
+            jump problema_multiplicacion_6
+        "23 flechas":
+            play sound "error.mp3" volume 4.0
+            "No te rindas, continúa intentándolo."
             jump problema_multiplicacion_6
         "105 flechas":
             play sound "error.mp3" volume 4.0
@@ -177,13 +179,13 @@ label inicio_historia:
             play sound "error.mp3" volume 4.0
             "Sigue intentando, estoy seguro de que la próxima será la correcta."
             jump problema_multiplicacion_2
-        "40 libros":
-            play sound "error.mp3" volume 4.0
-            "Ups, parece que esta respuesta no es la correcta. ¡No te rindas, sigue practicando!"
-            jump problema_multiplicacion_2
         "32 libros":
             play sound "error.mp3" volume 4.0
             "Buen intento, ahora trata con una operación diferente."
+            jump problema_multiplicacion_2
+        "40 libros":
+            play sound "error.mp3" volume 4.0
+            "Ups, parece que esta respuesta no es la correcta. ¡No te rindas, sigue practicando!"
             jump problema_multiplicacion_2
         "144 libros":
             play sound "acierto.mp3"
@@ -395,9 +397,10 @@ label cosechar_verduras_2:
         "Juan Cupul y Filiberto recolectaron cierta cantidad de provisiones para la población 
         de Tixcacal. Si en un día recolectaron 175 kg de maíz y 230 kg de frijoles, 
         ¿cuántos kilogramos de provisiones recolectaron en total?"
-        "405 kg":
-            play sound "acierto.mp3"
-            "¡Maravilloso! Parece que Juan y Filiberto saben cómo recolectar la cantidad justa de provisiones."
+        "305 kg":
+            play sound "error.mp3" volume 4.0
+            "Sigue intentado, estoy seguro de que la próxima será la correcta."
+            jump problema_suma_5
         "345 kg":
             play sound "error.mp3" volume 4.0
             "Ups, parece que esta respuesta no es la correcta. ¡No te rindas, sigue practicando!"
@@ -406,10 +409,9 @@ label cosechar_verduras_2:
             play sound "error.mp3" volume 4.0
             "¡Casi lo tienes! pero esta vez la respuesta no es la correcta."
             jump problema_suma_5
-        "305 kg":
-            play sound "error.mp3" volume 4.0
-            "Sigue intentado, estoy seguro de que la próxima será la correcta."
-            jump problema_suma_5
+        "405 kg":
+            play sound "acierto.mp3"
+            "¡Maravilloso! Parece que Juan y Filiberto saben cómo recolectar la cantidad justa de provisiones."
 
     # En cada bloque de cosecha se mueve al personaje para que esté a lado de esa
     # verdura, y después de que el usuario presiona Enter, suena "cosechar" y se
@@ -614,18 +616,18 @@ label cosechar_verduras_2:
             play sound "error.mp3" volume 4.0
             "Ups, parece que esta respuesta no es la correcta."
             jump problema_multiplicacion_1
-        "180 kilómetros":
-            play sound "acierto.mp3"
-            "Buen trabajo, la respuesta se obtiene de multiplicar la velocidad 
-            por el tiempo de viaje, sigue así."
-        "63 kilómetros":
-            play sound "error.mp3" volume 4.0
-            "Inténtalo de nuevo."
-            jump problema_multiplicacion_1
         "57 kilómetros":
             play sound "error.mp3" volume 4.0
             "Sigue intentado, estoy seguro de que la próxima será la correcta."
             jump problema_multiplicacion_1
+        "63 kilómetros":
+            play sound "error.mp3" volume 4.0
+            "Inténtalo de nuevo."
+            jump problema_multiplicacion_1
+        "180 kilómetros":
+            play sound "acierto.mp3"
+            "Buen trabajo, la respuesta se obtiene de multiplicar la velocidad 
+            por el tiempo de viaje, sigue así."
     
     "Filiberto se encarga de cosechar los rábanos rojos."
     "Presiona la tecla Enter para cosechar los rábanos rojos."
@@ -1031,9 +1033,11 @@ label camino_al_turno:
         puesto como bombero y que ocurra un ataque en ese momento?"
         "Sí, quiero acompañar al Vendedor ambulante":
             play sound "seleccion.mp3"
+            $ ayudoVendedor = True
             jump juan_ayuda_ambulante
         "No, no deseo arriesgar la seguridad de Tixcacal":
             play sound "seleccion.mp3"
+            $ ayudoVendedor = False
             jump juan_no_ayuda_ambulante
         
 
@@ -1493,14 +1497,15 @@ label maria_alimenta_animales:
         linear 1.5 ypos 0
     pause 1.5
 
-    jump fili_desaperece
+    jump comprar_super_gallina
 
-
+# María recorre un largo camino para encontrar al Vendedor ambulante y comprar 
+# una supuesta gallina mágica
 label comprar_super_gallina:
     scene afuera_casa_juan
 
     show novia parada frente:
-        xpos 800 ypos 700
+        xpos 895 ypos 700
     
     "María Dolores está saliendo de su casa de nuevo, luego de haber alimentado 
     a sus animales."
@@ -1521,18 +1526,18 @@ label comprar_super_gallina:
     # Primera bifurcación
     scene A10
 
-    show show novia camina frente:
-        xpos 800 ypos 0
-        linear 1.5 ypos 400
+    show novia camina frente:
+        xpos 895 ypos 0
+        linear 1.5 ypos 480
     pause 1.5
     show novia parada frente
 
     prometida "Ahora, ¿a dónde se supone que debo ir?"
 
     "Las personas habían mencionado que encontrar el camino al vendedor era 
-    complicado porque te confundes y pierdes mucho mientras lo buscas. Lo único 
-    que mencionaron que sí fue de ayuda fue que se puede encontrar un letrero 
-    de una pócima cuando ya estás en el camino correcto."
+    complicado porque te confundes y pierdes mucho mientras lo buscas. "
+    "Lo único que mencionaron que sí fue de ayuda fue que se puede encontrar un 
+    letrero de una pócima cuando ya estás en el camino correcto."
 
     prometida "¿Derecha...?"
     show novia parada derecha
@@ -1569,16 +1574,16 @@ label comprar_super_gallina:
 
     prometida "Hacia el frente, tiene que ser hacia el frente."
     
-    show novia camina frente
+    show novia camina frente:
         linear 2 ypos 1000
     pause 2
     
     # Segunda "bifurcación"
     scene A16
 
-    show show novia camina frente:
-        xpos 800 ypos 0
-        linear 1.5 ypos 400
+    show novia camina frente:
+        xpos 895 ypos 0
+        linear 1.5 ypos 450
     pause 1.5
     show novia parada frente
 
@@ -1600,7 +1605,7 @@ label comprar_super_gallina:
             play sound "error.mp3" volume 4.0
             "Ups, parece que esta respuesta no es la correcta. ¡No te rindas, sigue practicando!"
             jump problema_suma_4
-        "100":
+        "30 caballos":
             play sound "acierto.mp3"
             "¡Espectacular! Parece que Juan Cupul tiene una manada impresionante de 
             caballos a su disposición."
@@ -1615,8 +1620,8 @@ label comprar_super_gallina:
     scene A15
     
     show novia camina derecha:
-        xpos 0 ypos 400
-        linear 2 xpos 600
+        xpos 0 ypos 480
+        linear 2 xpos 880
     pause 2
     show novia parada derecha
 
@@ -1648,9 +1653,10 @@ label comprar_super_gallina:
     scene arboles_doblado
 
     show novia camina frente:
-        xpos 600 ypos 0
-        linear 1 ypos 400
-    pause 1
+        xpos 900 ypos 0
+        linear 1.5 ypos 430
+    pause 1.5
+    show novia parada frente
 
     prometida "No estoy segura de esto, ¿debería regresar?"
 
@@ -1676,18 +1682,125 @@ label comprar_super_gallina:
     prometida "No tiene caso regresar, ya llegué hasta aquí."
 
     show novia camina izquierda:
-        linear 1 xpos 200
-    pause 1
+        linear 1.8 xpos 200
+    pause 1.8
     show novia camina frente:
         linear 2 ypos 1000
     pause 2
 
-
     # Encuentra el letrero
     scene A12
 
-    show 
+    show novia camina frente:
+        xpos 895 ypos 0
+        linear 1.5 ypos 300
+    pause 1.5
+    show novia parada frente
 
+    prometida "¡El letrero! ¡Este es el camino correcto!"
+
+    show novia camina frente:
+        linear 1.5 ypos 1000
+    pause 1.5
+
+    # Llega con el Vendedor ambulante
+    scene A14
+
+    show vendedor quieto:
+        xpos 1220 ypos 670
+
+    show novia camina frente:
+        xpos 200 ypos 0
+        linear 1.5 ypos 355
+    pause 1.5
+    show novia parada frente
+
+    prometida "¡Llegué!"
+
+    # Camina al puesto del Vendedor ambulante
+    show novia camina frente:
+        linear 1.5 ypos 900
+    pause 1.5
+    show novia camina derecha:
+        linear 2.5 xpos 1220
+    pause 2.5
+    show novia camina atras:
+        linear 0.5 ypos 800
+    pause 0.5
+    show novia parada atras
+
+    prometida "Buenas tardes."
+    vendedor "Buenas tardes, señorita. Soy el Vendedor ambulante. Pídame lo 
+                que quiera, vendo de todo. ¿Qué puedo ofrecerle?"
+    prometida "Escuché que usted vende una gallina que puede hacerte muy fuerte 
+                si se come en caldo."
+    vendedor "Y así es."
+
+    python:
+        labelGallina = ""
+        if ayudoVendedor:
+            labelGallina = "tiene_gallina"
+        else:
+            labelGallina = "no_tiene_gallina"
+
+    jump expression labelGallina
+
+# El Vendedor ambulante sí tiene la gallina (Juan sí lo ayudó)
+label tiene_gallina:
+    vendedor "Es tu día de suerte, porque justo hoy encontré una con la ayuda de 
+    un amable muchacho."
+    prometida "Excelente, pues me la llevo."
+
+    "María le paga al Vendedor ambulante y él envía la gallina a su casa."
+
+    play sound "vendedor_efecto.mp3"
+
+    "María se asusta al oír una explosión."
+
+    prometida "¡¿Qué fue eso?! ¡Nos atacan!"
+    vendedor "No se preocupe, señorita. He sido yo. Envié a la gallina a su casa 
+                usando mi magia de transportación inmediata."
+    prometida "¿O sea que la gallina ya está en mi casa?"
+    vendedor "Así es. En su jardín delantero, si debo ser específico."
+    prometida "Pues ¡muchas gracias!"
+    vendedor "A ti, señorita. Si regresas otro día, te prometo que te regalaré 
+                un vestido que jamás se ensucia y tampoco se rompe."
+    prometida "Es muy amable, me aseguraré de volver, ¡hasta pronto!"
+    vendedor "¡Nos vemos!"
+
+    show novia camina frente:
+        linear 0.5 ypos 900
+    pause 0.5
+    show novia camina izquierda:
+        linear 2.5 xpos 400
+    pause 2
+    
+    jump fili_desaperece
+
+# El Vendedor ambulante no tiene la gallina (Juan no lo ayudó)
+label no_tiene_gallina:
+    vendedor "Lamentablemente, hoy no tengo ninguna en mi maravilloso inventario.
+            No soy capaz de hallarlas solo y nadie en mi camino estuvo dispuesto 
+            a ayudarme."
+    prometida "Es una lástima. Vine hasta aquí sólo por esa gallina."
+    vendedor "Me siento muy apenado, señorita. Le diré algo. Le prometo conseguir 
+            una de esas gallinas especiales para la próxima semana, y como bono 
+            por las molestias, le regalaré un vestido que jamás se ensucia o se rompe."
+    prometida "¿En serio?"
+    vendedor "Lo prometo y juro en este momento ante la presencia de nuestros dioses 
+            que nos vigilan desde lo más alto."
+    prometida "De acuerdo. Acepto entonces. Volveré la próxima semana."
+    vendedor "Nos vemos hasta entonces."
+    prometida "Hasta luego."
+
+    show novia camina frente:
+        linear 0.5 ypos 900
+    pause 0.5
+    show novia camina izquierda:
+        linear 2.5 xpos 400
+    pause 2
+    
+    jump fili_desaperece
 
 # Filiberto va en busca del agua, pero lo noquean cuando encuentra el río
 label fili_desaperece:
@@ -1794,7 +1907,7 @@ label fili_desaperece:
     show fili parado atras
     filiberto "¡¿Quién anda ahí?!"
 
-    "Filiberto ya ansioso a causa de la desaparición del agua, sabe que esa persona 
+    "Filiberto, ya ansioso a causa de la desaparición del agua, sabe que esa persona 
     no tiene, en absoluto, buenas intenciones."
 
     cruzob "¿Por qué no intentas adivinar?"

@@ -8,9 +8,6 @@ define vecina = Character("Verónica Tuz Cocom", color="#db0054")
 
 # IMÁGENES ####################################################################
 #De los personajes
-image protagonista1 = "Juan_Cupul_1.png"
-image prometida1 = "Maria_Dolores_1.png"
-image filiberto_tun = "Filiberto_1.png"
 image spritesheet_juanC = "Personajes/Juan_C_Sprite_Style_Sheets.png"
 image spritesheet_novia = "Personajes/Novia_Sprite_Sheet.png"
 image spritesheet_fili = "Personajes/Filberto_Style_Sheets_128x128.png"
@@ -33,7 +30,6 @@ image spritesheet_puerquito_2 = "Animales/Puerquito_Sheet_2.png"
 image spritesheet_cesta = "Personajes/Cesta_Vendedor_Style_Sheet.png"
 image spritesheet_vela = "Objetos/Decoracion/Vela_1.png"
 image spritesheet_calavera = "Objetos/Decoracion/Craneo_1.png"
-
 
 #ANIMACIONES ###################################################################
 #* JUAN
