@@ -263,19 +263,20 @@ label Ayuda_Fili:
     "Juan y Filiberto se ponen a caminar, pero están confundidos y no saben qué camino tomar."
 
     menu camino_oeste:
-        "Si pueden llegar al huerto caminando en línea recta y la casa de Juan está hacia el norte, ¿qué camino deben tomar?"
+        "Si pueden llegar al huerto caminando en línea recta y la casa de Juan 
+        está hacia el norte, ¿qué camino deben tomar?"
         "El de arriba":
             play sound "error.mp3" volume 4.0
             "Este es el camino norte, sólo regresarían a la casa de Juan. Intenta de nuevo."
+            jump camino_oeste
+        "El de la derecha":
+            play sound "error.mp3" volume 4.0
+            "Casi lo logras, pero este camino lleva al este. Trata de nuevo."
             jump camino_oeste
         "El de la izquierda":
             play sound "acierto.mp3"
             "¡Muy bien! El oeste está a la izquierda."
             jump llegan_a_huerto
-        "El de la derecha":
-            play sound "error.mp3" volume 4.0
-            "Casi lo logras, pero este camino lleva al este. Trata de nuevo."
-            jump camino_oeste
 
 label llegan_a_huerto:
     scene A33
@@ -789,16 +790,16 @@ label regresar_casaJ_agua:
         "Juan Cupul se encuentra frente a un depósito con 56 litros de agua que 
         debe distribuir en cubetas de 8 litros cada una. ¿Cuántas cubetas necesitará 
         llenar para repartir toda el agua?"
-        "48 cubetas":
-            play sound "error.mp3" volume 4.0
-            "¡Vuelve a intentarlo, tú puedes! Lee nuevamente el ejercicio. "
-            jump problema_division_3
         "7 cubetas":
             play sound "acierto.mp3"
             "¡Buen trabajo, lo has conseguido! Has logrado ayudar a Juan Cupul."
         "9 cubetas":
             play sound "error.mp3" volume 4.0
             "¡Casi lo tienes, estás cerca! Pero la respuesta no es la correcta."
+            jump problema_division_3
+        "48 cubetas":
+            play sound "error.mp3" volume 4.0
+            "¡Vuelve a intentarlo, tú puedes! Lee nuevamente el ejercicio. "
             jump problema_division_3
         "64 cubetas":
             play sound "error.mp3" volume 4.0
@@ -874,13 +875,13 @@ label turno_bombero:
             play sound "error.mp3" volume 4.0
             "Estás en el camino correcto. Recuerda cuántas partidas de ajedrez jugó Juan en total y cuántas ganó."
             jump problema_resta_6
+        "7 partidas":
+            play sound "acierto.mp3"
+            "¡Eso es! La respuesta es correcta."
         "23 partidas":
             play sound "error.mp3" volume 4.0
             "¡Tú puedes hallar la solución!"
             jump problema_resta_6
-        "7 partidas":
-            play sound "acierto.mp3"
-            "¡Eso es! La respuesta es correcta."
 
     prometida "No has perdido la práctica. Sigues sin perder tu racha de aciertos."
     juan "Practico mucho gracias a ti."
@@ -929,16 +930,16 @@ label vecina_naranjas:
         prometida "Después de la lucha, Juan Cupul tenía 325 balas para sus 
         pistolas. Si usó 150 balas durante la primera parte de la batalla, ¿cuántas 
         balas le quedaron después?"
+        "125 balas":
+            play sound "error.mp3" volume 4.0
+            "Piensa en cuántas balas tenía Juan al principio y cuántas utilizó durante la batalla."
+            jump problema_resta_7
         "175 balas":
             play sound "acierto.mp3" 
             "¡Muy bien! Hiciste un maravilloso trabajo, la respuesta es correcta."
         "200 balas":
             play sound "error.mp3" volume 4.0
             "Estás cerca de la respuesta correcta.¡Continúa intentándolo!"
-            jump problema_resta_7
-        "125 balas":
-            play sound "error.mp3" volume 4.0
-            "Piensa en cuántas balas tenía Juan al principio y cuántas utilizó durante la batalla."
             jump problema_resta_7
         "225 balas":
             play sound "error.mp3" volume 4.0
@@ -1138,6 +1139,10 @@ label en_el_gran_arbol:
             play sound "error.mp3" volume 4.0
             "¡Casi lo tienes, estás cerca! Pero la respuesta no es la correcta."
             jump problema_division_1
+        "5 machetes":
+            play sound "error.mp3" volume 4.0
+            "¡Vamos de nuevo!"
+            jump problema_division_1
         "6 machetes":
             play sound "acierto.mp3"
             "¡Excelente, ahí lo tienes! Juan Cupul debe dar 6 machetes a cada campesino."
@@ -1145,25 +1150,21 @@ label en_el_gran_arbol:
             play sound "error.mp3" volume 4.0
             "¡Vuelve a intentarlo, tú puedes!"
             jump problema_division_1
-        "5 machetes":
-            play sound "error.mp3" volume 4.0
-            "¡Vamos de nuevo!"
-            jump problema_division_1
     
     menu problema_division_2:
         vendedor "Durante la cosecha de tomates Juan Cupul recolecta 72 kilos y se los 
         quiere regalar a 9 familias que viven cerca de su casa, ¿cuántos kilos de tomate 
         le regalará a cada familia?"
+        "7 kilos":
+            play sound "error.mp3" volume 4.0
+            "¡Casi lo tienes, estás cerca! Pero la respuesta no es la correcta."
+            jump problema_division_2
         "8 kilos":
             play sound "acierto.mp3"
             "¡Excelente, lo has conseguido! Juan Cupul le regalara 8 kilos de tomate a cada familia."
         "13 kilos":
             play sound "error.mp3" volume 4.0
             "¡Vuelve a intentarlo, tú puedes!"
-            jump problema_division_2
-        "7 kilos":
-            play sound "error.mp3" volume 4.0
-            "¡Casi lo tienes, estás cerca! Pero la respuesta no es la correcta."
             jump problema_division_2
         "63 kilos":
             play sound "error.mp3" volume 4.0
@@ -1174,20 +1175,20 @@ label en_el_gran_arbol:
         vendedor "Juan Cupul está ayudando a sus vecinos a prepararse para el invierno. 
                 Han cortado 60 troncos de árboles y desean dividirlos igualmente entre 5 hogares. 
                 ¿Cuántos troncos recibirá cada hogar?"
+        "8 troncos":
+            play sound "error.mp3" volume 4.0
+            "¡Vamos de nuevo!"
+            jump problema_division_4
+        "11 troncos":
+            play sound "error.mp3" volume 4.0
+            "¡Casi lo tienes, estás cerca! Pero la respuesta no es la correcta."
+            jump problema_division_4
         "12 troncos":
             play sound "acierto.mp3"
             "¡Buen trabajo, lo has conseguido! Has apoyado mucho a Juan Cupul."
         "55 troncos":
             play sound "error.mp3" volume 4.0
             "¡Vuelve a intentarlo, tú puedes!"
-            jump problema_division_4
-        "11 troncos":
-            play sound "error.mp3" volume 4.0
-            "¡Casi lo tienes, estás cerca! Pero la respuesta no es la correcta."
-            jump problema_division_4
-        "8 troncos":
-            play sound "error.mp3" volume 4.0
-            "¡Vamos de nuevo!"
             jump problema_division_4
 
     vendedor "Muchas gracias, muchacho. Dame un segundo más."
@@ -1431,13 +1432,13 @@ label maria_alimenta_animales:
         "5 paquetes":
             play sound "acierto.mp3" 
             "¡Muy bien, lo has conseguido!"
-        "36 paquetes":
-            play sound "error.mp3" volume 4.0
-            "¡Vuelve a intentarlo, tú puedes! Lee nuevamente el ejercicio."
-            jump problema_division_5
         "28 paquetes":
             play sound "error.mp3" volume 4.0
             "¡Vamos de nuevo!"
+            jump problema_division_5
+        "36 paquetes":
+            play sound "error.mp3" volume 4.0
+            "¡Vuelve a intentarlo, tú puedes! Lee nuevamente el ejercicio."
             jump problema_division_5
 
     menu problema_multiplicacion_4:
@@ -1448,6 +1449,10 @@ label maria_alimenta_animales:
             play sound "error.mp3" volume 4.0
             "Sigue practicando, cada intento te acerca más al éxito."
             jump problema_multiplicacion_4
+        "7 bolsas de frijol":
+            play sound "error.mp3" volume 4.0
+            "No te desanimes, sigue intentándolo."
+            jump problema_multiplicacion_4
         "21 bolsas de frijol":
             play sound "error.mp3" volume 4.0
             "Ups, parece que esta respuesta no es la correcta."
@@ -1456,10 +1461,6 @@ label maria_alimenta_animales:
             play sound "acierto.mp3"
             "Muy bien, se multiplica el total de días de la semana (7) por las 
             14 bolsas de frijol que se juntó en cada uno de esos días. "
-        "7 bolsas de frijol":
-            play sound "error.mp3" volume 4.0
-            "No te desanimes, sigue intentándolo."
-            jump problema_multiplicacion_4
 
     menu problema_multiplicacion_5:
         "Para armar una estrategia de batalla Juan Cupul organizó una reunión con 
@@ -1469,13 +1470,13 @@ label maria_alimenta_animales:
             play sound "error.mp3" volume 4.0
             "Sigue practicando, cada intento te acerca más al éxito."
             jump problema_multiplicacion_5
-        "12 aliados":
-            play sound "error.mp3" volume 4.0
-            "Ups, parece que esta respuesta no es la correcta."
-            jump problema_multiplicacion_5
         "4 aliados":
             play sound "error.mp3" volume 4.0
             "Vamos, inténtalo otra vez."
+            jump problema_multiplicacion_5
+        "12 aliados":
+            play sound "error.mp3" volume 4.0
+            "Ups, parece que esta respuesta no es la correcta."
             jump problema_multiplicacion_5
         "32 aliados":
             play sound "acierto.mp3"
@@ -1597,6 +1598,10 @@ label comprar_super_gallina:
             play sound "error.mp3" volume 4.0
             "Sigue intentado, estoy seguro de que la próxima será la correcta."
             jump problema_suma_6
+        "30 caballos":
+            play sound "acierto.mp3"
+            "¡Espectacular! Parece que Juan Cupul tiene una manada impresionante de 
+            caballos a su disposición."
         "34 caballos":
             play sound "error.mp3" volume 4.0
             "¡Casi lo tienes! pero esta vez la respuesta no es la correcta."
@@ -1605,10 +1610,6 @@ label comprar_super_gallina:
             play sound "error.mp3" volume 4.0
             "Ups, parece que esta respuesta no es la correcta. ¡No te rindas, sigue practicando!"
             jump problema_suma_4
-        "30 caballos":
-            play sound "acierto.mp3"
-            "¡Espectacular! Parece que Juan Cupul tiene una manada impresionante de 
-            caballos a su disposición."
     
     prometida "A la derecha."
 
@@ -1628,22 +1629,22 @@ label comprar_super_gallina:
     menu problema_resta_3:
         "Juan Cupul cosechó 63 tomates en su campo y después regaló 25 a sus 
         vecinos. ¿Cuántos tomates le quedaron a Juan después de regalar algunos?"
-        "88 tomates":
+        "3 tomates":
             play sound "error.mp3" volume 4.0
-            "¡Estás haciendo un gran trabajo! Imagina cuántos tomates tenía Juan 
-            en total y cuántos decidió regalar."
+            "¡Puedes encontrar la respuesta!"
             jump problema_resta_3
         "14 tomates":
             play sound "error.mp3" volume 4.0
             "Vuelve a intentarlo, ¡tú puedes!"
             jump problema_resta_3
-        "3 tomates":
-            play sound "error.mp3" volume 4.0
-            "¡Puedes encontrar la respuesta!"
-            jump problema_resta_3
         "38 tomates":
             play sound "acierto.mp3"
             "¡Tienes esto! La respuesta es correcta."
+        "88 tomates":
+            play sound "error.mp3" volume 4.0
+            "¡Estás haciendo un gran trabajo! Imagina cuántos tomates tenía Juan 
+            en total y cuántos decidió regalar."
+            jump problema_resta_3
 
     show novia camina frente:
         linear 2 ypos 1000
@@ -1861,14 +1862,14 @@ label fili_desaperece:
             play sound "error.mp3" volume 4.0
             "¡Casi lo tienes! Pero esta vez la respuesta no es la correcta."
             jump problema_suma_3
-        "9:00 AM":
-            play sound "acierto.mp3"
-            "¡Fantástico! Parece que Juan Cupul tiene un buen ritmo para llegar a tiempo 
-            a la batalla."
         "8:20 AM":
             play sound "error.mp3" volume 4.0
             "Sigue intentando, estoy de que la próxima será la correcta."
             jump problema_suma_3
+        "9:00 AM":
+            play sound "acierto.mp3"
+            "¡Fantástico! Parece que Juan Cupul tiene un buen ritmo para llegar a tiempo 
+            a la batalla."
         "9:40 AM":
             play sound "error.mp3" volume 4.0
             "Ups, parece que esta respuesta no es la correcta. ¡No te rindas, sigue practicando!"
@@ -2049,19 +2050,19 @@ label ataque:
         "Para la batalla que se aproximaba Juan Cupul decidió armar 5 escuadrones con 10 
         soldados en cada una y de esta manera enfrentar a los enemigos ¿Cuántos soldados 
         fueron en total los que apoyaron en la batalla?"
-        "50 soldados":
-            play sound "acierto.mp3"
-            "¡Excelente! Tal vez Juan pueda vencer al cruzob."
-            $ puntos = puntos + 1
         "2 soldados":
-            play sound "error.mp3" volume 4.0
-            "Fallaste, así que Juan también."
-        "15 soldados":
             play sound "error.mp3" volume 4.0
             "Fallaste, así que Juan también."
         "5 soldados":
             play sound "error.mp3" volume 4.0
             "Fallaste, así que Juan también."
+        "15 soldados":
+            play sound "error.mp3" volume 4.0
+            "Fallaste, así que Juan también."
+        "50 soldados":
+            play sound "acierto.mp3"
+            "¡Excelente! Tal vez Juan pueda vencer al cruzob."
+            $ puntos = puntos + 1
     
     "Juan Cupul está enseñando técnicas de combate a 15 guerreros en su pueblo. 
         Quiere asegurarse de que todos reciban la misma cantidad de entrenamiento, 
@@ -2072,16 +2073,16 @@ label ataque:
         "2 horas":
             play sound "error.mp3" volume 4.0
             "Juan se ha equivocado porque tú te equivocaste."
-        "1675 horas":
-            play sound "error.mp3" volume 4.0
-            "Juan se ha equivocado porque tú te equivocaste."
-        "356 horas":
-            play sound "error.mp3" volume 4.0
-            "Juan se ha equivocado porque tú te equivocaste."
         "3 horas":
             play sound "acierto.mp3"
             "¡Eso es todo! Juan puede triunfar."
             $ puntos = puntos + 1
+        "356 horas":
+            play sound "error.mp3" volume 4.0
+            "Juan se ha equivocado porque tú te equivocaste."
+        "1675 horas":
+            play sound "error.mp3" volume 4.0
+            "Juan se ha equivocado porque tú te equivocaste."
 
     menu:
         "Juan Cupul tenía 25 espadas y perdió 9 en una batalla. ¿Cuántas espadas le quedan?"
