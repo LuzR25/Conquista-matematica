@@ -255,8 +255,9 @@ screen quick_menu():
 
             textbutton _("Atrás") action Rollback()
             textbutton _("Historial") action ShowMenu('history')
+            textbutton _("Glosario") action ShowMenu('glosario')
             textbutton _("Saltar") action Skip() alternate Skip(fast=True, confirm=True)
-            textbutton _("Auto") action Preference("auto-forward", "toggle")
+            textbutton _("Avance automático") action Preference("auto-forward", "toggle")
             textbutton _("Guardar") action ShowMenu('save')
             textbutton _("Guardar R.") action QuickSave()
             textbutton _("Cargar R.") action QuickLoad()
@@ -309,6 +310,8 @@ screen navigation():
         else:
 
             textbutton _("Historial") action ShowMenu("history")
+            
+            textbutton _("Glosario") action ShowMenu('glosario')
 
             textbutton _("Guardar") action ShowMenu("save")
 
@@ -1063,6 +1066,38 @@ style history_label:
 
 style history_label_text:
     xalign 0.5
+
+## Pantalla de glosario ########################################################
+##
+## Esta pantalla muestra un listado de palabras con su significado; se incluirán
+## todas aquellas que sean consideradas regionalismos yucatecos y cualquier otra
+## que sea necesario definir.
+
+screen glosario():
+    tag menu
+
+    use game_menu(_("Glosario"), scroll="viewport"):
+
+        style_prefix "history" #Robando cosas de history
+
+        window: 
+            label "China":
+                style "history_name"
+
+            text "Regionalismo yucateco para naranja dulce."
+        
+        window: 
+            label "Chopcalle":
+                style "history_name"
+
+            text "Regionalismo yucateco para calle cerrada (la única salida es regresarse), que también puede hacer referencia a una calle divida en dos donde sólo se puede ir a la izquierda o a la derecha."
+
+        window: 
+            label "Cruzoob":
+                style "history_name"
+
+            text "Cruzo'ob (formado de las palabras cruz en español y el pluralizador o'ob del maya) es el término usado para referirse a un grupo de mayas rebeldes durante la Guerra de Castas originario de Noj Kaaj Santa Cruz (común y erróneamente llamado Chan Santa Cruz y que es el actual Felipe Carrillo Puerto en Quintana Roo) que estaba fortalecido con gente de origen chino, negro, mestizo y hasta blancos, y que lucharon contra el gobierno opresor de aquel entonces."
+
 
 
 ## Pantalla de ayuda ###########################################################

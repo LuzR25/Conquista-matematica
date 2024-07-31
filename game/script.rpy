@@ -147,7 +147,7 @@ label inicio_historia:
     prometida "Me la debes, te di una oportunidad."
     juan "Está bien. Muchas gracias, María."
 
-    "Pero la amenaza de ataque e invasión al pueblo a causa de los cruzob estaba tan 
+    "Pero la amenaza de ataque e invasión al pueblo a causa de los cruzoob estaba tan 
     presente que en el pueblo se tomó la desición de hacer guardia todos los días y a todas 
     horas en una cabaña."
     "Las personas que vigilaban avisarían de los ataques explotando una bomba."
@@ -1026,7 +1026,7 @@ label camino_al_turno:
     "Por otro lado, podría ser peligroso seguir a este extraño a un lugar desconocido a buscar
     quien sabe qué y, de ayudarlo, corre con el riesgo de no llegar a tiempo a su puesto de bombero."
 
-    "Los cruzob podrían atacar en cualquier momento y él necesita estar ahí si eso
+    "Los cruzoob podrían atacar en cualquier momento y él necesita estar ahí si eso
     sucede, y no quiere arriesgar su responsabilidad por un desconocido."
 
     menu:
@@ -1353,7 +1353,7 @@ label en_la_cabana_bombero:
     filiberto "No tiene sentido que desapareciera. Somos los únicos que deberían estar aquí hoy."
     juan "Es extraño, pero no podemos descartar que alguien pasara y se la llevara, aunque no estoy
         seguro de por qué."
-    filiberto "¿Y si llegaron los cruzob y se la llevaron?"
+    filiberto "¿Y si llegaron los cruzoob y se la llevaron?"
     juan "Podría ser. Pero, de ser así, no habrían desperdiciado la oportunidad de atacar si pudieron
         tomarse el tiempo de robarse el agua."
     filiberto "Hay algo que no está bien aquí, Juan."
@@ -1833,7 +1833,7 @@ label fili_desaperece:
 
     show fili parado derecha
 
-    "Llega a un camino dividido en dos y, de repente, siente que no sabe por dónde ir."
+    "Llega a una chopcalle y, de repente, siente que no sabe por dónde ir."
 
     filiberto "¿Cuál era el camino? ¿Cuál era el camino?"
 
@@ -1923,7 +1923,7 @@ label fili_desaperece:
 
     cruzob "Un gusto conocerte, Filiberto, aunque no para ti."
 
-    "El cruzob no duda. Corre a Filiberto y lo noquea en un segundo."
+    "El cruzoob no duda. Corre a Filiberto y lo noquea en un segundo."
 
     # Cruzob avanza hasta Fili
     show hombre camina frente:
@@ -1978,7 +1978,7 @@ label ataque:
     pause 1.0
     show hombre parado derecha
 
-    juan "Aunque, si yo fuera un cruzob, intentaría..."
+    juan "Aunque, si yo fuera un cruzoob, intentaría..."
 
     show hombre camina derecha:
         linear 1 xpos 485
@@ -1996,14 +1996,14 @@ label ataque:
     pause 3
     show hombre parado atras
 
-    cruzob "Te estarás preguntando dónde está tu primo. Mi compañero le hizo una visita 
-            mientras iba por el agua. No te preocupes. No le ha hecho mucho daño.
-            Todavía."
-    cruzob "Lo dejó inconsciente, y ahora me toca a mí encargarme de ti en lo que los 
-            demás llegan."
+    cruzob "Te estarás preguntando dónde está tu primo. Mi compañero le hizo una 
+            visita mientras iba por el agua. No te preocupes. No le ha hecho 
+            mucho daño. Todavía."
+    cruzob "Lo dejó inconsciente, y ahora me toca a mí encargarme de ti en lo 
+            que los demás llegan."
 
-    "El primer impulso de Juan es saltar para alcanzar la bomba y avisar de que hay cruzob en 
-    el pueblo."
+    "El primer impulso de Juan es saltar para alcanzar la bomba y avisar de que 
+    hay cruzoob en el pueblo."
 
     show juan camina derecha
 
@@ -2025,7 +2025,7 @@ label ataque:
     cruzob "Ni se te ocurra tocar esa bomba, Juan Cupul. "
     cruzob "Lo que tú debes hacer justo ahora es enfrentarte a mí, no avisarle nada a nadie."
 
-    "Juan sabe que necesita vencer a este cruzob si quiere alcanzar la bomba."
+    "Juan sabe que necesita vencer a este cruzoob si quiere alcanzar la bomba."
 
     juan "Pues hay que acabar con esto rápido."
 
@@ -2061,7 +2061,7 @@ label ataque:
             "Fallaste, así que Juan también."
         "50 soldados":
             play sound "acierto.mp3"
-            "¡Excelente! Tal vez Juan pueda vencer al cruzob."
+            "¡Excelente! Tal vez Juan pueda vencer al cruzoob."
             $ puntos = puntos + 1
     
     "Juan Cupul está enseñando técnicas de combate a 15 guerreros en su pueblo. 
@@ -2114,7 +2114,7 @@ label ataque:
 
 
 label juan_triunfa:
-    "Juan logra vencer al cruzob."
+    "Juan logra vencer al cruzoob."
     
     hide hombre parado izquierda with moveouttop
 
@@ -2144,7 +2144,7 @@ label juan_triunfa:
     show juan parado derecha:
         xpos 110 ypos 800
 
-    juan "Listo, ahora todos saben que hay cruzob en el pueblo."
+    juan "Listo, ahora todos saben que hay cruzoob en el pueblo."
 
     show fili parado izquierda:
         xpos 1840 ypos 520
@@ -2172,7 +2172,7 @@ label juan_triunfa:
     filiberto "Escuché que lograste explotar la bomba, ¿todo bien?"
     juan "Sí, todo bien. ¿Y tú? Me dijeron que te dejaron inconsciente."
     filiberto "No tengo nada. Vamos, hay que correr y ayudar. Afortunadamente me libré 
-            de los cruzob que me vigilaban, pero los demás están atacando el pueblo."
+            de los cruzoob que me vigilaban, pero los demás están atacando el pueblo."
     juan "Vamos, vamos."
 
     show juan camina derecha:
@@ -2184,8 +2184,8 @@ label juan_triunfa:
     hide juan camina derecha
     hide fili camina derecha
 
-    "Gracias a que Juan logró vencer al cruzob y explotó la bomba, avisaron al pueblo a tiempo."
-    "Juan y Filiberto apoyaron a la gente de su hogar a combatir a los cruzob invasores y los vencieron 
+    "Gracias a que Juan logró vencer al cruzoob y explotó la bomba, avisaron al pueblo a tiempo."
+    "Juan y Filiberto apoyaron a la gente de su hogar a combatir a los cruzoob invasores y los vencieron 
     en poco tiempo."
     "Juan y María Dolores se pudieron casar al día siguiente :)."
 
@@ -2265,17 +2265,17 @@ label fili_ayuda:
     "Gracias a que Filiberto despertó justo a tiempo para rescatar a Juan, lograron 
     dar el aviso lo suficientemente antes como para que Tixcacal se defendiera
     con éxito."
-    "Tixcacal venció a los cruzob."
+    "Tixcacal venció a los cruzoob."
     "Juan y María Dolores pudieron casarse al día siguiente :)."
     jump despedida_final
 
 label perdiste:
-    "Has perdido la batalla contra el cruzob, te han vencido."
+    "Has perdido la batalla contra el cruzoob, te han vencido."
     hide hombre parado izquierda
     hide juan parado derecha
-    "Lamentablemente, los cruzob invadieron Tixcacal porque Juan nunca avisó 
+    "Lamentablemente, los cruzoob invadieron Tixcacal porque Juan nunca avisó 
     del ataque y Filiberto no despertó a tiempo para ir a ayudarlo."
-    "Los cruzob decidieron llevarse a Juan para que viera cómo hacían trizas su hogar."
+    "Los cruzoob decidieron llevarse a Juan para que viera cómo hacían trizas su hogar."
     "Juan no pudo casarse con María Dolores al día siguiente :(."
     jump despedida_final
 
