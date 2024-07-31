@@ -15,25 +15,14 @@ image casa_naranja = Image("Fondos/Fondo 8.png", oversample=0.93)
 image puente_rio = Image("Fondos/Fondo 11.png", oversample=0.933)
 image camino_casa_juan = Image("Fondos/Fondo_A04_Arboles.jpg", oversample=0.93)
 image corral_animales = Image("Fondos/Fondo 7.png", oversample=0.933)
-
-image A2 = "Fondo_A02.png"
-image A3 = "Fondo_A03.png"
-image A4 = "Fondo_A04.png"
-image A5 = "Fondo_A05.png"
-image A6 = "Fondo_A06.png"
-image A8 = "Fondo_A08.png"
-image A13 = "Fondo_A13.png"
-image A14 = "Fondo_A14.png"
-image A16 = "Fondo_A16.png"
-image A17 = "Fondo_A17.png"
-image A22 = "Fondo_A22.png"
-image A23 = "Fondo_A23.png"
-image A24 = "Fondo_A24.png"
-image A26 = "Fondo_A26.png"
-image A30 = "Fondo_A30.png"
 image A33 = Image("Fondos/Fondo_A33.png", oversample=0.93) #Huerto
-image A34 = "Fondo_A34.png"
 
+# Misión encontrar Vendedor Ambulante
+image A10 = Image("Fondos/Fondo 10.png", oversample=0.933)
+image A12 = Image("Fondos/Fondo 12.png", oversample=0.933)
+image A14 = Image("Fondos/Fondo 14.png", oversample=0.933)
+image A15 = Image("Fondos/Fondo 15.png", oversample=0.933)
+image A16 = Image("Fondos/Fondo 16.png", oversample=0.933)
 
 #*OBJETOS
 #Decoración
@@ -129,7 +118,7 @@ image avatar19_hover = "Avatares/Avatar 19_hover.png"
 image avatar20_hover = "Avatares/Avatar 20_hover.png"
 image avatar21_hover = "Avatares/Avatar 21_hover.png"
 
-#Distribución de las imágenes en la pantalla
+#Distribución de los avatares en la pantalla
 # 1    3
 
 # 2    4

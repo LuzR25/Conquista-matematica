@@ -198,7 +198,7 @@ label inicio_historia:
     filiberto "¡Juan! ¡Juan!"
     juan "Creo que es Filiberto."
     filiberto "¡Juan! ¡Juan!"
-    juan "Iré a ver qué es."
+    juan "Iré a ver qué necesita."
 
     jump Filiberto_afuera_casa
 
@@ -1203,7 +1203,7 @@ label en_el_gran_arbol:
 
     "De la nada, ya están en otro lugar."
 
-    vendedor "Espero te encuentres bien, muchacho, la trasnportación inmediata suele sentar
+    vendedor "Espero te encuentres bien, muchacho, la transportación inmediata suele sentar
             muy mal la primera vez."
 
     juan "Estoy bien, sólo... No vuelvas a hacerlo."
@@ -1495,6 +1495,200 @@ label maria_alimenta_animales:
 
     jump fili_desaperece
 
+
+label comprar_super_gallina:
+    scene afuera_casa_juan
+
+    show novia parada frente:
+        xpos 800 ypos 700
+    
+    "María Dolores está saliendo de su casa de nuevo, luego de haber alimentado 
+    a sus animales."
+
+    "Escuchó en el camino de regreso a unas personas hablando de un vendedor 
+    que ofrece objetos mágicos a un buen precio. Velas que nunca se apagan, 
+    gallinas que te vuelven súper fuerte si las comes en caldo, un gato que te 
+    traerá suerte en el amor."
+
+    "Ella está decidida a comprar esa gallina para Juan."
+
+    prometida "Bien, es hora de encontrar a ese vendedor."
+
+    show novia camina frente:
+        linear 1.5 ypos 1000
+    pause 1.5
+
+    # Primera bifurcación
+    scene A10
+
+    show show novia camina frente:
+        xpos 800 ypos 0
+        linear 1.5 ypos 400
+    pause 1.5
+    show novia parada frente
+
+    prometida "Ahora, ¿a dónde se supone que debo ir?"
+
+    "Las personas habían mencionado que encontrar el camino al vendedor era 
+    complicado porque te confundes y pierdes mucho mientras lo buscas. Lo único 
+    que mencionaron que sí fue de ayuda fue que se puede encontrar un letrero 
+    de una pócima cuando ya estás en el camino correcto."
+
+    prometida "¿Derecha...?"
+    show novia parada derecha
+    prometida "¿... O frente?"
+    show novia parada frente
+
+    "María Dolores intenta concentrarse para escoger el camino correcto."
+
+    prometida "Bien, lo más fácil sería dejarlo al azar, pero no quiero estar 
+    dando vueltas todo el día."
+
+    "Ayuda a María Dolores contestando correctamente un ejercicio cada que ella 
+    necesite cambiar de dirección hasta que encuentre el camino al vendedor."
+
+    menu problema_suma_4:
+        "Durante la lucha en 1847, Juan Cupul salvó a 40 niños y 25 ancianos. Si 
+        cada anciano representa 2 unidades y cada niño representa 1 unidad, 
+        ¿cuántas unidades en total salvó Juan Cupul?"
+        "65":
+            play sound "error.mp3" volume 4.0
+            "Sigue intentado, estoy seguro de que la próxima será la correcta."
+            jump problema_suma_4
+        "80":
+            play sound "error.mp3" volume 4.0
+            "Ups, parece que esta respuesta no es la correcta. ¡No te rindas, sigue practicando!"
+            jump problema_suma_4
+        "90":
+            play sound "acierto.mp3"
+            "¡Buen trabajo! La respuesta es correcta."
+        "100":
+            play sound "error.mp3" volume 4.0
+            "¡Casi lo tienes! pero esta vez la respuesta no es la correcta."
+            jump problema_suma_4
+
+    prometida "Hacia el frente, tiene que ser hacia el frente."
+    
+    show novia camina frente
+        linear 2 ypos 1000
+    pause 2
+    
+    # Segunda "bifurcación"
+    scene A16
+
+    show show novia camina frente:
+        xpos 800 ypos 0
+        linear 1.5 ypos 400
+    pause 1.5
+    show novia parada frente
+
+    prometida "¿Debería regresar o ir a la derecha?"
+
+    menu problema_suma_6:
+        "Juan Cupul tenía 25 caballos al comienzo de la sublevación. Después de 
+        un enfrentamiento, perdió 8 caballos y ganó 13 más en una escaramuza 
+        posterior. ¿Cuántos caballos tenía Juan Cupul al final?"
+        "25 caballos":
+            play sound "error.mp3" volume 4.0
+            "Sigue intentado, estoy seguro de que la próxima será la correcta."
+            jump problema_suma_6
+        "34 caballos":
+            play sound "error.mp3" volume 4.0
+            "¡Casi lo tienes! pero esta vez la respuesta no es la correcta."
+            jump problema_suma_4
+        "35 caballos":
+            play sound "error.mp3" volume 4.0
+            "Ups, parece que esta respuesta no es la correcta. ¡No te rindas, sigue practicando!"
+            jump problema_suma_4
+        "100":
+            play sound "acierto.mp3"
+            "¡Espectacular! Parece que Juan Cupul tiene una manada impresionante de 
+            caballos a su disposición."
+    
+    prometida "A la derecha."
+
+    show novia camina derecha:
+        linear 2 xpos 1600
+    pause 2
+
+    # Tercera bifurcación
+    scene A15
+    
+    show novia camina derecha:
+        xpos 0 ypos 400
+        linear 2 xpos 600
+    pause 2
+    show novia parada derecha
+
+    menu problema_resta_3:
+        "Juan Cupul cosechó 63 tomates en su campo y después regaló 25 a sus 
+        vecinos. ¿Cuántos tomates le quedaron a Juan después de regalar algunos?"
+        "88 tomates":
+            play sound "error.mp3" volume 4.0
+            "¡Estás haciendo un gran trabajo! Imagina cuántos tomates tenía Juan 
+            en total y cuántos decidió regalar."
+            jump problema_resta_3
+        "14 tomates":
+            play sound "error.mp3" volume 4.0
+            "Vuelve a intentarlo, ¡tú puedes!"
+            jump problema_resta_3
+        "3 tomates":
+            play sound "error.mp3" volume 4.0
+            "¡Puedes encontrar la respuesta!"
+            jump problema_resta_3
+        "38 tomates":
+            play sound "acierto.mp3"
+            "¡Tienes esto! La respuesta es correcta."
+
+    show novia camina frente:
+        linear 2 ypos 1000
+    pause 2
+
+    # Cuarta "bifurcación"
+    scene arboles_doblado
+
+    show novia camina frente:
+        xpos 600 ypos 0
+        linear 1 ypos 400
+    pause 1
+
+    prometida "No estoy segura de esto, ¿debería regresar?"
+
+    menu problema_resta_5:
+        "Juan Cupul tenía 60 tablones para construir un puente y usó 27. ¿Cuántos tablones le quedan?"
+        "31 tablones":
+            play sound "error.mp3" volume 4.0
+            "¡Sigue adelante, estás en el buen camino!"
+            jump problema_resta_5
+        "33 tablones":
+            play sound "acierto.mp3"
+            "¡Hiciste un buen trabajo, has llegado a la respuesta correcta!"
+        "35 tablones":
+            play sound "error.mp3" volume 4.0
+            "Intenta recordar cuántos tablones tenía Juan para construir el puente 
+            y cuántos utilizó."
+            jump problema_resta_5
+        "37 tablones":
+            play sound "error.mp3" volume 4.0
+            "¡Tú puedes hacerlo, sigue intentando!"
+            jump problema_resta_5
+
+    prometida "No tiene caso regresar, ya llegué hasta aquí."
+
+    show novia camina izquierda:
+        linear 1 xpos 200
+    pause 1
+    show novia camina frente:
+        linear 2 ypos 1000
+    pause 2
+
+
+    # Encuentra el letrero
+    scene A12
+
+    show 
+
+
 # Filiberto va en busca del agua, pero lo noquean cuando encuentra el río
 label fili_desaperece:
     scene camino_v_osc
@@ -1567,7 +1761,7 @@ label fili_desaperece:
             "Ups, parece que esta respuesta no es la correcta. ¡No te rindas, sigue practicando!"
             jump problema_suma_3
 
-    filiberto "... Que esa niña merita cochina fue."
+    filiberto "... pégale, pégale que ella fue."
     pause 0.1
     show fili parado frente
 
@@ -1588,7 +1782,7 @@ label fili_desaperece:
     show fili parado frente
 
     filiberto "¡Eso es todo!"
-    filiberto "Ahora, a conseguir esa agua."
+    filiberto "Ahora a conseguir esa agua."
 
     show fili camina frente:
         linear 2 ypos 500
@@ -1606,6 +1800,7 @@ label fili_desaperece:
     cruzob "¿Por qué no intentas adivinar?"
     filiberto "¡No tengo tiempo para juegos! ¡Sal ya!"
 
+    # Cruzob "sale" del árbol
     show hombre camina derecha:
         xpos 0.35 ypos 50
         linear 1 xpos 0.46
@@ -1616,12 +1811,14 @@ label fili_desaperece:
 
     "El cruzob no duda. Corre a Filiberto y lo noquea en un segundo."
 
+    # Cruzob avanza hasta Fili
     show hombre camina frente:
         linear 1 ypos 470
     pause 1
     show hombre parado frente
     hide fili parado atras
 
+    # Fili en posición de morido
     show fili_parado_atras_2:
         xpos 0.46 ypos 500
         linear 0.1 rotate 90
@@ -1964,8 +2161,7 @@ label perdiste:
     hide juan parado derecha
     "Lamentablemente, los cruzob invadieron Tixcacal porque Juan nunca avisó 
     del ataque y Filiberto no despertó a tiempo para ir a ayudarlo."
-    "Los cruzob decidieron secuestrar a Juan para que viera cómo hacían trizas su hogar."
-    "Al final, simplemente se deshicieron de Juan. "
+    "Los cruzob decidieron llevarse a Juan para que viera cómo hacían trizas su hogar."
     "Juan no pudo casarse con María Dolores al día siguiente :(."
     jump despedida_final
 
