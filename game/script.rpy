@@ -12,7 +12,7 @@
     errores = 0
     
     def my_save(data):
-        data["nombre_usuario"] = nombreUsuario
+        #data["nombre_usuario"] = nombreUsuario
         data["puntos_victorias"] = puntosVictorias
         data["ayudo_a_fili"] = ayudoFili
         data["ayudo_a_vendedor"] = ayudoVendedor
@@ -21,7 +21,8 @@
         data["aciertos"] = aciertos
         data["errores"] = errores
 
-    config.save_json_callbacks = [ my_save ]
+    #config.save_json_callbacks = [ my_save ]
+    config.save_json_callbacks.append(my_save)
 
 
 #Inicio del juego #############################################################
@@ -43,7 +44,7 @@ label start:
     hasta que terminen."
     "Por ahora, personaliza un poco tu partida."
 
-    $ nombreUsuario = renpy.input("Escribe tu nombre")
+    #$ nombreUsuario = renpy.input("Escribe tu nombre")
     $ aciertos = 10
     $ errores = 12
 
@@ -93,15 +94,15 @@ label inicio_historia:
         "7 flechas":
             play sound "error.mp3" volume 4.0
             "Ups, parece que esta respuesta no es la correcta."
-            jump problema_multiplicacion_6
+            jump abs_multiplicacion_6
         "23 flechas":
             play sound "error.mp3" volume 4.0
             "No te rindas, continúa intentándolo."
-            jump problema_multiplicacion_6
+            jump abs_multiplicacion_6
         "105 flechas":
             play sound "error.mp3" volume 4.0
             "Vamos, inténtalo otra vez."
-            jump problema_multiplicacion_6
+            jump abs_multiplicacion_6
         "120 flechas":
             play sound "acierto.mp3"
             "¡Excelente! En este caso hay 8 guerreros (7 guerreros + Juan Cupul) y 
@@ -123,25 +124,45 @@ label inicio_historia:
     de un empate."
     prometida "Está bien."
 
-    menu problema_resta_2:
-        prometida "Tenías 48 litros de agua para un maratón y bebiste 15 litros. 
-        ¿Cuántos litros de agua te quedan?"
-        "33 litros":
+    menu problema_suma_1:
+        "Durante la sublevación en 1847, Juan Cupul luchó contra las tropas enemigas durante 
+        2 horas y 20 minutos. Si comenzó la lucha a las 9:45 AM, ¿a qué hora terminó?"
+        "11:05 AM":
+            play sound "error.mp3" volume 4.0
+            "¡Casi lo tienes! La respuesta no es correcta, ¿cuál es la operación que se requiere realizar? "
+            jump abs_suma_1
+        "11:15 AM":
+            play sound "error.mp3" volume 4.0
+            "Sigue intentado, estoy seguro de que la próxima será la correcta. Observa muy bien tus datos"
+            jump abs_suma_1
+        "12:05 PM":
             play sound "acierto.mp3"
-            "¡Excelente! A Juan Cupul le quedan 33 litros de agua para seguir el maratón."
-        "34 litros":
+            "¡Excelente! Has dominado la aritmética del tiempo. Sigue así. "
+        "12:25 PM":
             play sound "error.mp3" volume 4.0
-            "¡Vamos, estás cerca! Pero esta vez la respuesta no es la correcta."
-            jump problema_resta_2
-        "35 litros":
-            play sound "error.mp3" volume 4.0
-            "¡Sigue adelante! Recuerda cuántos litros de agua tenía Juan para su 
-            maratón y cuántos bebió."
-            jump problema_resta_2
-        "63 litros":
-            play sound "error.mp3" volume 4.0
-            "¡Puedes descubrir la solución!"
-            jump problema_resta_2
+            "Ups, parece que esta respuesta no es la correcta. ¡No te rindas, sigue practicando! Recuerda que la hora tiene 60 minutos."
+            jump abs_suma_1
+
+
+    #menu problema_resta_2:
+    #    prometida "Tenías 48 litros de agua para un maratón y bebiste 15 litros. 
+    #    ¿Cuántos litros de agua te quedan?"
+    #    "33 litros":
+    #        play sound "acierto.mp3"
+    #        "¡Excelente! A Juan Cupul le quedan 33 litros de agua para seguir el maratón."
+    #    "34 litros":
+    #        play sound "error.mp3" volume 4.0
+    #        "¡Vamos, estás cerca! Pero esta vez la respuesta no es la correcta."
+    #        jump problema_resta_2
+    #    "35 litros":
+    #        play sound "error.mp3" volume 4.0
+    #        "¡Sigue adelante! Recuerda cuántos litros de agua tenía Juan para su 
+    #        maratón y cuántos bebió."
+    #        jump problema_resta_2
+    #    "63 litros":
+    #        play sound "error.mp3" volume 4.0
+    #        "¡Puedes descubrir la solución!"
+    #        jump problema_resta_2
 
     juan "¡Sí! Hoy declaramos un empate."
     prometida "Me la debes, te di una oportunidad."

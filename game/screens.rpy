@@ -2,7 +2,7 @@
 ## Inicialización
 ################################################################################
 init offset = -1
-default avatar = ""
+$ avatar = "Avatar 1"
 default nombreDeUsuario = "Ayuda, por favor"
 default aciertos = 0
 default errores = 0
@@ -300,7 +300,9 @@ screen navigation():
 
         spacing gui.navigation_spacing
 
-        #if not main_menu:
+        if not main_menu:
+            add Image("Avatares/" + "Avatar 2" + ".png", oversample=1.5, xalign=0.5)
+            text _("")
             #textbutton _("Datos de partida") action ShowMenu("datos_partida")
 
         if main_menu:
