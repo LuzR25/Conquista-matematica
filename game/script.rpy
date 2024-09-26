@@ -124,45 +124,25 @@ label inicio_historia:
     de un empate."
     prometida "Está bien."
 
-    menu problema_suma_1:
-        "Durante la sublevación en 1847, Juan Cupul luchó contra las tropas enemigas durante 
-        2 horas y 20 minutos. Si comenzó la lucha a las 9:45 AM, ¿a qué hora terminó?"
-        "11:05 AM":
-            play sound "error.mp3" volume 4.0
-            "¡Casi lo tienes! La respuesta no es correcta, ¿cuál es la operación que se requiere realizar? "
-            jump abs_suma_1
-        "11:15 AM":
-            play sound "error.mp3" volume 4.0
-            "Sigue intentado, estoy seguro de que la próxima será la correcta. Observa muy bien tus datos"
-            jump abs_suma_1
-        "12:05 PM":
+    menu problema_resta_2:
+        prometida "Tenías 48 litros de agua para un maratón y bebiste 15 litros. 
+        ¿Cuántos litros de agua te quedan?"
+        "33 litros":
             play sound "acierto.mp3"
-            "¡Excelente! Has dominado la aritmética del tiempo. Sigue así. "
-        "12:25 PM":
+            "¡Excelente! A Juan Cupul le quedan 33 litros de agua para seguir el maratón."
+        "34 litros":
             play sound "error.mp3" volume 4.0
-            "Ups, parece que esta respuesta no es la correcta. ¡No te rindas, sigue practicando! Recuerda que la hora tiene 60 minutos."
-            jump abs_suma_1
-
-
-    #menu problema_resta_2:
-    #    prometida "Tenías 48 litros de agua para un maratón y bebiste 15 litros. 
-    #    ¿Cuántos litros de agua te quedan?"
-    #    "33 litros":
-    #        play sound "acierto.mp3"
-    #        "¡Excelente! A Juan Cupul le quedan 33 litros de agua para seguir el maratón."
-    #    "34 litros":
-    #        play sound "error.mp3" volume 4.0
-    #        "¡Vamos, estás cerca! Pero esta vez la respuesta no es la correcta."
-    #        jump problema_resta_2
-    #    "35 litros":
-    #        play sound "error.mp3" volume 4.0
-    #        "¡Sigue adelante! Recuerda cuántos litros de agua tenía Juan para su 
-    #        maratón y cuántos bebió."
-    #        jump problema_resta_2
-    #    "63 litros":
-    #        play sound "error.mp3" volume 4.0
-    #        "¡Puedes descubrir la solución!"
-    #        jump problema_resta_2
+            "¡Vamos, estás cerca! Pero esta vez la respuesta no es la correcta."
+            jump abs_resta_2
+        "35 litros":
+            play sound "error.mp3" volume 4.0
+            "¡Sigue adelante! Recuerda cuántos litros de agua tenía Juan para su 
+            maratón y cuántos bebió."
+            jump abs_resta_2
+        "63 litros":
+            play sound "error.mp3" volume 4.0
+            "¡Puedes descubrir la solución!"
+            jump abs_resta_2
 
     juan "¡Sí! Hoy declaramos un empate."
     prometida "Me la debes, te di una oportunidad."
@@ -199,15 +179,15 @@ label inicio_historia:
         "9 libros":
             play sound "error.mp3" volume 4.0
             "Sigue intentando, estoy seguro de que la próxima será la correcta."
-            jump problema_multiplicacion_2
+            jump abs_mult_2
         "32 libros":
             play sound "error.mp3" volume 4.0
             "Buen intento, ahora trata con una operación diferente."
-            jump problema_multiplicacion_2
+            jump abs_mult_2
         "40 libros":
             play sound "error.mp3" volume 4.0
             "Ups, parece que esta respuesta no es la correcta. ¡No te rindas, sigue practicando!"
-            jump problema_multiplicacion_2
+            jump abs_mult_2
         "144 libros":
             play sound "acierto.mp3"
             "¡Felicidades! Para saber el total de libros se multiplican los 36 libros por las 4 
@@ -422,15 +402,15 @@ label cosechar_verduras_2:
         "305 kg":
             play sound "error.mp3" volume 4.0
             "Sigue intentado, estoy seguro de que la próxima será la correcta."
-            jump problema_suma_5
+            jump abs_suma_5
         "345 kg":
             play sound "error.mp3" volume 4.0
             "Ups, parece que esta respuesta no es la correcta. ¡No te rindas, sigue practicando!"
-            jump problema_suma_5
+            jump abs_suma_5
         "400 kg":
             play sound "error.mp3" volume 4.0
             "¡Casi lo tienes! pero esta vez la respuesta no es la correcta."
-            jump problema_suma_5
+            jump abs_suma_5
         "405 kg":
             play sound "acierto.mp3"
             "¡Maravilloso! Parece que Juan y Filiberto saben cómo recolectar la cantidad justa de provisiones."
@@ -497,18 +477,18 @@ label cosechar_verduras_2:
         "45 minutos":
             play sound "error.mp3" volume 4.0
             "Sigue intentado, estoy seguro de que la próxima será la correcta."
-            jump problema_suma_2
+            jump abs_suma_2
         "1 hora":
             play sound "error.mp3" volume 4.0
             "Ups, parece que esta respuesta no es la correcta. ¡No te rindas, sigue practicando!"
-            jump problema_suma_2
+            jump abs_suma_2
         "1 hora y 5 minutos":
             play sound "acierto.mp3"
             "¡Magnífico! La respuesta es correcta."
         "1 hora y 15 minutos":
             play sound "error.mp3" volume 4.0
             "¡Casi lo tienes! pero esta vez la respuesta no es la correcta."
-            jump problema_suma_2
+            jump abs_suma_2
         
     "Filiberto se encarga de cosechar los rábanos blancos."
     show fili camina frente:
@@ -578,15 +558,15 @@ label cosechar_verduras_2:
         "28 provisiones":
             play sound "error.mp3" volume 4.0
             "¡Sigue intentándolo, estás en el camino correcto!"
-            jump problema_resta_4
+            jump abs_resta_4
         "31 provisiones":
             play sound "error.mp3" volume 4.0
             "¡No te rindas! Piensa en cuántas provisiones tenía Juan al principio y cuántas consumió."
-            jump problema_resta_4
+            jump abs_resta_4
         "34 provisiones":
             play sound "error.mp3" volume 4.0
             "¡Sigue intentándolo! La respuesta no es correcta."
-            jump problema_resta_4
+            jump abs_resta_4
 
     #* Cosechar los tomates
 
@@ -637,15 +617,15 @@ label cosechar_verduras_2:
         "20 kilómetros":
             play sound "error.mp3" volume 4.0
             "Ups, parece que esta respuesta no es la correcta."
-            jump problema_multiplicacion_1
+            jump abs_mult_1
         "57 kilómetros":
             play sound "error.mp3" volume 4.0
             "Sigue intentado, estoy seguro de que la próxima será la correcta."
-            jump problema_multiplicacion_1
+            jump abs_mult_1
         "63 kilómetros":
             play sound "error.mp3" volume 4.0
             "Inténtalo de nuevo."
-            jump problema_multiplicacion_1
+            jump abs_mult_1
         "180 kilómetros":
             play sound "acierto.mp3"
             "Buen trabajo, la respuesta se obtiene de multiplicar la velocidad 
@@ -817,15 +797,15 @@ label regresar_casaJ_agua:
         "9 cubetas":
             play sound "error.mp3" volume 4.0
             "¡Casi lo tienes, estás cerca! Pero la respuesta no es la correcta."
-            jump problema_division_3
+            jump abs_division_3
         "48 cubetas":
             play sound "error.mp3" volume 4.0
             "¡Vuelve a intentarlo, tú puedes! Lee nuevamente el ejercicio. "
-            jump problema_division_3
+            jump abs_division_3
         "64 cubetas":
             play sound "error.mp3" volume 4.0
             "¡Vamos de nuevo!"
-            jump problema_division_3
+            jump abs_division_3
         
     show cubeta1:
         xpos 1140
@@ -891,18 +871,18 @@ label turno_bombero:
         "2 partidas":
             play sound "error.mp3" volume 4.0
             "¡Vuelve a intentarlo, tú puedes!"
-            jump problema_resta_6
+            jump abs_resta_6
         "5 partidas":
             play sound "error.mp3" volume 4.0
             "Estás en el camino correcto. Recuerda cuántas partidas de ajedrez jugó Juan en total y cuántas ganó."
-            jump problema_resta_6
+            jump abs_resta_6
         "7 partidas":
             play sound "acierto.mp3"
             "¡Eso es! La respuesta es correcta."
         "23 partidas":
             play sound "error.mp3" volume 4.0
             "¡Tú puedes hallar la solución!"
-            jump problema_resta_6
+            jump abs_resta_6
 
     prometida "No has perdido la práctica. Sigues sin perder tu racha de aciertos."
     juan "Practico mucho gracias a ti."
@@ -954,18 +934,18 @@ label vecina_naranjas:
         "125 balas":
             play sound "error.mp3" volume 4.0
             "Piensa en cuántas balas tenía Juan al principio y cuántas utilizó durante la batalla."
-            jump problema_resta_7
+            jump abs_resta_7
         "175 balas":
             play sound "acierto.mp3" 
             "¡Muy bien! Hiciste un maravilloso trabajo, la respuesta es correcta."
         "200 balas":
             play sound "error.mp3" volume 4.0
             "Estás cerca de la respuesta correcta.¡Continúa intentándolo!"
-            jump problema_resta_7
+            jump abs_resta_7
         "225 balas":
             play sound "error.mp3" volume 4.0
             "La respuesta es incorrecta, pero ¡tú puedes resolver esto!"
-            jump problema_resta_7
+            jump abs_resta_7
 
     prometida "¡Muy bien, Vero! La caja de naranjas es tuya."
     "María le da la caja de naranjas a Vero."
@@ -1159,18 +1139,18 @@ label en_el_gran_arbol:
         "4 machetes":
             play sound "error.mp3" volume 4.0
             "¡Casi lo tienes, estás cerca! Pero la respuesta no es la correcta."
-            jump problema_division_1
+            jump abs_division_1
         "5 machetes":
             play sound "error.mp3" volume 4.0
             "¡Vamos de nuevo!"
-            jump problema_division_1
+            jump abs_division_1
         "6 machetes":
             play sound "acierto.mp3"
             "¡Excelente, ahí lo tienes! Juan Cupul debe dar 6 machetes a cada campesino."
         "30 machetes":
             play sound "error.mp3" volume 4.0
             "¡Vuelve a intentarlo, tú puedes!"
-            jump problema_division_1
+            jump abs_division_1
     
     menu problema_division_2:
         vendedor "Durante la cosecha de tomates Juan Cupul recolecta 72 kilos y se los 
@@ -1179,18 +1159,18 @@ label en_el_gran_arbol:
         "7 kilos":
             play sound "error.mp3" volume 4.0
             "¡Casi lo tienes, estás cerca! Pero la respuesta no es la correcta."
-            jump problema_division_2
+            jump abs_division_2
         "8 kilos":
             play sound "acierto.mp3"
             "¡Excelente, lo has conseguido! Juan Cupul le regalara 8 kilos de tomate a cada familia."
         "13 kilos":
             play sound "error.mp3" volume 4.0
             "¡Vuelve a intentarlo, tú puedes!"
-            jump problema_division_2
+            jump abs_division_2
         "63 kilos":
             play sound "error.mp3" volume 4.0
             "¡Vamos de nuevo!"
-            jump problema_division_2
+            jump abs_division_2
     
     menu problema_division_4:
         vendedor "Juan Cupul está ayudando a sus vecinos a prepararse para el invierno. 
@@ -1199,18 +1179,18 @@ label en_el_gran_arbol:
         "8 troncos":
             play sound "error.mp3" volume 4.0
             "¡Vamos de nuevo!"
-            jump problema_division_4
+            jump abs_division_4
         "11 troncos":
             play sound "error.mp3" volume 4.0
             "¡Casi lo tienes, estás cerca! Pero la respuesta no es la correcta."
-            jump problema_division_4
+            jump abs_division_4
         "12 troncos":
             play sound "acierto.mp3"
             "¡Buen trabajo, lo has conseguido! Has apoyado mucho a Juan Cupul."
         "55 troncos":
             play sound "error.mp3" volume 4.0
             "¡Vuelve a intentarlo, tú puedes!"
-            jump problema_division_4
+            jump abs_division_4
 
     vendedor "Muchas gracias, muchacho. Dame un segundo más."
     vendedor "Ya está."
@@ -1449,18 +1429,18 @@ label maria_alimenta_animales:
         "4 paquetes":
             play sound "error.mp3" volume 4.0
             "¡Casi lo tienes, estás cerca! pero la respuesta no es la correcta."
-            jump problema_division_5
+            jump abs_division_5
         "5 paquetes":
             play sound "acierto.mp3" 
             "¡Muy bien, lo has conseguido!"
         "28 paquetes":
             play sound "error.mp3" volume 4.0
             "¡Vamos de nuevo!"
-            jump problema_division_5
+            jump abs_division_5
         "36 paquetes":
             play sound "error.mp3" volume 4.0
             "¡Vuelve a intentarlo, tú puedes! Lee nuevamente el ejercicio."
-            jump problema_division_5
+            jump abs_division_5
 
     menu problema_multiplicacion_4:
         "Después de la batalla que se dio en Tixcacal se empezó a recolectar despensa 
@@ -1469,15 +1449,15 @@ label maria_alimenta_animales:
         "2 bolsas de frijol":
             play sound "error.mp3" volume 4.0
             "Sigue practicando, cada intento te acerca más al éxito."
-            jump problema_multiplicacion_4
+            jump abs_mult_4
         "7 bolsas de frijol":
             play sound "error.mp3" volume 4.0
             "No te desanimes, sigue intentándolo."
-            jump problema_multiplicacion_4
+            jump abs_mult_4
         "21 bolsas de frijol":
             play sound "error.mp3" volume 4.0
             "Ups, parece que esta respuesta no es la correcta."
-            jump problema_multiplicacion_4
+            jump abs_mult_4
         "98 bolsas de frijol":
             play sound "acierto.mp3"
             "Muy bien, se multiplica el total de días de la semana (7) por las 
@@ -1490,15 +1470,15 @@ label maria_alimenta_animales:
         "2 aliados":
             play sound "error.mp3" volume 4.0
             "Sigue practicando, cada intento te acerca más al éxito."
-            jump problema_multiplicacion_5
+            jump abs_mult_5
         "4 aliados":
             play sound "error.mp3" volume 4.0
             "Vamos, inténtalo otra vez."
-            jump problema_multiplicacion_5
+            jump abs_mult_5
         "12 aliados":
             play sound "error.mp3" volume 4.0
             "Ups, parece que esta respuesta no es la correcta."
-            jump problema_multiplicacion_5
+            jump abs_mult_5
         "32 aliados":
             play sound "acierto.mp3"
             "Lo estás resolviendo muy bien, la respuesta se obtiene multiplicando 
@@ -1581,18 +1561,18 @@ label comprar_super_gallina:
         "65":
             play sound "error.mp3" volume 4.0
             "Sigue intentado, estoy seguro de que la próxima será la correcta."
-            jump problema_suma_4
+            jump abs_suma_4
         "80":
             play sound "error.mp3" volume 4.0
             "Ups, parece que esta respuesta no es la correcta. ¡No te rindas, sigue practicando!"
-            jump problema_suma_4
+            jump abs_suma_4
         "90":
             play sound "acierto.mp3"
             "¡Buen trabajo! La respuesta es correcta."
         "100":
             play sound "error.mp3" volume 4.0
             "¡Casi lo tienes! pero esta vez la respuesta no es la correcta."
-            jump problema_suma_4
+            jump abs_suma_4
 
     prometida "Hacia el frente, tiene que ser hacia el frente."
     
@@ -1618,7 +1598,7 @@ label comprar_super_gallina:
         "25 caballos":
             play sound "error.mp3" volume 4.0
             "Sigue intentado, estoy seguro de que la próxima será la correcta."
-            jump problema_suma_6
+            jump abs_suma_6
         "30 caballos":
             play sound "acierto.mp3"
             "¡Espectacular! Parece que Juan Cupul tiene una manada impresionante de 
@@ -1626,11 +1606,11 @@ label comprar_super_gallina:
         "34 caballos":
             play sound "error.mp3" volume 4.0
             "¡Casi lo tienes! pero esta vez la respuesta no es la correcta."
-            jump problema_suma_4
+            jump abs_suma_6
         "35 caballos":
             play sound "error.mp3" volume 4.0
             "Ups, parece que esta respuesta no es la correcta. ¡No te rindas, sigue practicando!"
-            jump problema_suma_4
+            jump abs_suma_6
     
     prometida "A la derecha."
 
@@ -1653,11 +1633,11 @@ label comprar_super_gallina:
         "3 tomates":
             play sound "error.mp3" volume 4.0
             "¡Puedes encontrar la respuesta!"
-            jump problema_resta_3
+            jump abs_resta_3
         "14 tomates":
             play sound "error.mp3" volume 4.0
             "Vuelve a intentarlo, ¡tú puedes!"
-            jump problema_resta_3
+            jump abs_resta_3
         "38 tomates":
             play sound "acierto.mp3"
             "¡Tienes esto! La respuesta es correcta."
@@ -1665,7 +1645,7 @@ label comprar_super_gallina:
             play sound "error.mp3" volume 4.0
             "¡Estás haciendo un gran trabajo! Imagina cuántos tomates tenía Juan 
             en total y cuántos decidió regalar."
-            jump problema_resta_3
+            jump abs_resta_3
 
     show novia camina frente:
         linear 2 ypos 1000
@@ -1687,7 +1667,7 @@ label comprar_super_gallina:
         "31 tablones":
             play sound "error.mp3" volume 4.0
             "¡Sigue adelante, estás en el buen camino!"
-            jump problema_resta_5
+            jump abs_resta_5
         "33 tablones":
             play sound "acierto.mp3"
             "¡Hiciste un buen trabajo, has llegado a la respuesta correcta!"
@@ -1695,11 +1675,11 @@ label comprar_super_gallina:
             play sound "error.mp3" volume 4.0
             "Intenta recordar cuántos tablones tenía Juan para construir el puente 
             y cuántos utilizó."
-            jump problema_resta_5
+            jump abs_resta_5
         "37 tablones":
             play sound "error.mp3" volume 4.0
             "¡Tú puedes hacerlo, sigue intentando!"
-            jump problema_resta_5
+            jump abs_resta_5
 
     prometida "No tiene caso regresar, ya llegué hasta aquí."
 
@@ -1882,11 +1862,11 @@ label fili_desaperece:
         "8:00 AM":
             play sound "error.mp3" volume 4.0
             "¡Casi lo tienes! Pero esta vez la respuesta no es la correcta."
-            jump problema_suma_3
+            jump abs_suma_3
         "8:20 AM":
             play sound "error.mp3" volume 4.0
             "Sigue intentando, estoy de que la próxima será la correcta."
-            jump problema_suma_3
+            jump abs_suma_3
         "9:00 AM":
             play sound "acierto.mp3"
             "¡Fantástico! Parece que Juan Cupul tiene un buen ritmo para llegar a tiempo 
@@ -1894,7 +1874,7 @@ label fili_desaperece:
         "9:40 AM":
             play sound "error.mp3" volume 4.0
             "Ups, parece que esta respuesta no es la correcta. ¡No te rindas, sigue practicando!"
-            jump problema_suma_3
+            jump abs_suma_3
 
     filiberto "... pégale, pégale que ella fue."
     pause 0.1

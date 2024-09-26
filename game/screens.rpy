@@ -616,7 +616,22 @@ screen about():
             if gui.about:
                 text "[gui.about!t]\n"
 
-            text _("Hecho con {a=https://www.renpy.org/}Ren'Py{/a} [renpy.version_only].\n\n[renpy.license!t]")
+            text _("Hecho con {a=https://www.renpy.org/}Ren'Py{/a} [renpy.version_only].\n\n[renpy.license!t]\n")
+
+            label "Idea inicial y concepto"
+            text _("Christopher Rajón\nCarlos Cigarroa\n")
+
+            label "Recursos gráficos"
+            text _("Betsy Ascencio\n")
+
+            label "Ejercicios y avatares"
+            text _("Jennifer Balam\nDianela Cob\nRosa Noh\nGeydi Puc\n")
+
+            label "Programación e historia"
+            text _("Luz García\n")
+
+            label "Coordinación"
+            text _("Mtro. Víctor Chí\nDr.Michel García\nDra. Cinhtia González\nMtro.Sergio González")
 
 
 style about_label is gui_label
