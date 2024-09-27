@@ -2,7 +2,7 @@
 ## Inicialización
 ################################################################################
 init offset = -1
-$ avatar = "Avatar 1"
+default avatar = "window_icon" 
 default nombreDeUsuario = "Ayuda, por favor"
 default aciertos = 0
 default errores = 0
@@ -300,9 +300,9 @@ screen navigation():
 
         spacing gui.navigation_spacing
 
-        if not main_menu:
-            add Image("Avatares/" + "Avatar 2" + ".png", oversample=1.5, xalign=0.5)
-            text _("")
+        #if not main_menu:
+            #add Image("Avatares/" + avatar + ".png", oversample=1.5, xalign=0.5)
+            #text _("")
             #textbutton _("Datos de partida") action ShowMenu("datos_partida")
 
         if main_menu:
@@ -694,8 +694,9 @@ screen file_slots(title):
             grid gui.file_slot_cols gui.file_slot_rows:
                 style_prefix "slot"
 
-                xalign 0.5
-                yalign 0.4
+                #* Con estos valores se calcula la posición de los slots en la pantalla
+                xalign 0.5 
+                yalign 0.25
 
                 spacing gui.slot_spacing
 
@@ -712,52 +713,35 @@ screen file_slots(title):
 
                         has vbox
 
-                        $ avatar = str(FileJson(slot, key="avatar_elegido", missing='Avatar 1'))
-                        $ nombreDeUsuario = FileJson(slot, key="nombre_usuario", missing='Sin nombre')
-                        $ aciertos = FileJson(slot, key="aciertos", missing=0)
-                        $ errores = FileJson(slot, key="errores", missing=0)
-                        $ partida = slot
+                        $ avatar = str(FileJson(slot, key="avatar_elegido", missing='window_icon'))
+                        #$ nombreDeUsuario = FileJson(slot, key="nombre_usuario", missing='Sin nombre')
+                        #$ aciertos = FileJson(slot, key="aciertos", missing=0)
+                        #$ errores = FileJson(slot, key="errores", missing=0)
+                        #$ partida = slot
 
-                        add FileScreenshot(slot) 
-                        
-                        #Lo de las imágenes ya funcionó, debo checar si puedo hacer 
-                        #que genere las imágenes
-
-                        #if nombrePartida == "vacío":
-                            #add FileScreenshot(persistent.nombreUsuario) 
-                        #    text nombrePartida:
-                        #        style "slot_time_text"
-                        #else:
-                            #image("saves_images/" + str(i+1) + ".png") xalign 0.5
-                            #text nombrePartida:
-                            #text nombres[i]:
-                        #    text str(i):
-                        #        style "slot_time_text"
-                        
-                        #text nombrePartida:
-                        #    style "slot_time_text"
-
+                        add FileScreenshot(slot)
 
                         #image("saves_images/" + str(i+1) + ".png") xalign 0.5
-
-                        #image("Avatares/" + str(FileJson(slot, key="avatar_elegido", missing='Avatar 1')) + ".png") xalign 0.5
                         #image("Avatares/Avatar 2.png") xalign 0.5
 
-                        text FileTime(slot, format=_("{#file_time}%A, %d de %B %Y, %H:%M"), empty=_("vacío")):
+                        text FileTime(slot, format=_("{#file_time}%A, %d de %B %Y, %H:%M"), empty=_("vacío")) + _("\n"):
                         #text nombrePartida:
                             style "slot_time_text"
 
-                        #$save_name = renpy.input("Nombre de la partida")
+                        if avatar == "None" or avatar == "window_icon":
+                            add Image("Avatares/window_icon.png", oversample=1.5, xalign=0.5)
+                        else:
+                            add Image("Avatares/" + avatar + ".png", oversample=1.2, xalign=0.5)
 
-                        
+                        #add Image("Avatares/" + str(FileJson(slot, key="avatar_elegido", missing="window_icon")) + ".png", oversample=1.5, xalign=0.5)
+
+                        #$save_name = renpy.input("Nombre de la partida")
                             #value FileSaveName(slot)
                         
-
-                        text ' %s' % FileJson(slot, key="nombre_usuario", missing='Sin nombre'):
-                            style "slot_time_text"
-
-
-
+                        #* Esto era para mostrar en pantalla el nombre del usuario que manualmente ingresaba
+                        #* desde el label start. Ya no hace falta, pero nunca se sabe
+                        #text ' %s' % FileJson(slot, key="nombre_usuario", missing='Sin nombre'):
+                        #    style "slot_time_text"
 
                         #text FileSaveName(slot):
                         #text slot:

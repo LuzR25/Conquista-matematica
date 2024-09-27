@@ -242,7 +242,7 @@ define config.thumbnail_height = 216 #*Justo debajo se indica la cantidad de slo
 
 ## Número de columnas y filas de la cuadrícula de partidas guardadas.
 define gui.file_slot_cols = 3
-define gui.file_slot_rows = 2
+define gui.file_slot_rows = 1
 
 
 ## Posicionamiento y espacios ##################################################

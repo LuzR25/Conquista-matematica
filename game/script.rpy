@@ -41,7 +41,7 @@ label start:
     "Y sobre todo, ¡no olvides divertirte!"
     "Como detalle adicional, verás que los personajes se moverán durante la historia.
     Para evitar errores durante esas animaciones, procura no presionar o mover nada 
-    hasta que terminen."
+    hasta que terminen (los personajes dejarán de moverse por la pantalla)."
     "Por ahora, personaliza un poco tu partida."
 
     #$ nombreUsuario = renpy.input("Escribe tu nombre")
