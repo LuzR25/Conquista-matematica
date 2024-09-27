@@ -3,7 +3,7 @@
 # recP = Reconocimiento de patrones
 # disAl = Diseño de algoritmos
 
-#* ############################# MULTIPLICACIÓN ###############################
+#* ################################ SUMA ######################################
 #* Problema 1 de suma 
 
 menu abs_suma_1:
@@ -514,7 +514,7 @@ menu des_mult_1:
         jump des_mult_1
 
 menu recP_mult_1:
-    "¿Qué operación necesitamos realizar para encontrar la hora en que terminó la lucha?"
+    "¿Qué operación necesitamos realizar para saber los kilómetros que recorrió?"
     "Multiplicación":
         play sound "acierto.mp3"
         "Correcto, necesitamos multiplicar la velocidad a la que va por la cantidad de horas que tardó en llegar."
@@ -632,153 +632,153 @@ menu disAl_mult_2:
 #* Problema de multiplicación 3
 menu abs_mult_3:
     "¿Cuál es el tema principal del problema?"
-    "El total de zanahorias en la huerta de Antonio":
+    "La cantidad total de soldados que fueron a la batalla con Juan Cupul a enfrentar a los enemigos":
         play sound "acierto.mp3"
-        "Correcto, el tema principal es sobre el total de zanahorias en la huerta de Antonio."
+        "Correcto, el tema principal es sobre la cantidad total de soldados que fueron a la batalla con Juan Cupul a enfrentar a los enemigos."
         jump des_mult_3
-    "La cantidad de horas que trabajó Antonio":
+    "Los soldados que sobrevivieron en la batalla":
         play sound "error.mp3" volume 4.0
         "Incorrecto, piensa en lo que se está preguntando en el problema."
         jump abs_mult_3
-    "La cosecha de zanahorias":
+    "La estrategias de batalla ":
         play sound "error.mp3" volume 4.0
         "Incorrecto, piensa en lo que se está preguntando en el problema."
         jump abs_mult_3
-    "El área de la huerta":
+    "La batalla de Juan Cupul con Tixcacalcupul":
         play sound "error.mp3" volume 4.0
         "Incorrecto, piensa en lo que se está preguntando en el problema."
         jump abs_mult_3
 
 menu des_mult_3:
     "¿Qué datos nos proporciona el problema?"
-    "La cantidad de zanahorias por hilera y el total de hileras en la huerta":
+    "El número de escuadrones y la cantidad de soldados en cada escuadrón":
         play sound "acierto.mp3"
-        "Correcto, los datos proporcionados son la cantidad de zanahorias por hilera y el total de hileras en la huerta."
+        "Correcto, los datos proporcionados son el número de escuadrones y la cantidad de soldados en cada escuadrón."
         jump recP_mult_3
-    "La cantidad total de zanahorias":
+    "Los pasos a seguir del plan de Juan Cupul":
         play sound "error.mp3" volume 4.0
         "Incorrecto, revisa los datos que se mencionan en el problema."
         jump des_mult_3
-    "El total de hileras en la huerta":
+    "La idea de batalla de Juan Cupul":
         play sound "error.mp3" volume 4.0
         "Incorrecto, revisa los datos que se mencionan en el problema."
         jump des_mult_3
-    "El área de la huerta de Antonio":
+    "Los escuadrones formados por los campesinos":
         play sound "error.mp3" volume 4.0
         "Incorrecto, revisa los datos que se mencionan en el problema."
         jump des_mult_3
 
 menu recP_mult_3:
-    "¿Qué operación necesitamos realizar para calcular el total de zanahorias?"
+    "¿Qué operación necesitamos realizar para encontrar la hora en que terminó la lucha?"
     "Suma":
         play sound "error.mp3" volume 4.0
-        "Incorrecto, necesitamos multiplicar el número total de hileras por la cantidad de zanahorias por hilera."
+        "Incorrecto, recuerda que necesitamos necesitamos multiplicar el número de escuadrones (5) por la cantidad de soldados que hay en cada escuadrón (10)."
         jump recP_mult_3
     "División":
         play sound "error.mp3" volume 4.0
-        "Incorrecto, necesitamos multiplicar el número total de hileras por la cantidad de zanahorias por hilera."
+        "Incorrecto, recuerda que necesitamos necesitamos multiplicar el número de escuadrones (5) por la cantidad de soldados que hay en cada escuadrón (10)."
         jump recP_mult_3
     "Multiplicación":
         play sound "acierto.mp3"
-        "Correcto, necesitamos multiplicar el número total de hileras por la cantidad de zanahorias por hilera."
+        "Correcto, necesitamos multiplicar el número de escuadrones (5) por la cantidad de soldados que hay en cada escuadrón (10)."
         jump disAl_mult_3
     "Resta":
         play sound "error.mp3" volume 4.0
-        "Incorrecto, necesitamos multiplicar el número total de hileras por la cantidad de zanahorias por hilera."
+        "Incorrecto, recuerda que necesitamos necesitamos multiplicar el número de escuadrones (5) por la cantidad de soldados que hay en cada escuadrón (10)."
         jump recP_mult_3
 
 menu disAl_mult_3:
-    "Si hay 8 hileras y en cada hilera hay 25 zanahorias, ¿cuál es el procedimiento para calcular el número total de zanahorias?"
-    "Multiplicar el número de hileras (8) por la cantidad de zanahorias por hilera (25), y el resultado es 200 zanahorias":
+    "Entonces, si tenemos el número total de escuadrones y el número de personas en cada escuadrón ¿cuál es el procedimiento para conocer el número total de personas que participaron en la batalla?"
+    "Sumar los 5 escuadrones más las 10 personas que hay en un escuadrón, lo que arroja un resultado de 15 personas":
+        play sound "error.mp3" volume 4.0
+        "Incorrecto, intenta realizar otra vez la operación."
+        jump disAl_mult_3
+    "Restar a las 10 personas los 5 escuadrones que hay, lo que da de resultado 5 personas":
+        play sound "error.mp3" volume 4.0
+        "Incorrecto, intenta realizar otra vez la operación."
+        jump disAl_mult_3
+    "Dividir las 10 personas entre los 5 escuadrones formados, lo que da 2 personas por escuadrón":
+        play sound "error.mp3" volume 4.0
+        "Incorrecto, intenta realizar otra vez la operación."
+        jump disAl_mult_3
+    "Multiplicar el número de escuadrones (5) por la cantidad de soldados que hay en cada escuadrón (10), lo que da como resultado 50 personas":
         play sound "acierto.mp3"
-        "Correcto, Multiplicar el número de hileras (8) por la cantidad de zanahorias por hilera (25), y el resultado es 200 zanahorias."
+        "Correcto, multiplicar el número de estanterías (4) por el total de libros por estantería (36), y el resultado es 144 libros."
         jump problema_multiplicacion_3
-    "Sumar las 8 hileras a las 25 zanahorias, lo que da un total de 33 zanahorias":
-        play sound "error.mp3" volume 4.0
-        "Incorrecto, intenta realizar otra vez la operación."
-        jump disAl_mult_3
-    "Restar el número de zanahorias a las hileras y el resultado es 17 zanahorias":
-        play sound "error.mp3" volume 4.0
-        "Incorrecto, intenta realizar otra vez la operación."
-        jump disAl_mult_3
-    "Dividir las zanahorias entre las hileras lo que da de resultado 3.125 zanahorias":
-        play sound "error.mp3" volume 4.0
-        "Incorrecto, intenta realizar otra vez la operación."
-        jump disAl_mult_3
 
 #* Problema de multiplicación 4
 menu abs_mult_4:
     "¿Cuál es el tema principal del problema?"
-    "El número total de camisas fabricadas en la fábrica":
+    "La cantidad total de bolsas de frijol reunidas durante la semana para armar despensa para los heridos":
         play sound "acierto.mp3"
-        "Correcto, el tema principal es sobre el número total de camisas fabricadas en la fábrica."
+        "Correcto, el tema principal es la cantidad total de bolsas de frijol reunidas durante la semana para armar despensa para los heridos."
         jump des_mult_4
-    "La fábrica de camisas":
+    "La comida de Tixcacalcupul ":
         play sound "error.mp3" volume 4.0
         "Incorrecto, piensa en lo que se está preguntando en el problema."
         jump abs_mult_4
-    "La cantidad de días trabajados":
+    "Los sobrevivientes de la batalla":
         play sound "error.mp3" volume 4.0
         "Incorrecto, piensa en lo que se está preguntando en el problema."
         jump abs_mult_4
-    "El número de fábricas":
+    "La comida que se le repartirá a las personas del pueblo para subsistir después de la gran batalla":
         play sound "error.mp3" volume 4.0
         "Incorrecto, piensa en lo que se está preguntando en el problema."
         jump abs_mult_4
 
 menu des_mult_4:
     "¿Qué datos nos proporciona el problema?"
-    "El número de camisas fabricadas por día y el total de días trabajados":
-        play sound "acierto.mp3"
+    "La cantidad de soldados a los que se les entregará las despensas":
+        play sound "error.mp3" volume 4.0
         "Correcto, los datos proporcionados son el número de camisas fabricadas por día y el total de días trabajados."
+        jump des_mult_4
+    "La cantidad de bolsas de frijol para una despensa y la cantidad de días que se recolectaron":
+        play sound "acierto.mp3"
+        "Correcto, los datos proporcionados son la cantidad de bolsas de frijol para una despensa y la cantidad de días que se recolectaron."
         jump recP_mult_4
-    "El total de camisas fabricadas en la fábrica":
+    "Los kilos de frijol para las despensas":
         play sound "error.mp3" volume 4.0
         "Incorrecto, revisa los datos que se mencionan en el problema."
         jump des_mult_4
-    "El número de fábricas y camisas":
-        play sound "error.mp3" volume 4.0
-        "Incorrecto, revisa los datos que se mencionan en el problema."
-        jump des_mult_4
-    "El total de días que trabajaron":
+    "Los días de la semana que se recolectaron las bolsas de frijol":
         play sound "error.mp3" volume 4.0
         "Incorrecto, revisa los datos que se mencionan en el problema."
         jump des_mult_4
 
 menu recP_mult_4:
-    "¿Qué operación necesitamos realizar para calcular el total de camisas fabricadas?"
-    "Multiplicación":
-        play sound "acierto.mp3"
-        "Correcto, necesitamos multiplicar el número de camisas fabricadas por el total de días trabajados."
-        jump disAl_mult_4
+    "¿Qué operación necesitamos realizar para saber la cantidad de bolsas de frijol que se juntaron a la semana?"
     "Suma":
         play sound "error.mp3" volume 4.0
-        "Incorrecto, necesitamos multiplicar el número de camisas fabricadas por el total de días trabajados."
+        "Incorrecto, recuerda que necesitamos el total de días de la semana (7) por las 14 bolsas de frijol que se juntó en cada uno de esos días."
         jump recP_mult_4
     "División":
         play sound "error.mp3" volume 4.0
-        "Incorrecto, necesitamos multiplicar el número de camisas fabricadas por el total de días trabajados."
+        "Incorrecto, recuerda que necesitamos el total de días de la semana (7) por las 14 bolsas de frijol que se juntó en cada uno de esos días."
         jump recP_mult_4
+    "Multiplicación":
+        play sound "acierto.mp3"
+        "Correcto, necesitamos multiplicar el total de días de la semana (7) por las 14 bolsas de frijol que se juntó en cada uno de esos días."
+        jump disAl_mult_4
     "Resta":
         play sound "error.mp3" volume 4.0
-        "Incorrecto, necesitamos multiplicar el número de camisas fabricadas por el total de días trabajados."
+        "Incorrecto, recuerda que necesitamos el total de días de la semana (7) por las 14 bolsas de frijol que se juntó en cada uno de esos días."
         jump recP_mult_4
 
 menu disAl_mult_4:
-    "Si en un día se fabricaron 50 camisas y trabajaron durante 5 días, ¿cuál es el procedimiento para calcular el número total de camisas?"
-    "Multiplicar las 50 camisas fabricadas en un día por los 5 días trabajados, lo que da de resultado 250 camisas":
+    "Si conocemos el número de días que se reunió la despensa (7) y la cantidad de bolsas  por caja de mercancía que se iba a armar¿cuál es el procedimiento para conocer la cantidad de bolsas de frijol se juntaron a la semana?"
+    "Multiplicar el número total de días de la semana (7) por las 14 bolsas de frijol que se juntó en cada uno de esos días y da como resultado 98 bolsas de frijol":
         play sound "acierto.mp3"
-        "Correcto, Multiplicar las 50 camisas fabricadas en un día por los 5 días trabajados da de resultado 250 camisas."
+        "Correcto, hay que multiplicar el número total de días de la semana (7) por las 14 bolsas de frijol que se juntó en cada uno de esos días y da como resultado 98 bolsas de frijol."
         jump problema_multiplicacion_4
-    "Sumar las camisas al número de días trabajados, lo que da de resultado 55 camisas":
+    "Sumar los 7 días que se recolectó despensa más ñas 14 bolsas de frijol lo que da de resultado 21 bolsas de frijol":
         play sound "error.mp3" volume 4.0
         "Incorrecto, intenta realizar otra vez la operación."
         jump disAl_mult_4
-    "Restar los días trabajados al número de camisas, lo que da de resultado 45 camisas":
+    "Restar a las 14 bolsas de frijol los 7 días que se recolectó despensa y da como resultado 7 bolsas":
         play sound "error.mp3" volume 4.0
         "Incorrecto, intenta realizar otra vez la operación."
         jump disAl_mult_4
-    "Dividir las camisas entre los días trabajados lo que da de resultado 10 camisas":
+    "Dividir las 14 bolsas entre los 7 días y da como resultado 2 bolsas de frijol":
         play sound "error.mp3" volume 4.0
         "Incorrecto, intenta realizar otra vez la operación."
         jump disAl_mult_4
@@ -786,76 +786,76 @@ menu disAl_mult_4:
 #* Ejercicio multiplicación 5
 menu abs_mult_5:
     "¿Cuál es el tema principal del problema?"
-    "El número total de árboles plantados":
+    "La cantidad de aliados que Juan Cupul reunió para armar una estrategia":
         play sound "acierto.mp3"
-        "Correcto, el tema principal es sobre el número total de árboles plantados."
+        "Correcto, el tema principal es sobre la cantidad de aliados que Juan Cupul reunió para armar una estrategia."
         jump des_mult_5
-    "El terreno donde se plantaron los árboles":
+    "La comida que dará Juan Cupul en la reunión":
         play sound "error.mp3" volume 4.0
         "Incorrecto, piensa en lo que se está preguntando en el problema."
         jump abs_mult_5
-    "El número de filas de árboles":
+    "Los planos estratégicos para la batalla que se le dará a cada mesa":
         play sound "error.mp3" volume 4.0
         "Incorrecto, piensa en lo que se está preguntando en el problema."
         jump abs_mult_5
-    "El tiempo que tardaron en plantar":
+    "Los refrescos para que se le dé a los invitados":
         play sound "error.mp3" volume 4.0
         "Incorrecto, piensa en lo que se está preguntando en el problema."
         jump abs_mult_5
 
 menu des_mult_5:
     "¿Qué datos nos proporciona el problema?"
-    "El número de árboles por fila y el total de filas plantadas":
+    "El número de sillas y mesas para las personas invitadas a la reunión":
         play sound "acierto.mp3"
-        "Correcto, los datos proporcionados son el número de árboles por fila y el total de filas plantadas."
+        "Correcto, los datos proporcionados son el número de sillas y mesas para las personas invitadas a la reunión"
         jump recP_mult_5
-    "El total de árboles plantados":
+    "La cantidad total de personas que asistiran a la reunión":
         play sound "error.mp3" volume 4.0
         "Incorrecto, revisa los datos que se mencionan en el problema."
         jump des_mult_5
-    "El número total de filas":
+    "El número total de sillas":
         play sound "error.mp3" volume 4.0
         "Incorrecto, revisa los datos que se mencionan en el problema."
         jump des_mult_5
-    "El área del terreno plantado":
+    "El número total de mesas":
         play sound "error.mp3" volume 4.0
         "Incorrecto, revisa los datos que se mencionan en el problema."
         jump des_mult_5
 
 menu recP_mult_5:
-    "¿Qué operación necesitamos realizar para calcular el número total de árboles plantados?"
-    "Multiplicación":
-        play sound "acierto.mp3"
-        "Correcto, necesitamos multiplicar el número de árboles por fila por el total de filas plantadas."
-        jump disAl_mult_5
+    "¿Qué operación necesitamos realizar para encontrar el número de aliados que invitó Juan Cupul para la reunión?"
     "Suma":
         play sound "error.mp3" volume 4.0
-        "Incorrecto, necesitamos multiplicar el número de árboles por fila por el total de filas plantadas."
+        "Incorrecto, recuerda que necesitamos multiplicar."
         jump recP_mult_5
     "División":
         play sound "error.mp3" volume 4.0
-        "Incorrecto, necesitamos multiplicar el número de árboles por fila por el total de filas plantadas."
+        "Incorrecto, recuerda que necesitamos multiplicar."
         jump recP_mult_5
+    "Multiplicación":
+        play sound "acierto.mp3"
+        "Correcto, necesitamos multiplicar."
+        jump disAl_mult_5   
     "Resta":
         play sound "error.mp3" volume 4.0
-        "Incorrecto, necesitamos multiplicar el número de árboles por fila por el total de filas plantadas."
+        "Incorrecto, recuerda que necesitamos multiplicar."
         jump recP_mult_5
 
 menu disAl_mult_5:
-    "Si se plantaron 30 árboles por fila y había 6 filas, ¿cuál es el procedimiento para calcular el número total de árboles?"
-    "Multiplicar los 30 árboles por fila por las 6 filas plantadas, lo que da un total de 180 árboles plantados":
+    "Si el número de mesas es 4 y la cantidad de sillas por mesas es 8 ¿cuál es el procedimiento para calcular el total de aliados que se han invitado?"
+    "Multiplicar el número de mesas (4) por el total de sillas en cada mesa (8), y el resultado es de 32 personas":
         play sound "acierto.mp3"
-        "Correcto, Multiplicar los 30 árboles por fila por las 6 filas plantadas da un total de 180 árboles."
+        "Correcto, al multiplicar el número de mesas (4) por el total de sillas en cada mesa (8) obtenemos que el resultado es de 32 aliados invitados a la reunión."
         jump problema_multiplicacion_5
-    "Sumar los árboles a las filas, lo que da como resultado 36 árboles plantados":
+    "Sumar las 4 mesas más las 8 sillas, que da como resultado 12 personas":
         play sound "error.mp3" volume 4.0
         "Incorrecto, intenta realizar otra vez la operación."
         jump disAl_mult_5
-    "Restar el número de filas a los árboles plantados lo que da de resultado 24 árboles plantados":
+    "Restar a las 8 sillas el número total de las 4 mesas que hay, lo que da resultado 4 personas":
         play sound "error.mp3" volume 4.0
         "Incorrecto, intenta realizar otra vez la operación."
         jump disAl_mult_5
-    "Dividir el número de árboles por fila entre el total de filas, lo que da de resultado 5 árboles plantados":
+    "Dividir las 8 sillas entre las 4 mesas y da como resultado 2 personas":
         play sound "error.mp3" volume 4.0
         "Incorrecto, intenta realizar otra vez la operación."
         jump disAl_mult_5
@@ -980,14 +980,14 @@ menu des_division_1:
 
 menu recP_division_1:
     "¿Qué operación necesitamos realizar para encontrar la cantidad de machetes que Juan Cupul debe dar a cada campesino?"
-    "División.":
-        play sound "acierto.mp3"
-        "Correcto, necesitamos dividir la cantidad de machetes entre el total de campesinos."
-        jump disAl_division_1
     "Multiplicación.":
         play sound "error.mp3" volume 4.0
         "Incorrecto, recuerda que estamos repartiendo los machetes entre los campesinos."
         jump recP_division_1
+    "División.":
+        play sound "acierto.mp3"
+        "Correcto, necesitamos dividir la cantidad de machetes entre el total de campesinos."
+        jump disAl_division_1
     "Suma.":
         play sound "error.mp3" volume 4.0
         "Incorrecto, recuerda que estamos repartiendo los machetes entre los campesinos."
@@ -999,14 +999,14 @@ menu recP_division_1:
 
 menu disAl_division_1:
     "Si el número total de machetes es 36 y se quiere repartir entre 6 campesinos de la comunidad, ¿cuál es el procedimiento para saber cuántos machetes le tocará a cada campesino?"
-    "Dividir el total de machetes (36) entre el número de campesinos (6) y el resultado es 6.":
-        play sound "acierto.mp3"
-        "Correcto, dividir el total de machetes (36) entre los campesinos (6) da como resultado 6 machetes para cada campesino."
-        jump problema_division_1
     "Restar al total de machetes (36) el número de campesinos (6) y el resultado es 30.":
         play sound "error.mp3" volume 4.0
         "Incorrecto, divide nuevamente los machetes entre los campesinos."
         jump disAl_division_1
+    "Dividir el total de machetes (36) entre el número de campesinos (6) y el resultado es 6.":
+        play sound "acierto.mp3"
+        "Correcto, dividir el total de machetes (36) entre los campesinos (6) da como resultado 6 machetes para cada campesino."
+        jump problema_division_1
     "Multiplicar los campesinos (6) por el total de machetes (36) y el resultado es 216.":
         play sound "error.mp3" volume 4.0
         "Incorrecto, divide nuevamente los machetes entre los campesinos."
@@ -1038,57 +1038,57 @@ menu abs_division_2:
 
 menu des_division_2:
     "¿Qué datos nos proporciona el problema?"
-    "La cantidad total de tomates que se cosechó y el número de familias.":
+    "Las verduras que Juan Cupul recolectó":
+        play sound "error.mp3" volume 4.0
+        "Incorrecto, revisa los datos que se mencionan en el problema."
+        jump des_division_2
+    "El número de familias que consumen tomate":
+        play sound "error.mp3" volume 4.0
+        "Incorrecto, revisa los datos que se mencionan en el problema."
+        jump des_division_2
+    "Cantidad de familias del pueblo":
+        play sound "error.mp3" volume 4.0
+        "Incorrecto, revisa los datos que se mencionan en el problema."
+        jump des_division_2
+    "La cantidad total de tomates que se cosechó y el número de familias":
         play sound "acierto.mp3"
         "Correcto, los datos proporcionados son el total de tomates que se cosechó y el número de familias."
         jump recP_division_2
-    "Las verduras que Juan Cupul recolectó.":
-        play sound "error.mp3" volume 4.0
-        "Incorrecto, revisa los datos que se mencionan en el problema."
-        jump des_division_2
-    "El número de familias que consumen tomate.":
-        play sound "error.mp3" volume 4.0
-        "Incorrecto, revisa los datos que se mencionan en el problema."
-        jump des_division_2
-    "Cantidad de familias del pueblo.":
-        play sound "error.mp3" volume 4.0
-        "Incorrecto, revisa los datos que se mencionan en el problema."
-        jump des_division_2
 
 menu recP_division_2:
     "¿Qué operación necesitamos realizar para encontrar la cantidad de tomates que Juan Cupul debe dar a cada familia?"
-    "División.":
+    "División":
         play sound "acierto.mp3"
         "Correcto, necesitamos dividir la cantidad de tomates entre el total de familias."
         jump disAl_division_2
-    "Multiplicación.":
+    "Multiplicación":
         play sound "error.mp3" volume 4.0
         "Incorrecto, recuerda que estamos repartiendo los tomates entre las familias."
         jump recP_division_2
-    "Suma.":
+    "Suma":
         play sound "error.mp3" volume 4.0
         "Incorrecto, recuerda que estamos repartiendo los tomates entre las familias."
         jump recP_division_2
-    "Resta.":
+    "Resta":
         play sound "error.mp3" volume 4.0
         "Incorrecto, recuerda que estamos repartiendo los tomates entre las familias."
         jump recP_division_2
 
 menu disAl_division_2:
     "Si el número total de tomates es de 72 kilos y se quiere repartir entre 9 familias de la comunidad, ¿cuál es el procedimiento para saber cuántos kilos de tomate le tocará a cada familia?"
-    "Dividir el total de tomates (72) entre el número de familias (9) y el resultado es 8.":
+    "Restar al total de tomates (72) el número de familias (9) y el resultado es 63":
+        play sound "error.mp3" volume 4.0
+        "Incorrecto, divide nuevamente los kilos de tomate entre las familias."
+        jump disAl_division_2
+    "Sumar los tomates (72) más el número de familias (9) y el resultado es 81":
+        play sound "error.mp3" volume 4.0
+        "Incorrecto, divide nuevamente los kilos de tomate entre las familias."
+        jump disAl_division_2
+    "Dividir el total de tomates (72) entre el número de familias (9) y el resultado es 8":
         play sound "acierto.mp3"
         "Correcto, dividir 72 kilos de tomate entre las 9 familias da como resultado 8."
         jump problema_division_2
-    "Restar al total de tomates (72) el número de familias (9) y el resultado es 63.":
-        play sound "error.mp3" volume 4.0
-        "Incorrecto, divide nuevamente los kilos de tomate entre las familias."
-        jump disAl_division_2
-    "Sumar los tomates (72) más el número de familias (9) y el resultado es 81.":
-        play sound "error.mp3" volume 4.0
-        "Incorrecto, divide nuevamente los kilos de tomate entre las familias."
-        jump disAl_division_2
-    "Multiplicar las familias (9) por el total de tomates (72) y el resultado es 648.":
+    "Multiplicar las familias (9) por el total de tomates (72) y el resultado es 648":
         play sound "error.mp3" volume 4.0
         "Incorrecto, divide nuevamente los kilos de tomate entre las familias."
         jump disAl_division_2
@@ -1096,76 +1096,76 @@ menu disAl_division_2:
 #* Problema división 3
 menu abs_division_3:
     "¿Cuál es el tema principal del problema?"
-    "Cantidad de cubetas que se necesitan para repartir el agua que se tiene.":
+    "Los problemas del servicio de agua":
+        play sound "error.mp3" volume 4.0
+        "Incorrecto, piensa en lo que se está preguntando en el problema."
+        jump abs_division_3
+    "Cantidad de cubetas que se necesitan para repartir el agua que se tiene":
         play sound "acierto.mp3"
         "Correcto, el tema principal son las cubetas que se necesitan para repartir el agua."
         jump des_division_3
-    "Los problemas del servicio de agua.":
+    "Cantidad de litros de agua de la comunidad":
         play sound "error.mp3" volume 4.0
         "Incorrecto, piensa en lo que se está preguntando en el problema."
         jump abs_division_3
-    "Cantidad de litros de agua de la comunidad.":
-        play sound "error.mp3" volume 4.0
-        "Incorrecto, piensa en lo que se está preguntando en el problema."
-        jump abs_division_3
-    "El agua que tienen las familias.":
+    "El agua que tienen las familias":
         play sound "error.mp3" volume 4.0
         "Incorrecto, piensa en lo que se está preguntando en el problema."
         jump abs_division_3
 
 menu des_division_3:
     "¿Qué datos nos proporciona el problema?"
-    "La cantidad de agua que hay en el depósito y los litros que pondrá en cada cubeta.":
+    "La cantidad de agua que hay en el río":
+        play sound "error.mp3" volume 4.0
+        "Incorrecto, revisa los datos que se mencionan en el problema."
+        jump des_division_3
+    "El número de cubetas que hay por casa":
+        play sound "error.mp3" volume 4.0
+        "Incorrecto, revisa los datos que se mencionan en el problema."
+        jump des_division_3
+    "Cantidad de vecinos que no tienen agua y necesitan":
+        play sound "error.mp3" volume 4.0
+        "Incorrecto, revisa los datos que se mencionan en el problema."
+        jump des_division_3
+    "La cantidad de agua que hay en el depósito y los litros que pondrá en cada cubeta":
         play sound "acierto.mp3"
         "Correcto, los datos proporcionados son los litros de agua en el depósito y los que irán en cada cubeta."
         jump recP_division_3
-    "La cantidad de agua que hay en el río.":
-        play sound "error.mp3" volume 4.0
-        "Incorrecto, revisa los datos que se mencionan en el problema."
-        jump des_division_3
-    "El número de cubetas que hay por casa.":
-        play sound "error.mp3" volume 4.0
-        "Incorrecto, revisa los datos que se mencionan en el problema."
-        jump des_division_3
-    "Cantidad de vecinos que no tienen agua y necesitan.":
-        play sound "error.mp3" volume 4.0
-        "Incorrecto, revisa los datos que se mencionan en el problema."
-        jump des_division_3
 
 menu recP_division_3:
     "¿Qué operación necesitamos realizar para encontrar la cantidad de cubetas que se necesitan?"
-    "División.":
+    "División":
         play sound "acierto.mp3"
         "Correcto, necesitamos dividir la cantidad total de agua que hay en el depósito entre la cantidad de litros que se quiere en cada cubeta."
         jump disAl_division_3
-    "Multiplicación.":
+    "Multiplicación":
         play sound "error.mp3" volume 4.0
         "Incorrecto, recuerda que estamos dividiendo el agua en cubetas de 8 litros cada una."
         jump recP_division_3
-    "Suma.":
+    "Suma":
         play sound "error.mp3" volume 4.0
         "Incorrecto, recuerda que estamos dividiendo el agua en cubetas de 8 litros cada una."
         jump recP_division_3
-    "Resta.":
+    "Resta":
         play sound "error.mp3" volume 4.0
         "Incorrecto, recuerda que estamos dividiendo el agua en cubetas de 8 litros cada una."
         jump recP_division_3
 
 menu disAl_division_3:
     "Si el número total de litros de agua es 56 y se quiere repartir en cubetas con 8 litros en cada una, ¿cuál es el procedimiento para saber cuántas cubetas se necesitan para repartir toda el agua?"
-    "Dividir los litros de agua del depósito (56) entre el número de litros que va en cada cubeta (8) y el resultado es 7.":
+    "Sumar los litros de agua del depósito (56) más el número de litros que va en cada cubeta (8) y el resultado es 63":
+        play sound "error.mp3" volume 4.0
+        "Incorrecto, divide nuevamente los litros de agua del depósito entre los que irían en cada cubeta."
+        jump disAl_division_3
+    "Dividir los litros de agua del depósito (56) entre el número de litros que va en cada cubeta (8) y el resultado es 7":
         play sound "acierto.mp3"
         "Correcto, dividir los litros de agua del depósito (56) entre el número de litros que va en cada cubeta (8) ayuda a saber que son 7 las cubetas que se necesitan para sacar toda el agua."
         jump problema_division_3
-    "Sumar los litros de agua del depósito (56) más el número de litros que va en cada cubeta (8) y el resultado es 63.":
+    "Restar a los litros de agua del depósito (56) los litros que van en cada cubeta (8) y el resultado es 48":
         play sound "error.mp3" volume 4.0
         "Incorrecto, divide nuevamente los litros de agua del depósito entre los que irían en cada cubeta."
         jump disAl_division_3
-    "Restar a los litros de agua del depósito (56) los litros que van en cada cubeta (8) y el resultado es 48.":
-        play sound "error.mp3" volume 4.0
-        "Incorrecto, divide nuevamente los litros de agua del depósito entre los que irían en cada cubeta."
-        jump disAl_division_3
-    "Multiplicar los litros de agua del depósito (56) por el número de litros que va en cada cubeta (8) y el resultado es 448.":
+    "Multiplicar los litros de agua del depósito (56) por el número de litros que va en cada cubeta (8) y el resultado es 448":
         play sound "error.mp3" volume 4.0
         "Incorrecto, divide nuevamente los litros de agua del depósito entre los que irían en cada cubeta."
         jump disAl_division_3
@@ -1173,76 +1173,76 @@ menu disAl_division_3:
 #* Problema división 4
 menu abs_division_4:
     "¿Cuál es el tema principal del problema?"
-    "La cantidad de troncos que le deberá tocar a cada hogar.":
+    "La escasez de troncos":
+        play sound "error.mp3" volume 4.0
+        "Incorrecto, piensa en lo que se está preguntando en el problema."
+        jump abs_division_4
+    "Los hogares que no tienen madera":
+        play sound "error.mp3" volume 4.0
+        "Incorrecto, piensa en lo que se está preguntando en el problema."
+        jump abs_division_4
+    "La cantidad de troncos que le deberá tocar a cada hogar":
         play sound "acierto.mp3"
         "Correcto, el tema principal son los troncos que Juan Cupul debe darle a cada hogar."
         jump des_division_4
-    "La escasez de troncos.":
-        play sound "error.mp3" volume 4.0
-        "Incorrecto, piensa en lo que se está preguntando en el problema."
-        jump abs_division_4
-    "Los hogares que no tienen madera.":
-        play sound "error.mp3" volume 4.0
-        "Incorrecto, piensa en lo que se está preguntando en el problema."
-        jump abs_division_4
-    "Los troncos que Juan Cupul tiene en su parcela.":
+    "Los troncos que Juan Cupul tiene en su parcela":
         play sound "error.mp3" volume 4.0
         "Incorrecto, piensa en lo que se está preguntando en el problema."
         jump abs_division_4
 
 menu des_division_4:
     "¿Qué datos nos proporciona el problema?"
-    "La cantidad de troncos totales y el número de hogares que recibirán dichos troncos.":
+    "La cantidad de troncos que hay en la parcela y se quieren vender":
+        play sound "error.mp3" volume 4.0
+        "Incorrecto, revisa los datos que se mencionan en el problema."
+        jump des_division_4
+    "La cantidad de troncos totales y el número de hogares que recibirán dichos troncos":
         play sound "acierto.mp3"
         "Correcto, los datos proporcionados son la cantidad de troncos totales y el número de hogares que lo recibirán."
         jump recP_division_4
-    "La cantidad de troncos que hay en la parcela y se quieren vender.":
+    "Cantidad de vecinos que necesitan troncos":
         play sound "error.mp3" volume 4.0
         "Incorrecto, revisa los datos que se mencionan en el problema."
         jump des_division_4
-    "Cantidad de vecinos que necesitan troncos.":
-        play sound "error.mp3" volume 4.0
-        "Incorrecto, revisa los datos que se mencionan en el problema."
-        jump des_division_4
-    "El precio que tiene cada tronco y el número de vecinos que quieren comprar.":
+    "El precio que tiene cada tronco y el número de vecinos que quieren comprar":
         play sound "error.mp3" volume 4.0
         "Incorrecto, revisa los datos que se mencionan en el problema."
         jump des_division_4
 
 menu recP_division_4:
     "¿Qué operación necesitamos realizar para encontrar la cantidad de troncos que recibirá cada hogar?"
-    "División.":
+    "Suma":
+        play sound "error.mp3" volume 4.0
+        "Incorrecto, recuerda que estamos dividiendo los troncos entre los hogares que existen cerca de la casa de Juan Cupul."
+        jump recP_division_4
+    "Multiplicación":
+        play sound "error.mp3" volume 4.0
+        "Incorrecto, recuerda que estamos dividiendo los troncos entre los hogares que existen cerca de la casa de Juan Cupul."
+        jump recP_division_4
+    "División":
         play sound "acierto.mp3"
         "Correcto, necesitamos dividir la cantidad total de troncos entre el número de hogares que los recibirán."
         jump disAl_division_4
-    "Suma.":
-        play sound "error.mp3" volume 4.0
-        "Incorrecto, recuerda que estamos dividiendo los troncos entre los hogares que existen cerca de la casa de Juan Cupul."
-        jump recP_division_4
-    "Multiplicación.":
-        play sound "error.mp3" volume 4.0
-        "Incorrecto, recuerda que estamos dividiendo los troncos entre los hogares que existen cerca de la casa de Juan Cupul."
-        jump recP_division_4
-    "Resta.":
+    "Resta":
         play sound "error.mp3" volume 4.0
         "Incorrecto, recuerda que estamos dividiendo los troncos entre los hogares que existen cerca de la casa de Juan Cupul."
         jump recP_division_4
 
 menu disAl_division_4:
     "Si el número total de troncos es 60 y se quiere repartir en 5 hogares, ¿cuál es el procedimiento para saber cuántos troncos le debe tocar a cada hogar?"
-    "Dividir los troncos (60) entre el número de hogares (5) lo que da como resultado 12.":
+    "Restar los troncos (60) menos el número de hogares (5) lo que da como resultado 55":
+        play sound "error.mp3" volume 4.0
+        "Incorrecto, divide nuevamente la cantidad de troncos entre los hogares que se les quiere dar."
+        jump disAl_division_4
+    "Sumar los troncos (60) más el número de hogares (5) lo que da como resultado 65":
+        play sound "error.mp3" volume 4.0
+        "Incorrecto, divide nuevamente la cantidad de troncos entre los hogares que se les quiere dar."
+        jump disAl_division_4
+    "Dividir los troncos (60) entre el número de hogares (5) lo que da como resultado 12":
         play sound "acierto.mp3"
         "Correcto, dividir la cantidad de troncos (60) entre la de los hogares (5) ayuda a conocer que son 12 los troncos que le tocará a cada hogar."
         jump problema_division_4
-    "Restar los troncos (60) menos el número de hogares (5) lo que da como resultado 55.":
-        play sound "error.mp3" volume 4.0
-        "Incorrecto, divide nuevamente la cantidad de troncos entre los hogares que se les quiere dar."
-        jump disAl_division_4
-    "Sumar los troncos (60) más el número de hogares (5) lo que da como resultado 65.":
-        play sound "error.mp3" volume 4.0
-        "Incorrecto, divide nuevamente la cantidad de troncos entre los hogares que se les quiere dar."
-        jump disAl_division_4
-    "Multiplicar los troncos (60) por el número de hogares (5) lo que da como resultado 300.":
+    "Multiplicar los troncos (60) por el número de hogares (5) lo que da como resultado 300":
         play sound "error.mp3" volume 4.0
         "Incorrecto, divide nuevamente la cantidad de troncos entre los hogares que se les quiere dar."
         jump disAl_division_4
@@ -1250,57 +1250,57 @@ menu disAl_division_4:
 #* Problema división 5
 menu abs_division_5:
     "¿Cuál es el tema principal del problema?"
-    "La cantidad de semillas que se tienen que vender por día.":
+    "La feria agrícola que habrá en el pueblo":
+        play sound "error.mp3" volume 4.0
+        "Incorrecto, piensa en lo que se está preguntando en el problema."
+        jump abs_division_5
+    "Los tipos de semillas que Juan Cupul vende":
+        play sound "error.mp3" volume 4.0
+        "Incorrecto, piensa en lo que se está preguntando en el problema."
+        jump abs_division_5
+    "La cantidad de semillas que se tienen que vender por día":
+        play sound "error.mp3" volume 4.0
+        "Incorrecto, piensa en lo que se está preguntando en el problema."
+        jump abs_division_5
+    "Los paquetes de semilla que le tocará a cada agricultor":
         play sound "acierto.mp3"
         "Correcto, el tema principal son los paquetes de semilla que le tocará a cada agricultor."
         jump des_division_5
-    "La feria agrícola que habrá en el pueblo.":
-        play sound "error.mp3" volume 4.0
-        "Incorrecto, piensa en lo que se está preguntando en el problema."
-        jump abs_division_5
-    "Los tipos de semillas que Juan Cupul vende.":
-        play sound "error.mp3" volume 4.0
-        "Incorrecto, piensa en lo que se está preguntando en el problema."
-        jump abs_division_5
-    "Los paquetes de semilla que le tocará a cada agricultor.":
-        play sound "error.mp3" volume 4.0
-        "Incorrecto, piensa en lo que se está preguntando en el problema."
-        jump abs_division_5
 
 menu des_division_5:
     "¿Qué datos nos proporciona el problema?"
-    "La cantidad de paquetes de semillas que tiene Juan Cupul y el número de agricultores.":
+    "La cantidad de paquetes de semillas que tiene Juan Cupul y el número de agricultores":
         play sound "acierto.mp3"
         "Correcto, los datos proporcionados son la cantidad de paquetes de semillas que tiene Juan Cupul y el número de agricultores."
         jump recP_division_5
-    "La cantidad de semillas que tiene cada paquete.":
+    "La cantidad de semillas que tiene cada paquete":
         play sound "error.mp3" volume 4.0
         "Incorrecto, revisa los datos que se mencionan en el problema."
         jump des_division_5
-    "Cantidad de agricultores que asistieron a la feria agrícola.":
+    "Cantidad de agricultores que asistieron a la feria agrícola":
         play sound "error.mp3" volume 4.0
         "Incorrecto, revisa los datos que se mencionan en el problema."
         jump des_division_5
-    "El precio que tiene cada paquete.":
+    "El precio que tiene cada paquete":
         play sound "error.mp3" volume 4.0
         "Incorrecto, revisa los datos que se mencionan en el problema."
         jump des_division_5
 
 menu recP_division_5:
     "¿Qué operación necesitamos realizar para encontrar la cantidad de paquetes que Juan Cupul debe darle a cada agricultor?"
-    "División.":
+    "Suma":
+        play sound "error.mp3" volume 4.0
+        "Incorrecto, recuerda que estamos dividiendo los paquetes de semilla entre el número de agricultores."
+        jump recP_division_5
+    "Multiplicación":
+        play sound "error.mp3" volume 4.0
+        "Incorrecto, recuerda que estamos dividiendo los paquetes de semilla entre el número de agricultores."
+        jump recP_division_5
+    "División":
         play sound "acierto.mp3"
         "Correcto, necesitamos dividir la cantidad total de paquetes de semilla entre el número de agricultores."
         jump disAl_division_5
-    "Suma.":
-        play sound "error.mp3" volume 4.0
-        "Incorrecto, recuerda que estamos dividiendo los paquetes de semilla entre el número de agricultores."
-        jump recP_division_5
-    "Multiplicación.":
-        play sound "error.mp3" volume 4.0
-        "Incorrecto, recuerda que estamos dividiendo los paquetes de semilla entre el número de agricultores."
-        jump recP_division_5
-    "Resta.":
+    "Resta":
         play sound "error.mp3" volume 4.0
         "Incorrecto, recuerda que estamos dividiendo los paquetes de semilla entre el número de agricultores."
         jump recP_division_5
@@ -1327,14 +1327,14 @@ menu disAl_division_5:
 #* Problema división 6
 menu abs_division_6:
     "¿Cuál es el tema principal del problema?"
-    "Las horas que recibe cada guerrero de entrenamiento.":
-        play sound "acierto.mp3"
-        "Correcto, el tema principal son las horas que recibe cada guerrero de entrenamiento."
-        jump des_division_6
     "Los entrenamientos que hace el guerrero en un semana.":
         play sound "error.mp3" volume 4.0
         "Incorrecto, piensa en lo que se está preguntando en el problema."
         jump abs_division_6
+    "Las horas que recibe cada guerrero de entrenamiento.":
+        play sound "acierto.mp3"
+        "Correcto, el tema principal son las horas que recibe cada guerrero de entrenamiento."
+        jump des_division_6
     "Los guerreros que se necesitan en el combate.":
         play sound "error.mp3" volume 4.0
         "Incorrecto, piensa en lo que se está preguntando en el problema."
@@ -1365,33 +1365,33 @@ menu des_division_6:
 
 menu recP_division_6:
     "¿Qué operación necesitamos realizar para encontrar la cantidad de horas de entrenamiento que Juan Cupul debe dar a cada guerrero?"
-    "División.":
+    "Multiplicación":
+        play sound "error.mp3" volume 4.0
+        "Incorrecto, recuerda que estamos asignando el número de horas de entrenamiento para cada guerrero."
+        jump recP_division_6
+    "División":
         play sound "acierto.mp3"
         "Correcto, necesitamos dividir la cantidad de horas entre el total de guerreros."
         jump disAl_division_6
-    "Multiplicación.":
+    "Suma":
         play sound "error.mp3" volume 4.0
         "Incorrecto, recuerda que estamos asignando el número de horas de entrenamiento para cada guerrero."
         jump recP_division_6
-    "Suma.":
-        play sound "error.mp3" volume 4.0
-        "Incorrecto, recuerda que estamos asignando el número de horas de entrenamiento para cada guerrero."
-        jump recP_division_6
-    "Resta.":
+    "Resta":
         play sound "error.mp3" volume 4.0
         "Incorrecto, recuerda que estamos asignando el número de horas de entrenamiento para cada guerrero."
         jump recP_division_6
 
 menu disAl_division_6:
     "Si el número total de horas de entrenamiento es de 45 y se quiere dar la misma cantidad de tiempo entre 15 guerreros, ¿cuál es el procedimiento para saber cuántas horas de entrenamiento le tocará a cada guerrero?"
-    "Dividir las horas de entrenamiento totales (45) entre el número de guerreros (15) y el resultado es 3.":
-        play sound "acierto.mp3"
-        "Correcto, dividir el total de horas de entrenamiento (45) entre los guerreros (15) da como resultado 3 horas de entrenamiento para cada guerrero."
-        jump problema_division_6
     "Restar al total de horas de entrenamiento (45) el número de guerreros (15) y el resultado es 30.":
         play sound "error.mp3" volume 4.0
         "Incorrecto, divide nuevamente los machetes entre los campesinos."
         jump disAl_division_6
+    "Dividir las horas de entrenamiento totales (45) entre el número de guerreros (15) y el resultado es 3.":
+        play sound "acierto.mp3"
+        "Correcto, dividir el total de horas de entrenamiento (45) entre los guerreros (15) da como resultado 3 horas de entrenamiento para cada guerrero."
+        jump problema_division_6
     "Sumar las horas de entrenamiento totales (45) más el número de guerreros (15) y el resultado es 60.":
         play sound "error.mp3" volume 4.0
         "Incorrecto, divide nuevamente los machetes entre los campesinos."

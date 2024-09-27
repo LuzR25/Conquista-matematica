@@ -553,41 +553,6 @@ style return_button:
     yalign 1.0
     yoffset -45
 
-## Pantalla 'datos de partida' #################################################
-##
-## Esta pantalla ofrecerá al usuario sus estadísticas de juego, siempre y cuando
-## haya una partida cargada en el momento.
-
-screen datos_partida():
-    tag menu
-
-    use game_menu(_("Datos de partida"), scroll="viewport"):
-
-        style_prefix "about"
-
-        vbox:
-
-        #* El avatar se ve y muestra bien, aunque falta acomodarlo para que se vea bien
-        
-        #* Los datos de las preguntas se jalan siempre y cuando yo haga alguna asignación
-        #* directa dentro de la partida
-
-        #! El nombre no se muestra, a pesar de que el usuario lo asigna y lo sé con seguridad
-        #! porque lo muestro en pantalla de guardado y carga, aquí indica que no fue asignado
-        
-            label "[nombreDeUsuario]\n"
-            image("Avatares/" + avatarElegido + ".png") xalign 0.5
-            text _("\nTotal de preguntas acertadas: [aciertos]")
-            text _("Total de preguntas erradas: [errores]\n")
-
-        #* Considerar la opción de crear una gráfica para ver la diferencia entre los
-        #* aciertos y los errores en las preguntas, debo ver creado una barra o algo 
-        #* por el estilo, tal vez añadiendo cuadrados manualmente o algo por el estilo.
-        #* Para no sobrellenar con muchos puntos si esos datos llegaran a 200 o algo así, 
-        #* puedo hacer un cálculo para obtener unas proporciones sobre diez y así rellenar 
-        #* las barras. 
-        #! Checar cómo funcionan las barras en otros menús
-
 ## Pantalla 'acerca de' ########################################################
 ##
 ## Esta pantalla da información sobre los créditos y el copyright del juego y de
@@ -750,9 +715,6 @@ screen file_slots(title):
                         
                         key "save_delete" action FileDelete(slot)
                         #* Presionar tecla suprimir mientras el cursor esta sobre el slot que se desea borrar
-                        #imagebutton:
-                        #    auto "eliminar.png"
-                        #    action FileDelete(slot)
 
             ## Botones de acceso a otras páginas
             vbox:
