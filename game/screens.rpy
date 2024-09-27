@@ -748,8 +748,11 @@ screen file_slots(title):
                             #style "slot_time_text"
                         #    style "slot_name_text"
                         
-                        #key "save_delete" action FileDelete(slot)
-                        key "save_delete" action FileDelete(save_name)
+                        key "save_delete" action FileDelete(slot)
+                        #* Presionar tecla suprimir mientras el cursor esta sobre el slot que se desea borrar
+                        #imagebutton:
+                        #    auto "eliminar.png"
+                        #    action FileDelete(slot)
 
             ## Botones de acceso a otras páginas
             vbox:
