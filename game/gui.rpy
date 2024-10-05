@@ -110,7 +110,7 @@ define gui.textbox_yalign = 1.0
 ## Colocación del nombre del personaje hablante, relativa a la caja de texto.
 ## Puede ser el númerode píxels desde la esquina superior izquierda, o 0.5 para
 ## centrar.
-define gui.name_xpos = 360
+define gui.name_xpos = 140
 define gui.name_ypos = 0
 
 ## La alineación horizontal del nombre del personaje. (0.0 es izquierda, 0.5 es
