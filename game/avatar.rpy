@@ -288,7 +288,7 @@ label elegi_A1:
         #xpos 800
         ypos 550
     
-    "¡Has elegido el avatar 1! Ahora con la historia ;)."
+    "¡Ya has elegido un avatar! Ahora iniciemos la historia ;)."
 
     jump inicio_historia
 
@@ -302,7 +302,7 @@ label elegi_A2:
         #xpos 800
         ypos 550
     
-    "¡Has elegido el avatar 2! Ahora con la historia ;)."
+    "¡Ya has elegido un avatar! Ahora iniciemos la historia ;)."
 
     jump inicio_historia
 
@@ -316,7 +316,7 @@ label elegi_A3:
         #xpos 800
         ypos 550
     
-    "¡Has elegido el avatar 3! Ahora con la historia ;)."
+    "¡Ya has elegido un avatar! Ahora iniciemos la historia ;)."
 
     jump inicio_historia
 
@@ -330,7 +330,7 @@ label elegi_A4:
         #xpos 800
         ypos 550
     
-    "¡Has elegido el avatar 4! Ahora con la historia ;)."
+    "¡Ya has elegido un avatar! Ahora iniciemos la historia ;)."
 
     jump inicio_historia
 
@@ -345,7 +345,7 @@ label elegi_A5:
         #xpos 800
         ypos 550
     
-    "¡Has elegido el avatar 5! Ahora con la historia ;)."
+    "¡Ya has elegido un avatar! Ahora iniciemos la historia ;)."
 
     jump inicio_historia
 
@@ -360,7 +360,7 @@ label elegi_A6:
         #xpos 800
         ypos 550
     
-    "¡Has elegido el avatar 6! Ahora con la historia ;)."
+    "¡Ya has elegido un avatar! Ahora iniciemos la historia ;)."
 
     jump inicio_historia
 
@@ -375,7 +375,7 @@ label elegi_A7:
         #xpos 800
         ypos 550
     
-    "¡Has elegido el avatar 7! Ahora con la historia ;)."
+    "¡Ya has elegido un avatar! Ahora iniciemos la historia ;)."
 
     jump inicio_historia
 
@@ -390,7 +390,7 @@ label elegi_A8:
         #xpos 800
         ypos 550
     
-    "¡Has elegido el avatar 8! Ahora con la historia ;)."
+    "¡Ya has elegido un avatar! Ahora iniciemos la historia ;)."
 
     jump inicio_historia
 
@@ -405,7 +405,7 @@ label elegi_A9:
         #xpos 800
         ypos 550
     
-    "¡Has elegido el avatar 9! Ahora con la historia ;)."
+    "¡Ya has elegido un avatar! Ahora iniciemos la historia ;)."
 
     jump inicio_historia
 
@@ -421,7 +421,7 @@ label elegi_A10:
         #xpos 800
         ypos 550
     
-    "¡Has elegido el avatar 10! Ahora con la historia ;)."
+    "¡Ya has elegido un avatar! Ahora iniciemos la historia ;)."
 
     jump inicio_historia
 
@@ -437,7 +437,7 @@ label elegi_A11:
         #xpos 800
         ypos 550
     
-    "¡Has elegido el avatar 11! Ahora con la historia ;)."
+    "¡Ya has elegido un avatar! Ahora iniciemos la historia ;)."
 
     jump inicio_historia
 
@@ -452,7 +452,7 @@ label elegi_A12:
         #xpos 800
         ypos 550
     
-    "¡Has elegido el avatar 12! Ahora con la historia ;)."
+    "¡Ya has elegido un avatar! Ahora iniciemos la historia ;)."
 
     jump inicio_historia
 
@@ -469,7 +469,7 @@ label elegi_A13:
         #xpos 800
         ypos 550
     
-    "¡Has elegido el avatar 13! Ahora con la historia ;)."
+    "¡Ya has elegido un avatar! Ahora iniciemos la historia ;)."
 
     jump inicio_historia
 
@@ -486,7 +486,7 @@ label elegi_A14:
         #xpos 800
         ypos 550
     
-    "¡Has elegido el avatar 14! Ahora con la historia ;)."
+    "¡Ya has elegido un avatar! Ahora iniciemos la historia ;)."
 
     jump inicio_historia
 
@@ -503,7 +503,7 @@ label elegi_A15:
         #xpos 800
         ypos 550
     
-    "¡Has elegido el avatar 15! Ahora con la historia ;)."
+    "¡Ya has elegido un avatar! Ahora iniciemos la historia ;)."
 
     jump inicio_historia
 
@@ -519,7 +519,7 @@ label elegi_A16:
         #xpos 800
         ypos 550
     
-    "¡Has elegido el avatar 16! Ahora con la historia ;)."
+    "¡Ya has elegido un avatar! Ahora iniciemos la historia ;)."
 
     jump inicio_historia
 
@@ -536,7 +536,7 @@ label elegi_A17:
         #xpos 800
         ypos 550
     
-    "¡Has elegido el avatar 17! Ahora con la historia ;)."
+    "¡Ya has elegido un avatar! Ahora iniciemos la historia ;)."
 
     jump inicio_historia
 
@@ -554,7 +554,7 @@ label elegi_A18:
         #xpos 800
         ypos 550
     
-    "¡Has elegido el avatar 18! Ahora con la historia ;)."
+    "¡Ya has elegido un avatar! Ahora iniciemos la historia ;)."
 
     jump inicio_historia
 
@@ -572,7 +572,7 @@ label elegi_A19:
         #xpos 800
         ypos 550
     
-    "¡Has elegido el avatar 19! Ahora con la historia ;)."
+    "¡Ya has elegido un avatar! Ahora iniciemos la historia ;)."
 
     jump inicio_historia
 
@@ -590,7 +590,7 @@ label elegi_A20:
         #xpos 800
         ypos 550
     
-    "¡Has elegido el avatar 20! Ahora con la historia ;)."
+    "¡Ya has elegido un avatar! Ahora iniciemos la historia ;)."
     
     jump inicio_historia
 
@@ -609,6 +609,6 @@ label elegi_A21:
         #xpos 800
         ypos 550
     
-    "¡Has elegido el avatar 21! Ahora con la historia ;)."
+    "¡Ya has elegido un avatar! Ahora iniciemos la historia ;)."
 
     jump inicio_historia
