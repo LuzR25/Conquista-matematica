@@ -2268,6 +2268,5 @@ label despedida_final:
     "Tu progreso se mantendrá en el mismo punto de la última vez que guardaste partida."
     "Si quieres guardar tu progreso para quedarte en el final, este es el momento."
     "Presiona Enter para terminar la partida y regresar al menú."
-    pause
 
     return

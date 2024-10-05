@@ -52,7 +52,7 @@ define gui.muted_color = '#66c1ff'
 define gui.hover_muted_color = '#99d6ff'
 
 ## Colores del texto del diálogo y menú.
-define gui.text_color = '#404040'
+define gui.text_color = '#1d1d1d' #'#404040'
 define gui.interface_text_color = '#404040'
 
 ## Tipos y tamaños de letra ####################################################
@@ -69,7 +69,7 @@ define gui.name_text_font = "fonts/PixelOperator.ttf"
 define gui.interface_text_font = "fonts/PixelOperator.ttf"
 
 ## El tamaño normal del texto del diálogo.
-define gui.text_size = 42 #33
+define gui.text_size = 50 #33
 
 ## El tamaño de los nombres de los personajes
 define gui.name_text_size = 60 #45
@@ -133,11 +133,11 @@ define gui.namebox_tile = False
 
 ## Colocación del diálogo relativa a la caja de texto. Puede ser el número de
 ## píxels relativos a la esquina superor izquierda o 0.5 para centrar.
-define gui.dialogue_xpos = 402
+define gui.dialogue_xpos = 140
 define gui.dialogue_ypos = 75
 
 ## La anchura máxima del texto del diálogo, en píxels.
-define gui.dialogue_width = 1116
+define gui.dialogue_width = 1800
 
 ## La alineación horizontal del texto del diálogo. (0.0 es izquierda, 0.5 es
 ## centro, 1.0 es derecha).
