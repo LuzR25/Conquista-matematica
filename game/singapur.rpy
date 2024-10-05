@@ -85,10 +85,6 @@ menu disAl_suma_1:
 #* Problema 2 de suma 
 menu abs_suma_2:
     "¿Cuál es el tema principal del problema?"
-    "El tiempo total que Juan pasó leyendo mensajes":
-        play sound "acierto.mp3"
-        "Correcto, el tema principal es el tiempo total que Juan pasó leyendo mensajes."
-        jump des_suma_2
     "La urgencia de los mensajes recibidos":
         play sound "error.mp3" volume 4.0
         "Incorrecto, piensa en lo que se está preguntando en el problema."
@@ -101,6 +97,10 @@ menu abs_suma_2:
         play sound "error.mp3" volume 4.0
         "Incorrecto, piensa en lo que se está preguntando en el problema."
         jump abs_suma_2
+    "El tiempo total que Juan pasó leyendo mensajes":
+        play sound "acierto.mp3"
+        "Correcto, el tema principal es el tiempo total que Juan pasó leyendo mensajes."
+        jump des_suma_2
 
 menu des_suma_2:
     "¿Qué datos nos proporciona el problema?"
@@ -183,14 +183,14 @@ menu abs_suma_3:
 
 menu des_suma_3:
     "¿Qué datos nos proporciona el problema?"
-    "La hora de inicio y la duración de la marcha":
-        play sound "acierto.mp3"
-        "Correcto, los datos proporcionados son la hora de inicio y la duración de la marcha."
-        jump recP_suma_3
     "La cantidad de horas que descansó Juan Cupul":
         play sound "error.mp3" volume 4.0
         "Incorrecto, revisa los datos que se mencionan en el problema."
         jump des_suma_3
+    "La hora de inicio y la duración de la marcha":
+        play sound "acierto.mp3"
+        "Correcto, los datos proporcionados son la hora de inicio y la duración de la marcha."
+        jump recP_suma_3
     "La distancia recorrida por Juan Cupul":
         play sound "error.mp3" volume 4.0
         "Incorrecto, revisa los datos que se mencionan en el problema."
@@ -241,14 +241,14 @@ menu disAl_suma_3:
 #* Problema suma 4
 menu abs_suma_4:
     "¿Cuál es el tema principal del problema?"
-    "La cantidad total de unidades salvadas por Juan Cupul":
-        play sound "acierto.mp3"
-        "Correcto, el tema principal es la cantidad total de unidades salvadas por Juan Cupul."
-        jump des_suma_4
     "La cantidad de niños en la lucha":
         play sound "error.mp3" volume 4.0
         "Incorrecto, piensa en lo que se está preguntando en el problema."
         jump abs_suma_4
+    "La cantidad total de unidades salvadas por Juan Cupul":
+        play sound "acierto.mp3"
+        "Correcto, el tema principal es la cantidad total de unidades salvadas por Juan Cupul."
+        jump des_suma_4
     "La cantidad de ancianos salvados":
         play sound "error.mp3" volume 4.0
         "Incorrecto, piensa en lo que se está preguntando en el problema."
@@ -402,7 +402,6 @@ menu abs_suma_6:
     "La cantidad total de caballos de Juan Cupul":
         play sound "acierto.mp3"
         "Correcto, el tema principal es la cantidad total de caballos de Juan Cupul."
-        
         jump des_suma_6
     "La estrategia de Juan Cupul en la batalla":
         play sound "error.mp3" volume 4.0
@@ -418,7 +417,6 @@ menu des_suma_6:
     "El número inicial de caballos, el número de caballos perdidos y el número de caballos ganados":
         play sound "acierto.mp3"
         "Correcto, los datos proporcionados son el número inicial de caballos, el número de caballos perdidos y el número de caballos ganados."
-        
         jump recP_suma_6
     "La edad de Juan Cupul":
         play sound "error.mp3" volume 4.0
@@ -477,19 +475,19 @@ menu disAl_suma_6:
 
 menu abs_mult_1:
     "¿Cuál es el tema principal del problema?"
-    "Los kilómetros que recorrió Juan Cupul hasta Tixcacalcupul":
-        play sound "acierto.mp3"
-        "Correcto, el tema principal es sobre los kilómetros que recorrió Juan Cupul hasta Tixcancalcupul."
-        jump des_mult_1
-    "Las horas que tardó en recorrer Juan Cupul":
-        play sound "error.mp3" volume 4.0
-        "Incorrecto, piensa en lo que se está preguntando en el problema."
-        jump abs_mult_1
     "El camino hasta llegar a Tixcacalcupul":
         play sound "error.mp3" volume 4.0
         "Incorrecto, piensa en lo que se está preguntando en el problema."
         jump abs_mult_1
     "El destino del viaje que hizo Juan Cupul":
+        play sound "error.mp3" volume 4.0
+        "Incorrecto, piensa en lo que se está preguntando en el problema."
+        jump abs_mult_1
+    "Los kilómetros que recorrió Juan Cupul hasta Tixcacalcupul":
+        play sound "acierto.mp3"
+        "Correcto, el tema principal es sobre los kilómetros que recorrió Juan Cupul hasta Tixcancalcupul."
+        jump des_mult_1
+    "Las horas que tardó en recorrer Juan Cupul":
         play sound "error.mp3" volume 4.0
         "Incorrecto, piensa en lo que se está preguntando en el problema."
         jump abs_mult_1
@@ -515,14 +513,14 @@ menu des_mult_1:
 
 menu recP_mult_1:
     "¿Qué operación necesitamos realizar para saber los kilómetros que recorrió?"
-    "Multiplicación":
-        play sound "acierto.mp3"
-        "Correcto, necesitamos multiplicar la velocidad a la que va por la cantidad de horas que tardó en llegar."
-        jump disAl_mult_1
     "División":
         play sound "error.mp3" volume 4.0
         "Incorrecto, recuerda que necesitamos multiplicar la velocidad a la que va por la cantidad de horas que tardó en llegar."
         jump recP_mult_1
+    "Multiplicación":
+        play sound "acierto.mp3"
+        "Correcto, necesitamos multiplicar la velocidad a la que va por la cantidad de horas que tardó en llegar."
+        jump disAl_mult_1
     "Suma":
         play sound "error.mp3" volume 4.0
         "Incorrecto, recuerda que necesitamos multiplicar la velocidad a la que va por la cantidad de horas que tardó en llegar."
@@ -534,10 +532,6 @@ menu recP_mult_1:
 
 menu disAl_mult_1:
     "Si viajaba a 60 km/h y tardó 3 horas, ¿cuál es el procedimiento para saber los kilómetros que recorrió?"
-    "Multiplicar los 60 km de 1 hora por las 3 horas que tardó en total, lo que da de resultado 180 km":
-        play sound "acierto.mp3"
-        "Correcto, Multiplicar los 60 km de 1 hora por las 3 horas que tardó en total, da de resultado 180 km."
-        jump problema_multiplicacion_1
     "Sumar los 60 km más las 3 horas que tardó el viaje y el resultado es 63 km":
         play sound "error.mp3" volume 4.0
         "Incorrecto, intenta realizar otra vez la operación."
@@ -550,6 +544,10 @@ menu disAl_mult_1:
         play sound "error.mp3" volume 4.0
         "Incorrecto, intenta realizar otra vez la operación."
         jump disAl_mult_1
+    "Multiplicar los 60 km de 1 hora por las 3 horas que tardó en total, lo que da de resultado 180 km":
+        play sound "acierto.mp3"
+        "Correcto, Multiplicar los 60 km de 1 hora por las 3 horas que tardó en total, da de resultado 180 km."
+        jump problema_multiplicacion_1
 
 #* Problema de multiplicación 2
 menu abs_mult_2:
@@ -611,35 +609,35 @@ menu recP_mult_2:
 
 menu disAl_mult_2:
     "Si el número total de estanterías es 4 y el total de libros por estantería es de 36, ¿cuál es el procedimiento para calcular el número total de libros?"
+    "Sumar las 4 estanterías más los 36 libros, que da como resultado 40 libros":
+        play sound "error.mp3" volume 4.0
+        "Incorrecto, intenta realizar otra vez la operación."
+        jump disAl_mult_2
+    "Restar a los 36 libros de una estantería el número total de 4 estanterías, lo que da resultado 32 libros":
+        play sound "error.mp3" volume 4.0
+        "Incorrecto, intenta realizar otra vez la operación."
+        jump disAl_mult_2
+    "Dividir los 36 libros entre las 4 estanterías, lo que da de resultado 9 libros":
+        play sound "error.mp3" volume 4.0
+        "Incorrecto, intenta realizar otra vez la operación."
+        jump disAl_mult_2
     "Multiplicar el número de estanterías (4) por el total de libros por estantería (36), y el resultado es 144 libros":
         play sound "acierto.mp3"
         "Correcto, Multiplicar el número de estanterías (4) por el total de libros por estantería (36), y el resultado es 144 libros."
         jump problema_multiplicacion_2
-    "Sumar las 4 estanterías más los 36 libros, que da como resultado 40 libros":
-        jump disAl_mult_2
-        play sound "error.mp3" volume 4.0
-        "Incorrecto, intenta realizar otra vez la operación."
-    "Restar a los 36 libros de una estantería el número total de 4 estanterías, lo que da resultado 32 libros":
-        jump disAl_mult_2
-        play sound "error.mp3" volume 4.0
-        "Incorrecto, intenta realizar otra vez la operación."
-    "Dividir los 36 libros entre las 4 estanterías, lo que da de resultado 9 libros":
-        jump disAl_mult_2
-        play sound "error.mp3" volume 4.0
-        "Incorrecto, intenta realizar otra vez la operación."
 
 
 #* Problema de multiplicación 3
 menu abs_mult_3:
     "¿Cuál es el tema principal del problema?"
-    "La cantidad total de soldados que fueron a la batalla con Juan Cupul a enfrentar a los enemigos":
-        play sound "acierto.mp3"
-        "Correcto, el tema principal es sobre la cantidad total de soldados que fueron a la batalla con Juan Cupul a enfrentar a los enemigos."
-        jump des_mult_3
     "Los soldados que sobrevivieron en la batalla":
         play sound "error.mp3" volume 4.0
         "Incorrecto, piensa en lo que se está preguntando en el problema."
         jump abs_mult_3
+    "La cantidad total de soldados que fueron a la batalla con Juan Cupul a enfrentar a los enemigos":
+        play sound "acierto.mp3"
+        "Correcto, el tema principal es sobre la cantidad total de soldados que fueron a la batalla con Juan Cupul a enfrentar a los enemigos."
+        jump des_mult_3
     "La estrategias de batalla ":
         play sound "error.mp3" volume 4.0
         "Incorrecto, piensa en lo que se está preguntando en el problema."
@@ -651,10 +649,6 @@ menu abs_mult_3:
 
 menu des_mult_3:
     "¿Qué datos nos proporciona el problema?"
-    "El número de escuadrones y la cantidad de soldados en cada escuadrón":
-        play sound "acierto.mp3"
-        "Correcto, los datos proporcionados son el número de escuadrones y la cantidad de soldados en cada escuadrón."
-        jump recP_mult_3
     "Los pasos a seguir del plan de Juan Cupul":
         play sound "error.mp3" volume 4.0
         "Incorrecto, revisa los datos que se mencionan en el problema."
@@ -667,6 +661,10 @@ menu des_mult_3:
         play sound "error.mp3" volume 4.0
         "Incorrecto, revisa los datos que se mencionan en el problema."
         jump des_mult_3
+    "El número de escuadrones y la cantidad de soldados en cada escuadrón":
+        play sound "acierto.mp3"
+        "Correcto, los datos proporcionados son el número de escuadrones y la cantidad de soldados en cada escuadrón."
+        jump recP_mult_3
 
 menu recP_mult_3:
     "¿Qué operación necesitamos realizar para encontrar la hora en que terminó la lucha?"
@@ -730,7 +728,7 @@ menu des_mult_4:
     "¿Qué datos nos proporciona el problema?"
     "La cantidad de soldados a los que se les entregará las despensas":
         play sound "error.mp3" volume 4.0
-        "Correcto, los datos proporcionados son el número de camisas fabricadas por día y el total de días trabajados."
+        "Incorrecto, revisa los datos que se mencionan en el problema."
         jump des_mult_4
     "La cantidad de bolsas de frijol para una despensa y la cantidad de días que se recolectaron":
         play sound "acierto.mp3"
@@ -766,10 +764,6 @@ menu recP_mult_4:
 
 menu disAl_mult_4:
     "Si conocemos el número de días que se reunió la despensa (7) y la cantidad de bolsas  por caja de mercancía que se iba a armar¿cuál es el procedimiento para conocer la cantidad de bolsas de frijol se juntaron a la semana?"
-    "Multiplicar el número total de días de la semana (7) por las 14 bolsas de frijol que se juntó en cada uno de esos días y da como resultado 98 bolsas de frijol":
-        play sound "acierto.mp3"
-        "Correcto, hay que multiplicar el número total de días de la semana (7) por las 14 bolsas de frijol que se juntó en cada uno de esos días y da como resultado 98 bolsas de frijol."
-        jump problema_multiplicacion_4
     "Sumar los 7 días que se recolectó despensa más ñas 14 bolsas de frijol lo que da de resultado 21 bolsas de frijol":
         play sound "error.mp3" volume 4.0
         "Incorrecto, intenta realizar otra vez la operación."
@@ -782,14 +776,14 @@ menu disAl_mult_4:
         play sound "error.mp3" volume 4.0
         "Incorrecto, intenta realizar otra vez la operación."
         jump disAl_mult_4
+    "Multiplicar el número total de días de la semana (7) por las 14 bolsas de frijol que se juntó en cada uno de esos días y da como resultado 98 bolsas de frijol":
+        play sound "acierto.mp3"
+        "Correcto, hay que multiplicar el número total de días de la semana (7) por las 14 bolsas de frijol que se juntó en cada uno de esos días y da como resultado 98 bolsas de frijol."
+        jump problema_multiplicacion_4
 
 #* Ejercicio multiplicación 5
 menu abs_mult_5:
     "¿Cuál es el tema principal del problema?"
-    "La cantidad de aliados que Juan Cupul reunió para armar una estrategia":
-        play sound "acierto.mp3"
-        "Correcto, el tema principal es sobre la cantidad de aliados que Juan Cupul reunió para armar una estrategia."
-        jump des_mult_5
     "La comida que dará Juan Cupul en la reunión":
         play sound "error.mp3" volume 4.0
         "Incorrecto, piensa en lo que se está preguntando en el problema."
@@ -802,6 +796,10 @@ menu abs_mult_5:
         play sound "error.mp3" volume 4.0
         "Incorrecto, piensa en lo que se está preguntando en el problema."
         jump abs_mult_5
+    "La cantidad de aliados que Juan Cupul reunió para armar una estrategia":
+        play sound "acierto.mp3"
+        "Correcto, el tema principal es sobre la cantidad de aliados que Juan Cupul reunió para armar una estrategia."
+        jump des_mult_5
 
 menu des_mult_5:
     "¿Qué datos nos proporciona el problema?"
@@ -843,14 +841,14 @@ menu recP_mult_5:
 
 menu disAl_mult_5:
     "Si el número de mesas es 4 y la cantidad de sillas por mesas es 8 ¿cuál es el procedimiento para calcular el total de aliados que se han invitado?"
-    "Multiplicar el número de mesas (4) por el total de sillas en cada mesa (8), y el resultado es de 32 personas":
-        play sound "acierto.mp3"
-        "Correcto, al multiplicar el número de mesas (4) por el total de sillas en cada mesa (8) obtenemos que el resultado es de 32 aliados invitados a la reunión."
-        jump problema_multiplicacion_5
     "Sumar las 4 mesas más las 8 sillas, que da como resultado 12 personas":
         play sound "error.mp3" volume 4.0
         "Incorrecto, intenta realizar otra vez la operación."
         jump disAl_mult_5
+    "Multiplicar el número de mesas (4) por el total de sillas en cada mesa (8), y el resultado es de 32 personas":
+        play sound "acierto.mp3"
+        "Correcto, al multiplicar el número de mesas (4) por el total de sillas en cada mesa (8) obtenemos que el resultado es de 32 aliados invitados a la reunión."
+        jump problema_multiplicacion_5
     "Restar a las 8 sillas el número total de las 4 mesas que hay, lo que da resultado 4 personas":
         play sound "error.mp3" volume 4.0
         "Incorrecto, intenta realizar otra vez la operación."
@@ -863,10 +861,6 @@ menu disAl_mult_5:
 #* Problema de multiplicación 6
 menu abs_multiplicacion_6:
     "¿Cuál es el tema principal del problema?"
-    "La cantidad de flechas lanzadas por Juan Cupul y los otros 7 guerreros durante la batalla":
-        play sound "acierto.mp3"
-        jump des_multiplicacion_6
-        "Correcto, el tema principal es sobre la cantidad de flechas lanzadas por Juan Cupul y otros 7 guerreros durante la batalla."
     "La cantidad de heridos en batalla":
         play sound "error.mp3" volume 4.0
         "Incorrecto, piensa bien en lo que se está preguntando en el problema."
@@ -879,6 +873,10 @@ menu abs_multiplicacion_6:
         play sound "error.mp3" volume 4.0
         "Incorrecto, piensa bien en lo que se está preguntando en el problema."
         jump abs_multiplicacion_6
+    "La cantidad de flechas lanzadas por Juan Cupul y los otros 7 guerreros durante la batalla":
+        play sound "acierto.mp3"
+        jump des_multiplicacion_6
+        "Correcto, el tema principal es sobre la cantidad de flechas lanzadas por Juan Cupul y otros 7 guerreros durante la batalla."
 
 menu des_multiplicacion_6:
     "¿Qué datos nos proporciona el problema?"
@@ -961,10 +959,6 @@ menu abs_division_1:
 
 menu des_division_1:
     "¿Qué datos nos proporciona el problema?"
-    "Los machetes que tiene Juan Cupul y el número de campesinos":
-        play sound "acierto.mp3"
-        "Correcto, los datos proporcionados son los machetes que tiene Juan Cupul y el número de campesinos."
-        jump recP_division_1
     "El número de vecinos que tiene Juan Cupul":
         play sound "error.mp3" volume 4.0
         "Incorrecto, revisa los datos que se mencionan en el problema."
@@ -977,6 +971,10 @@ menu des_division_1:
         play sound "error.mp3" volume 4.0
         "Incorrecto, revisa los datos que se mencionan en el problema."
         jump des_division_1
+    "Los machetes que tiene Juan Cupul y el número de campesinos":
+        play sound "acierto.mp3"
+        "Correcto, los datos proporcionados son los machetes que tiene Juan Cupul y el número de campesinos."
+        jump recP_division_1
 
 menu recP_division_1:
     "¿Qué operación necesitamos realizar para encontrar la cantidad de machetes que Juan Cupul debe dar a cada campesino?"
@@ -1003,14 +1001,14 @@ menu disAl_division_1:
         play sound "error.mp3" volume 4.0
         "Incorrecto, divide nuevamente los machetes entre los campesinos."
         jump disAl_division_1
-    "Dividir el total de machetes (36) entre el número de campesinos (6) y el resultado es 6.":
-        play sound "acierto.mp3"
-        "Correcto, dividir el total de machetes (36) entre los campesinos (6) da como resultado 6 machetes para cada campesino."
-        jump problema_division_1
     "Multiplicar los campesinos (6) por el total de machetes (36) y el resultado es 216.":
         play sound "error.mp3" volume 4.0
         "Incorrecto, divide nuevamente los machetes entre los campesinos."
         jump disAl_division_1
+    "Dividir el total de machetes (36) entre el número de campesinos (6) y el resultado es 6.":
+        play sound "acierto.mp3"
+        "Correcto, dividir el total de machetes (36) entre los campesinos (6) da como resultado 6 machetes para cada campesino."
+        jump problema_division_1
     "Sumar los machetes (36) más el número de campesinos (6) y el resultado es 42.":
         play sound "error.mp3" volume 4.0
         "Incorrecto, divide nuevamente los machetes entre los campesinos."
@@ -1019,10 +1017,6 @@ menu disAl_division_1:
 #* Problema división 2
 menu abs_division_2:
     "¿Cuál es el tema principal del problema?"
-    "La cantidad de tomates que Juan Cupul deberá regalar a cada familia.":
-        play sound "acierto.mp3"
-        "Correcto, el tema principal son los tomates que le tocará a cada familia."
-        jump des_division_2
     "Los vecinos que viven cerca de Juan Cupul.":
         play sound "error.mp3" volume 4.0
         "Incorrecto, piensa en lo que se está preguntando en el problema."
@@ -1031,6 +1025,10 @@ menu abs_division_2:
         play sound "error.mp3" volume 4.0
         "Incorrecto, piensa en lo que se está preguntando en el problema."
         jump abs_division_2
+    "La cantidad de tomates que Juan Cupul deberá regalar a cada familia.":
+        play sound "acierto.mp3"
+        "Correcto, el tema principal son los tomates que le tocará a cada familia."
+        jump des_division_2
     "La cantidad de vecinos que no comen tomates.":
         play sound "error.mp3" volume 4.0
         "Incorrecto, piensa en lo que se está preguntando en el problema."
@@ -1080,14 +1078,14 @@ menu disAl_division_2:
         play sound "error.mp3" volume 4.0
         "Incorrecto, divide nuevamente los kilos de tomate entre las familias."
         jump disAl_division_2
-    "Sumar los tomates (72) más el número de familias (9) y el resultado es 81":
-        play sound "error.mp3" volume 4.0
-        "Incorrecto, divide nuevamente los kilos de tomate entre las familias."
-        jump disAl_division_2
     "Dividir el total de tomates (72) entre el número de familias (9) y el resultado es 8":
         play sound "acierto.mp3"
         "Correcto, dividir 72 kilos de tomate entre las 9 familias da como resultado 8."
         jump problema_division_2
+    "Sumar los tomates (72) más el número de familias (9) y el resultado es 81":
+        play sound "error.mp3" volume 4.0
+        "Incorrecto, divide nuevamente los kilos de tomate entre las familias."
+        jump disAl_division_2
     "Multiplicar las familias (9) por el total de tomates (72) y el resultado es 648":
         play sound "error.mp3" volume 4.0
         "Incorrecto, divide nuevamente los kilos de tomate entre las familias."
@@ -1157,14 +1155,14 @@ menu disAl_division_3:
         play sound "error.mp3" volume 4.0
         "Incorrecto, divide nuevamente los litros de agua del depósito entre los que irían en cada cubeta."
         jump disAl_division_3
-    "Dividir los litros de agua del depósito (56) entre el número de litros que va en cada cubeta (8) y el resultado es 7":
-        play sound "acierto.mp3"
-        "Correcto, dividir los litros de agua del depósito (56) entre el número de litros que va en cada cubeta (8) ayuda a saber que son 7 las cubetas que se necesitan para sacar toda el agua."
-        jump problema_division_3
     "Restar a los litros de agua del depósito (56) los litros que van en cada cubeta (8) y el resultado es 48":
         play sound "error.mp3" volume 4.0
         "Incorrecto, divide nuevamente los litros de agua del depósito entre los que irían en cada cubeta."
         jump disAl_division_3
+    "Dividir los litros de agua del depósito (56) entre el número de litros que va en cada cubeta (8) y el resultado es 7":
+        play sound "acierto.mp3"
+        "Correcto, dividir los litros de agua del depósito (56) entre el número de litros que va en cada cubeta (8) ayuda a saber que son 7 las cubetas que se necesitan para sacar toda el agua."
+        jump problema_division_3
     "Multiplicar los litros de agua del depósito (56) por el número de litros que va en cada cubeta (8) y el resultado es 448":
         play sound "error.mp3" volume 4.0
         "Incorrecto, divide nuevamente los litros de agua del depósito entre los que irían en cada cubeta."
@@ -1219,17 +1217,21 @@ menu recP_division_4:
         play sound "error.mp3" volume 4.0
         "Incorrecto, recuerda que estamos dividiendo los troncos entre los hogares que existen cerca de la casa de Juan Cupul."
         jump recP_division_4
-    "División":
-        play sound "acierto.mp3"
-        "Correcto, necesitamos dividir la cantidad total de troncos entre el número de hogares que los recibirán."
-        jump disAl_division_4
     "Resta":
         play sound "error.mp3" volume 4.0
         "Incorrecto, recuerda que estamos dividiendo los troncos entre los hogares que existen cerca de la casa de Juan Cupul."
         jump recP_division_4
+    "División":
+        play sound "acierto.mp3"
+        "Correcto, necesitamos dividir la cantidad total de troncos entre el número de hogares que los recibirán."
+        jump disAl_division_4
 
 menu disAl_division_4:
     "Si el número total de troncos es 60 y se quiere repartir en 5 hogares, ¿cuál es el procedimiento para saber cuántos troncos le debe tocar a cada hogar?"
+    "Dividir los troncos (60) entre el número de hogares (5) lo que da como resultado 12":
+        play sound "acierto.mp3"
+        "Correcto, dividir la cantidad de troncos (60) entre la de los hogares (5) ayuda a conocer que son 12 los troncos que le tocará a cada hogar."
+        jump problema_division_4
     "Restar los troncos (60) menos el número de hogares (5) lo que da como resultado 55":
         play sound "error.mp3" volume 4.0
         "Incorrecto, divide nuevamente la cantidad de troncos entre los hogares que se les quiere dar."
@@ -1238,10 +1240,6 @@ menu disAl_division_4:
         play sound "error.mp3" volume 4.0
         "Incorrecto, divide nuevamente la cantidad de troncos entre los hogares que se les quiere dar."
         jump disAl_division_4
-    "Dividir los troncos (60) entre el número de hogares (5) lo que da como resultado 12":
-        play sound "acierto.mp3"
-        "Correcto, dividir la cantidad de troncos (60) entre la de los hogares (5) ayuda a conocer que son 12 los troncos que le tocará a cada hogar."
-        jump problema_division_4
     "Multiplicar los troncos (60) por el número de hogares (5) lo que da como resultado 300":
         play sound "error.mp3" volume 4.0
         "Incorrecto, divide nuevamente la cantidad de troncos entre los hogares que se les quiere dar."
@@ -1311,14 +1309,14 @@ menu disAl_division_5:
         play sound "error.mp3" volume 4.0
         "Incorrecto, divide nuevamente la cantidad de paquetes de semilla entre el número de agricultores que se les quiere dar."
         jump disAl_division_5
-    "Restar a los paquetes de semilla (45) el número de agricultores (9) lo que da como resultado 36.":
-        play sound "error.mp3" volume 4.0
-        "Incorrecto, divide nuevamente la cantidad de paquetes de semilla entre el número de agricultores que se les quiere dar."
-        jump disAl_division_5
     "Dividir los paquetes de semilla (45) entre el número de agricultores (9) lo que da como resultado 5.":
         play sound "acierto.mp3"
         "Correcto, dividir la cantidad de paquetes de semilla (45) entre el número de agricultores (9) ayuda a conocer que son 5 los paquetes que le tocará a cada agricultor."
         jump problema_division_5
+    "Restar a los paquetes de semilla (45) el número de agricultores (9) lo que da como resultado 36.":
+        play sound "error.mp3" volume 4.0
+        "Incorrecto, divide nuevamente la cantidad de paquetes de semilla entre el número de agricultores que se les quiere dar."
+        jump disAl_division_5
     "Multiplicar los paquetes de semilla (45) por número de agricultores (9) lo que da como resultado 405.":
         play sound "error.mp3" volume 4.0
         "Incorrecto, divide nuevamente la cantidad de paquetes de semilla entre el número de agricultores que se les quiere dar."
@@ -1369,14 +1367,14 @@ menu recP_division_6:
         play sound "error.mp3" volume 4.0
         "Incorrecto, recuerda que estamos asignando el número de horas de entrenamiento para cada guerrero."
         jump recP_division_6
-    "División":
-        play sound "acierto.mp3"
-        "Correcto, necesitamos dividir la cantidad de horas entre el total de guerreros."
-        jump disAl_division_6
     "Suma":
         play sound "error.mp3" volume 4.0
         "Incorrecto, recuerda que estamos asignando el número de horas de entrenamiento para cada guerrero."
         jump recP_division_6
+    "División":
+        play sound "acierto.mp3"
+        "Correcto, necesitamos dividir la cantidad de horas entre el total de guerreros."
+        jump disAl_division_6
     "Resta":
         play sound "error.mp3" volume 4.0
         "Incorrecto, recuerda que estamos asignando el número de horas de entrenamiento para cada guerrero."
@@ -1463,6 +1461,10 @@ menu recP_resta_1:
 
 menu disAl_resta_1:
     "Si Juan Cupul tenía 25 espadas y perdió 9 en una batalla, ¿cuál es el procedimiento para saber cuántas espadas le quedan?"
+    "Restar la cantidad de espadas perdidas (9) de la cantidad de espadas iniciales (25) y el resultado es 16.":
+        play sound "acierto.mp3"
+        "Correcto, restar 9 espadas de las 25 espadas iniciales da como resultado 16 espadas."
+        jump problema_resta_1
     "Sumar la cantidad de espadas iniciales (25) con la cantidad de espadas perdidas (9) y el resultado es 34.":
         play sound "error.mp3" volume 4.0
         "Incorrecto, revisa nuevamente las operaciones necesarias para restar espadas perdidas de la cantidad inicial."
@@ -1471,10 +1473,6 @@ menu disAl_resta_1:
         play sound "error.mp3" volume 4.0
         "Incorrecto, revisa nuevamente las operaciones necesarias para restar espadas perdidas de la cantidad inicial."
         jump disAl_resta_1
-    "Restar la cantidad de espadas perdidas (9) de la cantidad de espadas iniciales (25) y el resultado es 16.":
-        play sound "acierto.mp3"
-        "Correcto, restar 9 espadas de las 25 espadas iniciales da como resultado 16 espadas."
-        jump problema_resta_1
     "Dividir la cantidad de espadas iniciales (25) entre la cantidad de espadas perdidas (9) y el resultado es 14.":
         play sound "error.mp3" volume 4.0
         "Incorrecto, revisa nuevamente las operaciones necesarias para restar espadas perdidas de la cantidad inicial."
@@ -1502,14 +1500,14 @@ menu abs_resta_2:
 
 menu des_resta_2:
     "¿Qué datos nos proporciona el problema?"
-    "La cantidad inicial de agua y la cantidad de agua bebida":
-        play sound "acierto.mp3"
-        "Correcto, los datos proporcionados son la cantidad inicial de agua y la cantidad de agua bebida."
-        jump recP_resta_2
     "La duración del maratón":
         play sound "error.mp3" volume 4.0
         "Incorrecto, revisa los datos que se mencionan en el problema."
         jump des_resta_2
+    "La cantidad inicial de agua y la cantidad de agua bebida":
+        play sound "acierto.mp3"
+        "Correcto, los datos proporcionados son la cantidad inicial de agua y la cantidad de agua bebida."
+        jump recP_resta_2
     "La velocidad de Juan":
         play sound "error.mp3" volume 4.0
         "Incorrecto, revisa los datos que se mencionan en el problema."
@@ -1540,10 +1538,6 @@ menu recP_resta_2:
 
 menu disAl_resta_2:
     "Si Juan Cupul tenía 48 litros de agua y bebió 15 litros, ¿cuál es el procedimiento para saber cuántos litros de agua le quedan?"
-    "Restar la cantidad de agua bebida (15) de la cantidad de agua inicial (48) y el resultado es 33":
-        play sound "acierto.mp3"
-        "Correcto, restar 15 litros de los 48 litros iniciales da como resultado 33 litros."
-        jump problema_resta_2
     "Sumar la cantidad de agua inicial (48) con la cantidad de agua bebida (15) y el resultado es 63":
         play sound "error.mp3" volume 4.0
         "Incorrecto, revisa nuevamente las operaciones necesarias para restar la cantidad de agua bebida de la cantidad inicial."
@@ -1552,6 +1546,10 @@ menu disAl_resta_2:
         play sound "error.mp3" volume 4.0
         "Incorrecto, revisa nuevamente las operaciones necesarias para restar la cantidad de agua bebida de la cantidad inicial."
         jump disAl_resta_2
+    "Restar la cantidad de agua bebida (15) de la cantidad de agua inicial (48) y el resultado es 33":
+        play sound "acierto.mp3"
+        "Correcto, restar 15 litros de los 48 litros iniciales da como resultado 33 litros."
+        jump problema_resta_2
     "Dividir la cantidad de agua inicial (48) entre la cantidad de agua bebida (15) y el resultado es 34":
         play sound "error.mp3" volume 4.0
         "Incorrecto, revisa nuevamente las operaciones necesarias para restar la cantidad de agua bebida de la cantidad inicial."
@@ -1582,7 +1580,6 @@ menu des_resta_3:
     "La cantidad de tomates cosechados y la cantidad de tomates regalados":
         play sound "acierto.mp3"
         "Correcto, los datos proporcionados son la cantidad de tomates cosechados y la cantidad de tomates regalados."
-        
         jump recP_resta_3
     "El número de vecinos":
         play sound "error.mp3" volume 4.0
@@ -1599,10 +1596,6 @@ menu des_resta_3:
 
 menu recP_resta_3:
     "¿Qué operación necesitamos realizar para encontrar la cantidad de tomates restantes?"
-    "Resta":
-        play sound "acierto.mp3"
-        "Correcto, necesitamos restar la cantidad de tomates regalados de la cantidad inicial."
-        jump disAl_resta_3
     "Multiplicación":
         play sound "error.mp3" volume 4.0
         "Incorrecto, recuerda que estamos restando la cantidad de tomates regalados de la cantidad inicial."
@@ -1611,6 +1604,10 @@ menu recP_resta_3:
         play sound "error.mp3" volume 4.0
         "Incorrecto, recuerda que estamos restando la cantidad de tomates regalados de la cantidad inicial."
         jump recP_resta_3
+    "Resta":
+        play sound "acierto.mp3"
+        "Correcto, necesitamos restar la cantidad de tomates regalados de la cantidad inicial."
+        jump disAl_resta_3
     "Suma":
         play sound "error.mp3" volume 4.0
         "Incorrecto, recuerda que estamos restando la cantidad de tomates regalados de la cantidad inicial."
@@ -1645,7 +1642,6 @@ menu abs_resta_4:
     "La cantidad de provisiones restantes":
         play sound "acierto.mp3"
         "Correcto, el tema principal es la cantidad de provisiones restantes."
-        
         jump des_resta_4
     "La duración de la expedición":
         play sound "error.mp3" volume 4.0
@@ -1720,13 +1716,13 @@ menu abs_resta_5:
         play sound "error.mp3" volume 4.0
         "Incorrecto, piensa en lo que se está preguntando en el problema."
         jump abs_resta_5
-    "La cantidad de tablones restantes":
-        play sound "acierto.mp3"
-        "Correcto, el tema principal es la cantidad de tablones restantes."
-        jump abs_resta_5
     "La duración de la construcción del puente":
         play sound "error.mp3" volume 4.0
         "Incorrecto, piensa en lo que se está preguntando en el problema."
+        jump abs_resta_5
+    "La cantidad de tablones restantes":
+        play sound "acierto.mp3"
+        "Correcto, el tema principal es la cantidad de tablones restantes."
         jump abs_resta_5
     "La cantidad de tablones iniciales":
         play sound "error.mp3" volume 4.0
@@ -1762,14 +1758,14 @@ menu recP_resta_5:
         play sound "error.mp3" volume 4.0
         "Incorrecto, recuerda que estamos restando la cantidad de tablones utilizados de la cantidad inicial."
         jump recP_resta_5
-    "Resta":
-        play sound "acierto.mp3"
-        "Correcto, necesitamos restar la cantidad de tablones utilizados de la cantidad inicial."
-        jump disAl_resta_5
     "Suma":
         play sound "error.mp3" volume 4.0
         "Incorrecto, recuerda que estamos restando la cantidad de tablones utilizados de la cantidad inicial."
         jump recP_resta_5
+    "Resta":
+        play sound "acierto.mp3"
+        "Correcto, necesitamos restar la cantidad de tablones utilizados de la cantidad inicial."
+        jump disAl_resta_5
 
 menu disAl_resta_5:
     "Si Juan Cupul tenía 60 tablones y usó 27, ¿cuál es el procedimiento para saber cuántos tablones le quedan?"
@@ -1777,6 +1773,10 @@ menu disAl_resta_5:
         play sound "error.mp3" volume 4.0
         "Incorrecto, revisa nuevamente las operaciones necesarias para restar la cantidad de tablones utilizados de la cantidad inicial."
         jump disAl_resta_5
+    "Restar la cantidad de tablones utilizados (27) de la cantidad de tablones iniciales (60) y el resultado es 33":
+        play sound "acierto.mp3"
+        "Correcto, restar 27 tablones de los 60 tablones iniciales da como resultado 33 tablones."
+        jump problema_resta_5
     "Multiplicar la cantidad de tablones iniciales (60) por la cantidad de tablones utilizados (27) y el resultado es 33":
         play sound "error.mp3" volume 4.0
         "Incorrecto, revisa nuevamente las operaciones necesarias para restar la cantidad de tablones utilizados de la cantidad inicial."
@@ -1785,10 +1785,6 @@ menu disAl_resta_5:
         play sound "error.mp3" volume 4.0
         "Incorrecto, revisa nuevamente las operaciones necesarias para restar la cantidad de tablones utilizados de la cantidad inicial."
         jump disAl_resta_5
-    "Restar la cantidad de tablones utilizados (27) de la cantidad de tablones iniciales (60) y el resultado es 33":
-        play sound "acierto.mp3"
-        "Correcto, restar 27 tablones de los 60 tablones iniciales da como resultado 33 tablones."
-        jump problema_resta_5
 
 #* Problema resta 6
 menu abs_resta_6:
@@ -1797,14 +1793,14 @@ menu abs_resta_6:
         play sound "error.mp3" volume 4.0
         "Incorrecto, piensa en lo que se está preguntando en el problema."
         jump abs_resta_6
-    "La cantidad de partidas perdidas":
-        play sound "acierto.mp3"
-        "Correcto, el tema principal es la cantidad de partidas perdidas."
-        jump des_resta_6
     "El tiempo dedicado a cada partida":
         play sound "error.mp3" volume 4.0
         "Incorrecto, piensa en lo que se está preguntando en el problema."
         jump abs_resta_6
+    "La cantidad de partidas perdidas":
+        play sound "acierto.mp3"
+        "Correcto, el tema principal es la cantidad de partidas perdidas."
+        jump des_resta_6
     "El número de oponentes":
         play sound "error.mp3" volume 4.0
         "Incorrecto, piensa en lo que se está preguntando en el problema."
@@ -1831,14 +1827,14 @@ menu des_resta_6:
 
 menu recP_resta_6:
     "¿Qué operación necesitamos realizar para encontrar la cantidad de partidas perdidas?"
-    "Resta":
-        play sound "acierto.mp3"
-        "Correcto, necesitamos restar la cantidad de partidas ganadas de la cantidad total de partidas jugadas."
-        jump disAl_resta_6
     "Multiplicación":
         play sound "error.mp3" volume 4.0
         "Incorrecto, recuerda que estamos restando la cantidad de partidas ganadas de la cantidad total de partidas jugadas."
         jump recP_resta_6
+    "Resta":
+        play sound "acierto.mp3"
+        "Correcto, necesitamos restar la cantidad de partidas ganadas de la cantidad total de partidas jugadas."
+        jump disAl_resta_6
     "División":
         play sound "error.mp3" volume 4.0
         "Incorrecto, recuerda que estamos restando la cantidad de partidas ganadas de la cantidad total de partidas jugadas."
@@ -1858,14 +1854,14 @@ menu disAl_resta_6:
         play sound "error.mp3" volume 4.0
         "Incorrecto, revisa nuevamente las operaciones necesarias para restar la cantidad de partidas ganadas de la cantidad total de partidas jugadas."
         jump disAl_resta_6
-    "Restar la cantidad de partidas ganadas (8) de la cantidad de partidas jugadas (15) y el resultado es 7":
-        play sound "acierto.mp3"
-        "Correcto, restar 8 partidas ganadas de las 15 partidas jugadas da como resultado 7 partidas perdidas."
-        jump problema_resta_6
     "Dividir la cantidad de partidas jugadas (15) entre la cantidad de partidas ganadas (8) y el resultado es 5":
         play sound "error.mp3" volume 4.0
         "Incorrecto, revisa nuevamente las operaciones necesarias para restar la cantidad de partidas ganadas de la cantidad total de partidas jugadas."
         jump disAl_resta_6
+    "Restar la cantidad de partidas ganadas (8) de la cantidad de partidas jugadas (15) y el resultado es 7":
+        play sound "acierto.mp3"
+        "Correcto, restar 8 partidas ganadas de las 15 partidas jugadas da como resultado 7 partidas perdidas."
+        jump problema_resta_6
 
 #* Problema resta 7
 menu abs_resta_7:
@@ -1927,10 +1923,6 @@ menu recP_resta_7:
 
 menu disAl_resta_7:
     "Si Juan Cupul tenía 325 balas y usó 150, ¿cuál es el procedimiento para saber cuántas balas le quedaron?"
-    "Restar la cantidad de balas utilizadas (150) de la cantidad de balas iniciales (325) y el resultado es 175":
-        play sound "acierto.mp3"
-        "Correcto, restar 150 balas de las 325 balas iniciales da como resultado 175 balas."
-        jump problema_resta_7
     "Sumar la cantidad de balas iniciales (325) con la cantidad de balas utilizadas (150) y el resultado es 475":
         play sound "error.mp3" volume 4.0
         "Incorrecto, revisa nuevamente las operaciones necesarias para restar la cantidad de balas utilizadas de la cantidad inicial."
@@ -1939,6 +1931,10 @@ menu disAl_resta_7:
         play sound "error.mp3" volume 4.0
         "Incorrecto, revisa nuevamente las operaciones necesarias para restar la cantidad de balas utilizadas de la cantidad inicial."
         jump disAl_resta_7
+    "Restar la cantidad de balas utilizadas (150) de la cantidad de balas iniciales (325) y el resultado es 175":
+        play sound "acierto.mp3"
+        "Correcto, restar 150 balas de las 325 balas iniciales da como resultado 175 balas."
+        jump problema_resta_7
     "Dividir la cantidad de balas iniciales (325) entre la cantidad de balas utilizadas (150) y el resultado es 225":
         play sound "error.mp3" volume 4.0
         "Incorrecto, revisa nuevamente las operaciones necesarias para restar la cantidad de balas utilizadas de la cantidad inicial."

@@ -8,18 +8,13 @@
     ayudoVendedor = False
     avatarElegido = ""
     conservaObjeto = False
-    aciertos = 0
-    errores = 0
     
     def my_save(data):
-        #data["nombre_usuario"] = nombreUsuario
         data["puntos_victorias"] = puntosVictorias
         data["ayudo_a_fili"] = ayudoFili
         data["ayudo_a_vendedor"] = ayudoVendedor
         data["conserva_objeto"] = conservaObjeto
         data["avatar_elegido"] = avatarElegido
-        data["aciertos"] = aciertos
-        data["errores"] = errores
 
     #config.save_json_callbacks = [ my_save ]
     config.save_json_callbacks.append(my_save)
@@ -81,10 +76,9 @@ label inicio_historia:
 
     #$ persistent.nombres.append(nombreUsuario)# = nombres
 
-    "Juan Bautista Cupul Tun vive con su prometida María Dolores Canul en una casita 
+    "Juan Bautista Cupul Tun está con su prometida María Dolores Canul en una casita 
     en el pueblo Tixcacal."
-    "Se la pasan sus días tranquilos, jugando a resolver problemas matemáticos 
-    para no perder la práctica en sus habilidades de matemáticas."
+    "Pasan sus días tranquilos y a veces juegan a resolver retos matemáticos para divertirse."
 
     prometida "Te tengo uno bueno."
 
@@ -149,7 +143,7 @@ label inicio_historia:
     juan "Está bien. Muchas gracias, María."
 
     "Pero la amenaza de ataque e invasión al pueblo a causa de los cruzoob estaba tan 
-    presente que en el pueblo se tomó la desición de hacer guardia todos los días y a todas 
+    presente que en el pueblo se tomó la decisión de hacer guardia todos los días y a todas 
     horas en una cabaña."
     "Las personas que vigilaban avisarían de los ataques explotando una bomba."
     "A nadie le parecía excesivo ya que estuvieron todos de acuerdo en que era necesario
@@ -180,6 +174,10 @@ label inicio_historia:
             play sound "error.mp3" volume 4.0
             "Sigue intentando, estoy seguro de que la próxima será la correcta."
             jump abs_mult_2
+        "144 libros":
+            play sound "acierto.mp3"
+            "¡Felicidades! Para saber el total de libros se multiplican los 36 libros por las 4 
+            estanterías que hay en la sección de Historia."
         "32 libros":
             play sound "error.mp3" volume 4.0
             "Buen intento, ahora trata con una operación diferente."
@@ -188,10 +186,6 @@ label inicio_historia:
             play sound "error.mp3" volume 4.0
             "Ups, parece que esta respuesta no es la correcta. ¡No te rindas, sigue practicando!"
             jump abs_mult_2
-        "144 libros":
-            play sound "acierto.mp3"
-            "¡Felicidades! Para saber el total de libros se multiplican los 36 libros por las 4 
-            estanterías que hay en la sección de Historia."
 
     prometida "Vaya, apenas empieza el día y ya siento que vas a ganarme."
     juan "Yo no estaría tan seguro de eso."
@@ -204,9 +198,6 @@ label inicio_historia:
     juan "Iré a ver qué necesita."
 
     jump Filiberto_afuera_casa
-
-    #hide protagonista1
-    #with dissolve
 
 label Filiberto_afuera_casa:
 
@@ -612,12 +603,16 @@ label cosechar_verduras_2:
 
     menu problema_multiplicacion_1:
         "Juan Cupul se encontraba viajando a una velocidad de 60km por hora para 
-        llegar hasta Tixcacal, si viajo durante 3 horas ¿Cuántos kilómetros 
+        llegar hasta Tixcacal, si viajó durante 3 horas, ¿cuántos kilómetros 
         recorrió en total?"
         "20 kilómetros":
             play sound "error.mp3" volume 4.0
             "Ups, parece que esta respuesta no es la correcta."
             jump abs_mult_1
+        "180 kilómetros":
+            play sound "acierto.mp3"
+            "Buen trabajo, la respuesta se obtiene de multiplicar la velocidad 
+            por el tiempo de viaje, sigue así."
         "57 kilómetros":
             play sound "error.mp3" volume 4.0
             "Sigue intentado, estoy seguro de que la próxima será la correcta."
@@ -626,10 +621,6 @@ label cosechar_verduras_2:
             play sound "error.mp3" volume 4.0
             "Inténtalo de nuevo."
             jump abs_mult_1
-        "180 kilómetros":
-            play sound "acierto.mp3"
-            "Buen trabajo, la respuesta se obtiene de multiplicar la velocidad 
-            por el tiempo de viaje, sigue así."
     
     "Filiberto se encarga de cosechar los rábanos rojos."
     "Presiona la tecla Enter para cosechar los rábanos rojos."
@@ -1144,13 +1135,13 @@ label en_el_gran_arbol:
             play sound "error.mp3" volume 4.0
             "¡Vamos de nuevo!"
             jump abs_division_1
-        "6 machetes":
-            play sound "acierto.mp3"
-            "¡Excelente, ahí lo tienes! Juan Cupul debe dar 6 machetes a cada campesino."
         "30 machetes":
             play sound "error.mp3" volume 4.0
             "¡Vuelve a intentarlo, tú puedes!"
             jump abs_division_1
+        "6 machetes":
+            play sound "acierto.mp3"
+            "¡Excelente, ahí lo tienes! Juan Cupul debe dar 6 machetes a cada campesino."
     
     menu problema_division_2:
         vendedor "Durante la cosecha de tomates Juan Cupul recolecta 72 kilos y se los 
@@ -1415,13 +1406,13 @@ label maria_alimenta_animales:
         "En la feria agrícola, Juan Cupul obtuvo 45 paquetes de semillas. Quiere 
         distribuirlos de manera igualitaria entre 9 agricultores de la comunidad. 
         ¿Cuántos paquetes de semillas recibirá cada agricultor?"
+        "5 paquetes":
+            play sound "acierto.mp3" 
+            "¡Muy bien, lo has conseguido!"
         "4 paquetes":
             play sound "error.mp3" volume 4.0
             "¡Casi lo tienes, estás cerca! pero la respuesta no es la correcta."
             jump abs_division_5
-        "5 paquetes":
-            play sound "acierto.mp3" 
-            "¡Muy bien, lo has conseguido!"
         "28 paquetes":
             play sound "error.mp3" volume 4.0
             "¡Vamos de nuevo!"
@@ -1464,14 +1455,14 @@ label maria_alimenta_animales:
             play sound "error.mp3" volume 4.0
             "Vamos, inténtalo otra vez."
             jump abs_mult_5
-        "12 aliados":
-            play sound "error.mp3" volume 4.0
-            "Ups, parece que esta respuesta no es la correcta."
-            jump abs_mult_5
         "32 aliados":
             play sound "acierto.mp3"
             "Lo estás resolviendo muy bien, la respuesta se obtiene multiplicando 
             el número de mesas (4) por la cantidad de sillas que va en cada mesa (8)."
+        "12 aliados":
+            play sound "error.mp3" volume 4.0
+            "Ups, parece que esta respuesta no es la correcta."
+            jump abs_mult_5
 
     "María alimenta a los cochinos, las gallinas y los pavos."
 
@@ -1555,13 +1546,13 @@ label comprar_super_gallina:
             play sound "error.mp3" volume 4.0
             "Ups, parece que esta respuesta no es la correcta. ¡No te rindas, sigue practicando!"
             jump abs_suma_4
-        "90":
-            play sound "acierto.mp3"
-            "¡Buen trabajo! La respuesta es correcta."
         "100":
             play sound "error.mp3" volume 4.0
             "¡Casi lo tienes! pero esta vez la respuesta no es la correcta."
             jump abs_suma_4
+        "90":
+            play sound "acierto.mp3"
+            "¡Buen trabajo! La respuesta es correcta."
 
     prometida "Hacia el frente, tiene que ser hacia el frente."
     
@@ -1619,6 +1610,9 @@ label comprar_super_gallina:
     menu problema_resta_3:
         "Juan Cupul cosechó 63 tomates en su campo y después regaló 25 a sus 
         vecinos. ¿Cuántos tomates le quedaron a Juan después de regalar algunos?"
+        "38 tomates":
+            play sound "acierto.mp3"
+            "¡Tienes esto! La respuesta es correcta."
         "3 tomates":
             play sound "error.mp3" volume 4.0
             "¡Puedes encontrar la respuesta!"
@@ -1627,9 +1621,6 @@ label comprar_super_gallina:
             play sound "error.mp3" volume 4.0
             "Vuelve a intentarlo, ¡tú puedes!"
             jump abs_resta_3
-        "38 tomates":
-            play sound "acierto.mp3"
-            "¡Tienes esto! La respuesta es correcta."
         "88 tomates":
             play sound "error.mp3" volume 4.0
             "¡Estás haciendo un gran trabajo! Imagina cuántos tomates tenía Juan 
@@ -2022,16 +2013,16 @@ label ataque:
     menu:
         "Durante la sublevación en 1847, Juan Cupul luchó contra las tropas enemigas durante 
         2 horas y 20 minutos. Si comenzó la lucha a las 9:45 AM, ¿a qué hora terminó?"
+        "12:05 PM":
+            play sound "acierto.mp3"
+            "¡Muy bien! Juan ha ganado un punto en la batalla."
+            $ puntos = puntos + 1
         "11:05 AM":
             play sound "error.mp3" volume 4.0
             "No hay segundas oportunidades en el campo de batalla."
         "11:15 AM":
             play sound "error.mp3" volume 4.0
             "No hay segundas oportunidades en el campo de batalla."
-        "12:05 PM":
-            play sound "acierto.mp3"
-            "¡Muy bien! Juan ha ganado un punto en la batalla."
-            $ puntos = puntos + 1
         "12:25 PM":
             play sound "error.mp3" volume 4.0
             "No hay segundas oportunidades en el campo de batalla."
@@ -2079,13 +2070,13 @@ label ataque:
         "14 espadas":
             play sound "error.mp3" volume 4.0
             "Juan podría no vencer, lo has guiado mal."
+        "18 espadas":
+            play sound "error.mp3" volume 4.0
+            "Juan podría no vencer, lo has guiado mal."
         "16 espadas":
             play sound "acierto.mp3"
             "¡Triunfaste, y Juan también!"
             $ puntos = puntos + 1
-        "18 espadas":
-            play sound "error.mp3" volume 4.0
-            "Juan podría no vencer, lo has guiado mal."
         "34 espadas":
             play sound "error.mp3" volume 4.0
             "Juan podría no vencer, lo has guiado mal."
@@ -2277,122 +2268,6 @@ label despedida_final:
     "Tu progreso se mantendrá en el mismo punto de la última vez que guardaste partida."
     "Si quieres guardar tu progreso para quedarte en el final, este es el momento."
     "Presiona Enter para terminar la partida y regresar al menú."
-    pause
-
-    return
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-label Juan_irse_Dolores:
-    hide filiberto_tun with dissolve
-
-    show juan parado izquierda:
-        xpos 0.51
-        ypos 0.59
-
-    show novia parada derecha:
-        xpos 0.47
-        ypos 0.59
-    
-    "Juan le explica a Dolores lo que sucede."
-
-    prometida "Ya veo. Entonces eso es lo que pasó."
-    juan "Lo siento. Sé que mañana es importante."
-    prometida "No te preocupes. Sé lo importante que es esto. Ve, yo te estaré esperando aquí."
-    juan "¡Gracias!"
-    prometida "Cuando te sientas cansado, puedes volver aquí y te diré lo que necesites."
-    juan "Nos vemos luego. Regresaré. Te lo prometo."
-    prometida "Nos vemos."
-
-    hide novia with dissolve
-
-    "Juan se dirige a la casa de milpa que está al Oeste."
-    #"Juan debe dirigirse a la casa de milpa que está al Oeste."
-
-    #jump juan_milpa_oeste
-    #jump ubicar_afuera_casa
-    #jump mapa_6
-    jump ir_milpa_oeste
-
-label ir_milpa_oeste:
-    scene camino_casa_juan
-    with fade
-    pause 0.5
-
-    scene A4
-    with fade
-    pause 0.5
-
-    scene A3
-    with fade
-    pause 0.5
-
-    scene A2
-    with fade
-    pause 0.5
-
-    scene A33
-    with fade
-    pause 0.5
-
-    scene A35
-    with fade
-    pause 0.5
-
-    show protagonista1:
-        xpos 0.5
-        ypos 0.5
-
-    "Juan ve una estatua y se acerca a ella."
-    "Su aparación le resulta extraña, sin importar que Filiberto ya le hubiera comentado. 
-    Estaba claro que había problemas."
-    "Cuando la toca —tal como Filiberto le indicó que hiciera—, la estatua le habla."
-
-    estatua "Tienes que demostrar ser digno de la información que te ayudará a salvar a tu pueblo. 
-    Y para lograrlo, tienes que contestar correctamente la siguiente pregunta."
-
-    menu problema1_suma:
-        "Durante la sublevación en 1847, Juan Cupul luchó contra las tropas enemigas 
-        durante 2 horas y 20 minutos. Si comenzó la lucha a las 9:45 AM, ¿a qué hora terminó?"
-        "11:05 AM":
-            "¡Respuesta incorrecta!"
-            jump problema1_suma
-        "11:15 AM":
-            "¡Respuesta incorrecta!"
-            jump problema1_suma
-        "12:05 AM":
-            "¡Respuesta correcta!"
-        "12:25 AM":
-            "¡Respuesta incorrecta!"
-            jump problema1_suma
-    
-    estatua "Muy bien, Juan Cupul. Has demostrado ser digno. Ahora escucha con atención."
-
     pause
 
     return
