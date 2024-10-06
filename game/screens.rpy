@@ -3,9 +3,10 @@
 ################################################################################
 init offset = -1
 default avatar = "window_icon" 
-default nombreDeUsuario = "Ayuda, por favor"
-default aciertos = 0
-default errores = 0
+#! Tuve que desactivar la función de autoguardado porque da error al abrir esa 
+#! vista luego de hacer el guardado de una partida cuando el usuario aún no ha
+#! elegido su avatar
+define config.has_autosave = False 
 
 
 
@@ -259,6 +260,7 @@ screen quick_menu():
             textbutton _("Saltar") action Skip() alternate Skip(fast=True, confirm=True)
             textbutton _("Avance automático") action Preference("auto-forward", "toggle")
             textbutton _("Guardar") action ShowMenu('save')
+            textbutton _("Cargar") action ShowMenu('load')
             textbutton _("Guardar R.") action QuickSave()
             textbutton _("Cargar R.") action QuickLoad()
             textbutton _("Prefs.") action ShowMenu('preferences')
@@ -642,7 +644,7 @@ screen file_slots(title):
             ## botones.
             order_reverse True
 
-            ## El nombre de la pagina, se puede editar haciendo clic en el
+            ## El nombre de la página, se puede editar haciendo clic en el
             ## botón.
             button:
                 style "page_label"
@@ -1062,7 +1064,7 @@ screen glosario():
             label "Cruzoob":
                 style "history_name"
 
-            text "Cruzo'ob (formado de las palabras cruz en español y el pluralizador o'ob del maya) es el término usado para referirse a un grupo de mayas rebeldes durante la Guerra de Castas originario de Noj Kaaj Santa Cruz (común y erróneamente llamado Chan Santa Cruz y que es el actual Felipe Carrillo Puerto en Quintana Roo) que estaba fortalecido con gente de origen chino, negro, mestizo y hasta blancos, y que lucharon contra el gobierno opresor de aquel entonces."
+            text "Cruzo'ob (formado de las palabras cruz en español y el pluralizador o'ob del maya) es el término usado para referirse a un grupo de mayas rebeldes durante la Guerra de Castas originario de Noj Kaaj Santa Cruz (común y erróneamente llamado Chan Santa Cruz y que es el actual Felipe Carrillo Puerto en Quintana Roo) que estaba fortalecido con gente de origen chino, negro, mestizo y blancos." #, y que lucharon contra el gobierno opresor de aquel entonces."
 
 
 
